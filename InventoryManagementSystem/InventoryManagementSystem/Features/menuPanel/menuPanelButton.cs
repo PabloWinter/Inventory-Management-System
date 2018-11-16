@@ -84,7 +84,7 @@ namespace InventoryManagementSystem.Features.menuPanel
             else
             {
                 buttonSelected = true;
-                this.BackColor = Color.RoyalBlue;
+                this.BackColor = Color.DimGray;
             }
         }
 

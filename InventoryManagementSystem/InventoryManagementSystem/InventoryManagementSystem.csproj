@@ -45,12 +45,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Features\Button.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Features\Button.Designer.cs">
-      <DependentUpon>Button.cs</DependentUpon>
-    </Compile>
     <Compile Include="Features\menuPanel\menuPanelButton.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -93,6 +87,8 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Features\Other\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

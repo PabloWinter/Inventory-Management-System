@@ -43,9 +43,9 @@ namespace InventoryManagementSystem
         private void Form1_Load(object sender, EventArgs e)
         {
             //hide the tabs so buttons are used to navigate
-      //      optionTabs.Appearance = TabAppearance.FlatButtons;
-        //    optionTabs.ItemSize = new Size(0, 1);
-          //  optionTabs.SizeMode = TabSizeMode.Fixed;
+             optionTabs.Appearance = TabAppearance.FlatButtons;
+             //optionTabs.ItemSize = new Size(0, 1);
+             //optionTabs.SizeMode = TabSizeMode.Fixed;
         }
 
 
@@ -84,6 +84,48 @@ namespace InventoryManagementSystem
         {
             SelectOption("Brands");
             optionTabs.SelectedIndex = 2;
+        }
+
+        //category click
+        private void categoryOption_MouseClick(object sender, MouseEventArgs e)
+        {
+            SelectOption("Category");
+            optionTabs.SelectedIndex = 3;
+        }
+
+        //current stock
+        private void stockOption_MouseClick(object sender, MouseEventArgs e)
+        {
+            SelectOption("Current Stock");
+            optionTabs.SelectedIndex = 4;
+        }
+
+        //returned
+        private void returnedOption_MouseClick(object sender, MouseEventArgs e)
+        {
+            SelectOption("Returned");
+            optionTabs.SelectedIndex = 5;
+        }
+
+        //search
+        private void searchOption_MouseClick(object sender, MouseEventArgs e)
+        {
+            SelectOption("Search");
+            optionTabs.SelectedIndex = 6;
+        }
+
+        //purchase logs
+        private void plOption_MouseClick(object sender, MouseEventArgs e)
+        {
+            SelectOption("Purchase Log");
+            optionTabs.SelectedIndex = 7;
+        }
+        
+        //logistics
+        private void logisticOption_Click(object sender, EventArgs e)
+        {
+            SelectOption("Logistics");
+            optionTabs.SelectedIndex = 8;
         }
     }
 }
