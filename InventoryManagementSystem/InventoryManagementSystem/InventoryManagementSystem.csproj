@@ -90,5 +90,11 @@
   <ItemGroup>
     <Folder Include="Features\Other\" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\InventoryViewsLayer\InventoryViewsLayer.csproj">
+      <Project>{2f76b89f-bd60-46fc-b8fc-e02c7ef2a8aa}</Project>
+      <Name>InventoryViewsLayer</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
