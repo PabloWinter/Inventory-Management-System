@@ -12,9 +12,7 @@ namespace InventoryDataLayer
         private void ShowProduct()
         {
             using (DataLinqToSQLDataContext products = new DataLinqToSQLDataContext())
-            {
-                // dataGridView1.DataSource = employee.GetTable<TOrderItem>();
-
+            {             
                 var query = from product in products.TProductGroups
                             select product;
 
@@ -23,10 +21,7 @@ namespace InventoryDataLayer
                                        orderby prod.BrandID
                                        select prod;
 
-                //var query = item.PR_Employees.OrderBy(x => x.FirstName).ThenByDescending(x => x.HourlyRate);
-
-                dataGridView1.DataSource = custQuery;
-
+                var lambaQuery = products.TProductGroups.OrderBy(x => x.DESCRIPTION).ThenByDescending(x => x.CategoryID);
             }
 
         }
