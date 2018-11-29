@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace InventoryDataLayer
 {
-    class Search
+    public class SearchDL
     {
         DataLinqToSQLDataContext connect = new DataLinqToSQLDataContext();
 
@@ -23,6 +23,15 @@ namespace InventoryDataLayer
                                                         WHERE BrandID = {0}", value);
 
 
+        }
+
+        public static IEnumerable<TProductGroup> AllProducts()
+        {
+            DataLinqToSQLDataContext connect = new DataLinqToSQLDataContext();
+
+            var result = connect.ExecuteQuery<TProductGroup>(@"SELECT *
+                                                        FROM TProductGroup");
+            return result;
         }
     }
 }
