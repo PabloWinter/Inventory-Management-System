@@ -9,8 +9,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InventoryDataLayer", "Inven
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InventoryBusinessLayer", "InventoryBusinessLayer\InventoryBusinessLayer.csproj", "{867CE2B4-6939-4BE6-980B-BB7C1F39BF7E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InventoryViewsLayer", "InventoryViewsLayer\InventoryViewsLayer.csproj", "{2F76B89F-BD60-46FC-B8FC-E02C7EF2A8AA}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,10 +27,6 @@ Global
 		{867CE2B4-6939-4BE6-980B-BB7C1F39BF7E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{867CE2B4-6939-4BE6-980B-BB7C1F39BF7E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{867CE2B4-6939-4BE6-980B-BB7C1F39BF7E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{2F76B89F-BD60-46FC-B8FC-E02C7EF2A8AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2F76B89F-BD60-46FC-B8FC-E02C7EF2A8AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2F76B89F-BD60-46FC-B8FC-E02C7EF2A8AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2F76B89F-BD60-46FC-B8FC-E02C7EF2A8AA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
