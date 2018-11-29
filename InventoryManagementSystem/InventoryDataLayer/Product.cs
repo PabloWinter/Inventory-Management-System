@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace InventoryDataLayer
 {
-    class Product
+    public class Product
     {
 
         private void ShowProduct()
@@ -25,5 +26,20 @@ namespace InventoryDataLayer
             }
 
         }
+
+        public IEnumerable<TProductGroup> ShowAllProducts()
+        {
+            using (DataLinqToSQLDataContext products = new DataLinqToSQLDataContext())
+            {
+                var query = from product in products.TProductGroups
+                            select product;
+
+                return query;
+
+
+            }
+        }
+
+        //public IEnumerable<TProductGroup> InsertANewProduct()
     }
 }

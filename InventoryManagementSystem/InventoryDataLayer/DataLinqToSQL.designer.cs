@@ -151,7 +151,7 @@ namespace InventoryDataLayer
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
-		private int _BarcodeID;
+		private int _Barcode;
 		
 		private string _Name;
 		
@@ -185,8 +185,8 @@ namespace InventoryDataLayer
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
     partial void OnCreated();
-    partial void OnBarcodeIDChanging(int value);
-    partial void OnBarcodeIDChanged();
+    partial void OnBarcodeChanging(int value);
+    partial void OnBarcodeChanged();
     partial void OnNameChanging(string value);
     partial void OnNameChanged();
     partial void OnPriceChanging(decimal value);
@@ -218,22 +218,22 @@ namespace InventoryDataLayer
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BarcodeID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int BarcodeID
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Barcode", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int Barcode
 		{
 			get
 			{
-				return this._BarcodeID;
+				return this._Barcode;
 			}
 			set
 			{
-				if ((this._BarcodeID != value))
+				if ((this._Barcode != value))
 				{
-					this.OnBarcodeIDChanging(value);
+					this.OnBarcodeChanging(value);
 					this.SendPropertyChanging();
-					this._BarcodeID = value;
-					this.SendPropertyChanged("BarcodeID");
-					this.OnBarcodeIDChanged();
+					this._Barcode = value;
+					this.SendPropertyChanged("Barcode");
+					this.OnBarcodeChanged();
 				}
 			}
 		}
@@ -446,7 +446,7 @@ namespace InventoryDataLayer
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TProductGroup_TProduct", Storage="_TProducts", ThisKey="BarcodeID", OtherKey="BarcodeID")]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TProductGroup_TProduct", Storage="_TProducts", ThisKey="Barcode", OtherKey="Barcode")]
 		public EntitySet<TProduct> TProducts
 		{
 			get
@@ -459,7 +459,7 @@ namespace InventoryDataLayer
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TProductGroup_TPurchaseLog", Storage="_TPurchaseLogs", ThisKey="BarcodeID", OtherKey="BarcodeID")]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TProductGroup_TPurchaseLog", Storage="_TPurchaseLogs", ThisKey="Barcode", OtherKey="Barcode")]
 		public EntitySet<TPurchaseLog> TPurchaseLogs
 		{
 			get
@@ -593,7 +593,7 @@ namespace InventoryDataLayer
 		
 		private int _SerialNumber;
 		
-		private System.Nullable<int> _BarcodeID;
+		private System.Nullable<int> _Barcode;
 		
 		private EntityRef<TProductGroup> _TProductGroup;
 		
@@ -603,8 +603,8 @@ namespace InventoryDataLayer
     partial void OnCreated();
     partial void OnSerialNumberChanging(int value);
     partial void OnSerialNumberChanged();
-    partial void OnBarcodeIDChanging(System.Nullable<int> value);
-    partial void OnBarcodeIDChanged();
+    partial void OnBarcodeChanging(System.Nullable<int> value);
+    partial void OnBarcodeChanged();
     #endregion
 		
 		public TProduct()
@@ -633,31 +633,31 @@ namespace InventoryDataLayer
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BarcodeID", DbType="Int")]
-		public System.Nullable<int> BarcodeID
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Barcode", DbType="Int")]
+		public System.Nullable<int> Barcode
 		{
 			get
 			{
-				return this._BarcodeID;
+				return this._Barcode;
 			}
 			set
 			{
-				if ((this._BarcodeID != value))
+				if ((this._Barcode != value))
 				{
 					if (this._TProductGroup.HasLoadedOrAssignedValue)
 					{
 						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
 					}
-					this.OnBarcodeIDChanging(value);
+					this.OnBarcodeChanging(value);
 					this.SendPropertyChanging();
-					this._BarcodeID = value;
-					this.SendPropertyChanged("BarcodeID");
-					this.OnBarcodeIDChanged();
+					this._Barcode = value;
+					this.SendPropertyChanged("Barcode");
+					this.OnBarcodeChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TProductGroup_TProduct", Storage="_TProductGroup", ThisKey="BarcodeID", OtherKey="BarcodeID", IsForeignKey=true)]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TProductGroup_TProduct", Storage="_TProductGroup", ThisKey="Barcode", OtherKey="Barcode", IsForeignKey=true)]
 		public TProductGroup TProductGroup
 		{
 			get
@@ -680,11 +680,11 @@ namespace InventoryDataLayer
 					if ((value != null))
 					{
 						value.TProducts.Add(this);
-						this._BarcodeID = value.BarcodeID;
+						this._Barcode = value.Barcode;
 					}
 					else
 					{
-						this._BarcodeID = default(Nullable<int>);
+						this._Barcode = default(Nullable<int>);
 					}
 					this.SendPropertyChanged("TProductGroup");
 				}
@@ -948,7 +948,7 @@ namespace InventoryDataLayer
 		
 		private int _TransactionID;
 		
-		private System.Nullable<int> _BarcodeID;
+		private System.Nullable<int> _Barcode;
 		
 		private System.Nullable<int> _LocationID;
 		
@@ -968,8 +968,8 @@ namespace InventoryDataLayer
     partial void OnCreated();
     partial void OnTransactionIDChanging(int value);
     partial void OnTransactionIDChanged();
-    partial void OnBarcodeIDChanging(System.Nullable<int> value);
-    partial void OnBarcodeIDChanged();
+    partial void OnBarcodeChanging(System.Nullable<int> value);
+    partial void OnBarcodeChanged();
     partial void OnLocationIDChanging(System.Nullable<int> value);
     partial void OnLocationIDChanged();
     partial void OnDateChanging(System.DateTime value);
@@ -1007,26 +1007,26 @@ namespace InventoryDataLayer
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BarcodeID", DbType="Int")]
-		public System.Nullable<int> BarcodeID
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Barcode", DbType="Int")]
+		public System.Nullable<int> Barcode
 		{
 			get
 			{
-				return this._BarcodeID;
+				return this._Barcode;
 			}
 			set
 			{
-				if ((this._BarcodeID != value))
+				if ((this._Barcode != value))
 				{
 					if (this._TProductGroup.HasLoadedOrAssignedValue)
 					{
 						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
 					}
-					this.OnBarcodeIDChanging(value);
+					this.OnBarcodeChanging(value);
 					this.SendPropertyChanging();
-					this._BarcodeID = value;
-					this.SendPropertyChanged("BarcodeID");
-					this.OnBarcodeIDChanged();
+					this._Barcode = value;
+					this.SendPropertyChanged("Barcode");
+					this.OnBarcodeChanged();
 				}
 			}
 		}
@@ -1115,7 +1115,7 @@ namespace InventoryDataLayer
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TProductGroup_TPurchaseLog", Storage="_TProductGroup", ThisKey="BarcodeID", OtherKey="BarcodeID", IsForeignKey=true)]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TProductGroup_TPurchaseLog", Storage="_TProductGroup", ThisKey="Barcode", OtherKey="Barcode", IsForeignKey=true)]
 		public TProductGroup TProductGroup
 		{
 			get
@@ -1138,11 +1138,11 @@ namespace InventoryDataLayer
 					if ((value != null))
 					{
 						value.TPurchaseLogs.Add(this);
-						this._BarcodeID = value.BarcodeID;
+						this._Barcode = value.Barcode;
 					}
 					else
 					{
-						this._BarcodeID = default(Nullable<int>);
+						this._Barcode = default(Nullable<int>);
 					}
 					this.SendPropertyChanged("TProductGroup");
 				}
