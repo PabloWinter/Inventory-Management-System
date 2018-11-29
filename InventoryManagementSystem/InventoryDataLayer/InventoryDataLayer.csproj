@@ -55,6 +55,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
+    <Compile Include="Stock.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

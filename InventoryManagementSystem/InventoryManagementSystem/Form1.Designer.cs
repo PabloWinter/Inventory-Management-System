@@ -42,6 +42,7 @@
             this.tabPage7 = new System.Windows.Forms.TabPage();
             this.tabPage8 = new System.Windows.Forms.TabPage();
             this.tabPage9 = new System.Windows.Forms.TabPage();
+            this.logisticOption = new InventoryManagementSystem.Features.menuPanel.menuPanelButton();
             this.plOption = new InventoryManagementSystem.Features.menuPanel.menuPanelButton();
             this.searchOption = new InventoryManagementSystem.Features.menuPanel.menuPanelButton();
             this.returnedOption = new InventoryManagementSystem.Features.menuPanel.menuPanelButton();
@@ -50,11 +51,12 @@
             this.brandOption = new InventoryManagementSystem.Features.menuPanel.menuPanelButton();
             this.productOption = new InventoryManagementSystem.Features.menuPanel.menuPanelButton();
             this.dashboardOption = new InventoryManagementSystem.Features.menuPanel.menuPanelButton();
-            this.logisticOption = new InventoryManagementSystem.Features.menuPanel.menuPanelButton();
+            this.stockManager1 = new InventoryManagementSystem.Features.Stock.StockManager();
             this.menuPanel.SuspendLayout();
             this.optionTabs.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
+            this.tabPage5.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuPanel
@@ -166,6 +168,7 @@
             // 
             // tabPage5
             // 
+            this.tabPage5.Controls.Add(this.stockManager1);
             this.tabPage5.Location = new System.Drawing.Point(4, 22);
             this.tabPage5.Name = "tabPage5";
             this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
@@ -213,6 +216,17 @@
             this.tabPage9.TabIndex = 8;
             this.tabPage9.Text = "Logistics";
             this.tabPage9.UseVisualStyleBackColor = true;
+            // 
+            // logisticOption
+            // 
+            this.logisticOption.BackColor = System.Drawing.Color.DodgerBlue;
+            this.logisticOption.Label1Text = "Logistics";
+            this.logisticOption.Label2Text = "↙️↗️";
+            this.logisticOption.Location = new System.Drawing.Point(0, 534);
+            this.logisticOption.Name = "logisticOption";
+            this.logisticOption.Size = new System.Drawing.Size(249, 48);
+            this.logisticOption.TabIndex = 8;
+            this.logisticOption.Click += new System.EventHandler(this.logisticOption_Click);
             // 
             // plOption
             // 
@@ -302,16 +316,12 @@
             this.dashboardOption.TabIndex = 0;
             this.dashboardOption.Click += new System.EventHandler(this.menuPanelButton1_Click);
             // 
-            // logisticOption
+            // stockManager1
             // 
-            this.logisticOption.BackColor = System.Drawing.Color.DodgerBlue;
-            this.logisticOption.Label1Text = "Logistics";
-            this.logisticOption.Label2Text = "↙️↗️";
-            this.logisticOption.Location = new System.Drawing.Point(0, 534);
-            this.logisticOption.Name = "logisticOption";
-            this.logisticOption.Size = new System.Drawing.Size(249, 48);
-            this.logisticOption.TabIndex = 8;
-            this.logisticOption.Click += new System.EventHandler(this.logisticOption_Click);
+            this.stockManager1.Location = new System.Drawing.Point(45, 52);
+            this.stockManager1.Name = "stockManager1";
+            this.stockManager1.Size = new System.Drawing.Size(634, 508);
+            this.stockManager1.TabIndex = 0;
             // 
             // Form1
             // 
@@ -329,6 +339,7 @@
             this.tabPage1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
+            this.tabPage5.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -358,6 +369,7 @@
         private Features.menuPanel.menuPanelButton searchOption;
         private Features.menuPanel.menuPanelButton plOption;
         private Features.menuPanel.menuPanelButton logisticOption;
+        private Features.Stock.StockManager stockManager1;
     }
 }
 
