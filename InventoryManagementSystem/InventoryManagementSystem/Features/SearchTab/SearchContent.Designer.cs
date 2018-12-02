@@ -36,7 +36,7 @@
             // 
             // AddFilter
             // 
-            this.AddFilter.Location = new System.Drawing.Point(4, 4);
+            this.AddFilter.Location = new System.Drawing.Point(4, 46);
             this.AddFilter.Name = "AddFilter";
             this.AddFilter.Size = new System.Drawing.Size(197, 92);
             this.AddFilter.TabIndex = 0;
@@ -46,9 +46,9 @@
             // 
             // FilterPanel
             // 
-            this.FilterPanel.Location = new System.Drawing.Point(402, 4);
+            this.FilterPanel.Location = new System.Drawing.Point(207, 46);
             this.FilterPanel.Name = "FilterPanel";
-            this.FilterPanel.Size = new System.Drawing.Size(710, 240);
+            this.FilterPanel.Size = new System.Drawing.Size(905, 198);
             this.FilterPanel.TabIndex = 1;
             // 
             // ResultView

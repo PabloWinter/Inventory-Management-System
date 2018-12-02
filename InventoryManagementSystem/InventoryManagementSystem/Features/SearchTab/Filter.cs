@@ -12,23 +12,17 @@ using System.Diagnostics;
 
 namespace InventoryManagementSystem.Features.SearchTab
 {
-    public partial class SearchContent : UserControl
+    public partial class Filter : UserControl
     {
-        public SearchContent()
+        public Filter()
         {
             InitializeComponent();
+            SearchBL.PopulateTableBox(TableBox);
         }
 
-        private void AddFilter_Click(object sender, EventArgs e)
+        private void TableBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-
-            //SearchBL.PopulateGrid(ResultView);
-
-            //SearchBL.GetAProductGroup(ResultView, "Name", "=", "SS Printer");
-
-            //SearchBL.GetResult(ResultView, "TProductGroup", "Name", "SS Printer");
-
-            FilterPanel.Controls.Add(new Filter());
+            SearchBL.PopulateColumnBox(ColumnBox, TableBox.Text);
         }
     }
 }
