@@ -24,5 +24,13 @@ namespace InventoryManagementSystem.Features.Stock
         {
             Stock.GetProducts(dataGridView1);
         }
+
+        //launch add item to stock form
+        private void button1_Click(object sender, EventArgs e)
+        {
+            AddItemToStock form = new AddItemToStock();
+
+            form.Show();
+        }
     }
 }
