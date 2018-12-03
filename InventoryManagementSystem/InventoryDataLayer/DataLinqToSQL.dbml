@@ -84,4 +84,12 @@
       <Association Name="TLocation_TInStock" Member="TLocation" ThisKey="LocationID" OtherKey="LocationID" Type="TLocation" IsForeignKey="true" />
     </Type>
   </Table>
+  <Table Name="dbo.TManagerInventory" Member="TManagerInventories">
+    <Type Name="TManagerInventory">
+      <Column Name="ManagerID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="UserName" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ManagerEmail" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Password" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
 </Database>

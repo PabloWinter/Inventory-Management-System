@@ -15,9 +15,9 @@ namespace InventoryManagementSystem
         public Form1()
         {
             InitializeComponent();
-            menuPanel.Width = 249;
-            SelectOption("Dashboard");
 
+            menuPanel.Width = 249;
+            SelectOption("Dashboard");           
         }
 
         //selection menu option
@@ -26,14 +26,14 @@ namespace InventoryManagementSystem
             foreach (InventoryManagementSystem.Features.menuPanel.menuPanelButton C in menuPanel.Controls)
             {
                if (C.Label1Text != option)
-                {
+               {
                     C.selectMenu(false);
-                }
+               }
 
                else
-                {
+               {
                     C.selectMenu(true);
-                }
+               }
             }
 
         }

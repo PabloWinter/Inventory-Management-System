@@ -34,6 +34,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -69,11 +70,11 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="LogginForm.cs">
+    <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="LogginForm.Designer.cs">
-      <DependentUpon>LogginForm.cs</DependentUpon>
+    <Compile Include="LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -89,8 +90,8 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="LogginForm.resx">
-      <DependentUpon>LogginForm.cs</DependentUpon>
+    <EmbeddedResource Include="LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -122,6 +123,10 @@
     <ProjectReference Include="..\InventoryBusinessLayer\InventoryBusinessLayer.csproj">
       <Project>{867ce2b4-6939-4be6-980b-bb7c1f39bf7e}</Project>
       <Name>InventoryBusinessLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\InventoryDataLayer\InventoryDataLayer.csproj">
+      <Project>{4BEB6A89-83A1-4421-B2B0-37E9572E1EE2}</Project>
+      <Name>InventoryDataLayer</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

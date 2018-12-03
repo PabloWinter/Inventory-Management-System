@@ -1,6 +1,6 @@
 ﻿namespace InventoryManagementSystem
 {
-    partial class LogginForm
+    partial class LoginForm
     {
         /// <summary>
         /// Required designer variable.
@@ -124,6 +124,7 @@
             this.BtnLoggin.TabIndex = 4;
             this.BtnLoggin.Text = "Submit";
             this.BtnLoggin.UseVisualStyleBackColor = false;
+            this.BtnLoggin.Click += new System.EventHandler(this.BtnLoggin_Click);
             // 
             // logginImage
             // 
