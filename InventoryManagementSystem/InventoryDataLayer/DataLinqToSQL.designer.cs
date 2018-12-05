@@ -48,6 +48,9 @@ namespace InventoryDataLayer
     partial void InsertTLocation(TLocation instance);
     partial void UpdateTLocation(TLocation instance);
     partial void DeleteTLocation(TLocation instance);
+    partial void InsertTInStock(TInStock instance);
+    partial void UpdateTInStock(TInStock instance);
+    partial void DeleteTInStock(TInStock instance);
     #endregion
 		
 		public DataLinqToSQLDataContext() : 
@@ -177,6 +180,8 @@ namespace InventoryDataLayer
 		
 		private EntitySet<TPurchaseLog> _TPurchaseLogs;
 		
+		private EntitySet<TInStock> _TInStocks;
+		
 		private EntityRef<TCategory> _TCategory;
 		
 		private EntityRef<TBrand> _TBrand;
@@ -213,6 +218,7 @@ namespace InventoryDataLayer
 		{
 			this._TProducts = new EntitySet<TProduct>(new Action<TProduct>(this.attach_TProducts), new Action<TProduct>(this.detach_TProducts));
 			this._TPurchaseLogs = new EntitySet<TPurchaseLog>(new Action<TPurchaseLog>(this.attach_TPurchaseLogs), new Action<TPurchaseLog>(this.detach_TPurchaseLogs));
+			this._TInStocks = new EntitySet<TInStock>(new Action<TInStock>(this.attach_TInStocks), new Action<TInStock>(this.detach_TInStocks));
 			this._TCategory = default(EntityRef<TCategory>);
 			this._TBrand = default(EntityRef<TBrand>);
 			OnCreated();
@@ -472,6 +478,19 @@ namespace InventoryDataLayer
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TProductGroup_TInStock", Storage="_TInStocks", ThisKey="Barcode", OtherKey="BarcodeID")]
+		public EntitySet<TInStock> TInStocks
+		{
+			get
+			{
+				return this._TInStocks;
+			}
+			set
+			{
+				this._TInStocks.Assign(value);
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TCategory_TProductGroup", Storage="_TCategory", ThisKey="CategoryID", OtherKey="CategoryID", IsForeignKey=true)]
 		public TCategory TCategory
 		{
@@ -579,6 +598,18 @@ namespace InventoryDataLayer
 		}
 		
 		private void detach_TPurchaseLogs(TPurchaseLog entity)
+		{
+			this.SendPropertyChanging();
+			entity.TProductGroup = null;
+		}
+		
+		private void attach_TInStocks(TInStock entity)
+		{
+			this.SendPropertyChanging();
+			entity.TProductGroup = this;
+		}
+		
+		private void detach_TInStocks(TInStock entity)
 		{
 			this.SendPropertyChanging();
 			entity.TProductGroup = null;
@@ -1222,6 +1253,8 @@ namespace InventoryDataLayer
 		
 		private EntitySet<TPurchaseLog> _TPurchaseLogs;
 		
+		private EntitySet<TInStock> _TInStocks;
+		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -1241,6 +1274,7 @@ namespace InventoryDataLayer
 		public TLocation()
 		{
 			this._TPurchaseLogs = new EntitySet<TPurchaseLog>(new Action<TPurchaseLog>(this.attach_TPurchaseLogs), new Action<TPurchaseLog>(this.detach_TPurchaseLogs));
+			this._TInStocks = new EntitySet<TInStock>(new Action<TInStock>(this.attach_TInStocks), new Action<TInStock>(this.detach_TInStocks));
 			OnCreated();
 		}
 		
@@ -1357,6 +1391,19 @@ namespace InventoryDataLayer
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TLocation_TInStock", Storage="_TInStocks", ThisKey="LocationID", OtherKey="LocationID")]
+		public EntitySet<TInStock> TInStocks
+		{
+			get
+			{
+				return this._TInStocks;
+			}
+			set
+			{
+				this._TInStocks.Assign(value);
+			}
+		}
+		
 		public event PropertyChangingEventHandler PropertyChanging;
 		
 		public event PropertyChangedEventHandler PropertyChanged;
@@ -1384,6 +1431,18 @@ namespace InventoryDataLayer
 		}
 		
 		private void detach_TPurchaseLogs(TPurchaseLog entity)
+		{
+			this.SendPropertyChanging();
+			entity.TLocation = null;
+		}
+		
+		private void attach_TInStocks(TInStock entity)
+		{
+			this.SendPropertyChanging();
+			entity.TLocation = this;
+		}
+		
+		private void detach_TInStocks(TInStock entity)
 		{
 			this.SendPropertyChanging();
 			entity.TLocation = null;
@@ -1454,8 +1513,10 @@ namespace InventoryDataLayer
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TInStock")]
-	public partial class TInStock
+	public partial class TInStock : INotifyPropertyChanging, INotifyPropertyChanged
 	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
 		private int _BarcodeID;
 		
@@ -1463,11 +1524,30 @@ namespace InventoryDataLayer
 		
 		private int _Quantity;
 		
+		private EntityRef<TProductGroup> _TProductGroup;
+		
+		private EntityRef<TLocation> _TLocation;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnBarcodeIDChanging(int value);
+    partial void OnBarcodeIDChanged();
+    partial void OnLocationIDChanging(int value);
+    partial void OnLocationIDChanged();
+    partial void OnQuantityChanging(int value);
+    partial void OnQuantityChanged();
+    #endregion
+		
 		public TInStock()
 		{
+			this._TProductGroup = default(EntityRef<TProductGroup>);
+			this._TLocation = default(EntityRef<TLocation>);
+			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BarcodeID", DbType="Int NOT NULL")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BarcodeID", DbType="Int NOT NULL", IsPrimaryKey=true)]
 		public int BarcodeID
 		{
 			get
@@ -1478,7 +1558,15 @@ namespace InventoryDataLayer
 			{
 				if ((this._BarcodeID != value))
 				{
+					if (this._TProductGroup.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnBarcodeIDChanging(value);
+					this.SendPropertyChanging();
 					this._BarcodeID = value;
+					this.SendPropertyChanged("BarcodeID");
+					this.OnBarcodeIDChanged();
 				}
 			}
 		}
@@ -1494,7 +1582,15 @@ namespace InventoryDataLayer
 			{
 				if ((this._LocationID != value))
 				{
+					if (this._TLocation.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnLocationIDChanging(value);
+					this.SendPropertyChanging();
 					this._LocationID = value;
+					this.SendPropertyChanged("LocationID");
+					this.OnLocationIDChanged();
 				}
 			}
 		}
@@ -1510,8 +1606,100 @@ namespace InventoryDataLayer
 			{
 				if ((this._Quantity != value))
 				{
+					this.OnQuantityChanging(value);
+					this.SendPropertyChanging();
 					this._Quantity = value;
+					this.SendPropertyChanged("Quantity");
+					this.OnQuantityChanged();
 				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TProductGroup_TInStock", Storage="_TProductGroup", ThisKey="BarcodeID", OtherKey="Barcode", IsForeignKey=true)]
+		public TProductGroup TProductGroup
+		{
+			get
+			{
+				return this._TProductGroup.Entity;
+			}
+			set
+			{
+				TProductGroup previousValue = this._TProductGroup.Entity;
+				if (((previousValue != value) 
+							|| (this._TProductGroup.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._TProductGroup.Entity = null;
+						previousValue.TInStocks.Remove(this);
+					}
+					this._TProductGroup.Entity = value;
+					if ((value != null))
+					{
+						value.TInStocks.Add(this);
+						this._BarcodeID = value.Barcode;
+					}
+					else
+					{
+						this._BarcodeID = default(int);
+					}
+					this.SendPropertyChanged("TProductGroup");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TLocation_TInStock", Storage="_TLocation", ThisKey="LocationID", OtherKey="LocationID", IsForeignKey=true)]
+		public TLocation TLocation
+		{
+			get
+			{
+				return this._TLocation.Entity;
+			}
+			set
+			{
+				TLocation previousValue = this._TLocation.Entity;
+				if (((previousValue != value) 
+							|| (this._TLocation.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._TLocation.Entity = null;
+						previousValue.TInStocks.Remove(this);
+					}
+					this._TLocation.Entity = value;
+					if ((value != null))
+					{
+						value.TInStocks.Add(this);
+						this._LocationID = value.LocationID;
+					}
+					else
+					{
+						this._LocationID = default(int);
+					}
+					this.SendPropertyChanged("TLocation");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
 		}
 	}

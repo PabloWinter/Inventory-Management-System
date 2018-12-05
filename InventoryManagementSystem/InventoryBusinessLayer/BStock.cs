@@ -15,9 +15,17 @@ namespace InventoryBusinessLayer
 
         public void GetProducts(DataGridView dataView)
         {
-            dataView.DataSource = stock.GetProducts().ToList();
+            dataView.DataSource = stock.GetProductList().ToList();
         }
 
-        
+
+        public void NewStockItem (int barcode, int location, int quantity)
+        {
+            //NewStockItem (int barcode, int location, int quantity)
+            stock.NewStockItem(barcode, location, quantity);
+           
+        }
+
+
     }
 }

@@ -32,5 +32,10 @@ namespace InventoryManagementSystem.Features.Stock
 
             form.Show();
         }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

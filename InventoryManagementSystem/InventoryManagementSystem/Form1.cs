@@ -17,7 +17,6 @@ namespace InventoryManagementSystem
             InitializeComponent();
             menuPanel.Width = 249;
             SelectOption("Dashboard");
-
         }
 
         //selection menu option

@@ -77,7 +77,7 @@
   </Table>
   <Table Name="dbo.TInStock" Member="TInStocks">
     <Type Name="TInStock">
-      <Column Name="BarcodeID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="BarcodeID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="LocationID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="Quantity" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Association Name="TProductGroup_TInStock" Member="TProductGroup" ThisKey="BarcodeID" OtherKey="Barcode" Type="TProductGroup" IsForeignKey="true" />
