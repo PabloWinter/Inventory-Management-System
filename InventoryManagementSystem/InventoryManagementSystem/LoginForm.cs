@@ -45,7 +45,7 @@ namespace InventoryManagementSystem
 
                     MessageBox.Show("Welcome " + userManager, "Inventory Management", MessageBoxButtons.OK, MessageBoxIcon.None);
 
-                    Form1 authForm = new Form1();
+                    MainInventoryForm authForm = new MainInventoryForm();
                     authForm.Show();
                     this.Hide();
                 }

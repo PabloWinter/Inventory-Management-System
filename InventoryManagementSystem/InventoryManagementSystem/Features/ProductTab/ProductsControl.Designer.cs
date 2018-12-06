@@ -30,7 +30,6 @@
         {
             this.Insert = new System.Windows.Forms.Button();
             this.Update = new System.Windows.Forms.Button();
-            this.Print = new System.Windows.Forms.Button();
             this.GroupData = new System.Windows.Forms.GroupBox();
             this.ViewDataList = new System.Windows.Forms.DataGridView();
             this.View = new System.Windows.Forms.Button();
@@ -47,7 +46,7 @@
             this.Insert.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.Insert.Font = new System.Drawing.Font("Microsoft YaHei", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Insert.ForeColor = System.Drawing.Color.White;
-            this.Insert.Location = new System.Drawing.Point(520, 129);
+            this.Insert.Location = new System.Drawing.Point(630, 129);
             this.Insert.Name = "Insert";
             this.Insert.Size = new System.Drawing.Size(104, 37);
             this.Insert.TabIndex = 0;
@@ -61,25 +60,12 @@
             this.Update.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.Update.Font = new System.Drawing.Font("Microsoft YaHei", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Update.ForeColor = System.Drawing.Color.White;
-            this.Update.Location = new System.Drawing.Point(630, 129);
+            this.Update.Location = new System.Drawing.Point(740, 129);
             this.Update.Name = "Update";
             this.Update.Size = new System.Drawing.Size(104, 37);
             this.Update.TabIndex = 0;
             this.Update.Text = "Update";
             this.Update.UseVisualStyleBackColor = false;
-            // 
-            // Print
-            // 
-            this.Print.BackColor = System.Drawing.Color.SteelBlue;
-            this.Print.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.Print.Font = new System.Drawing.Font("Microsoft YaHei", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Print.ForeColor = System.Drawing.Color.White;
-            this.Print.Location = new System.Drawing.Point(740, 129);
-            this.Print.Name = "Print";
-            this.Print.Size = new System.Drawing.Size(104, 37);
-            this.Print.TabIndex = 1;
-            this.Print.Text = "Print";
-            this.Print.UseVisualStyleBackColor = false;
             // 
             // GroupData
             // 
@@ -107,7 +93,7 @@
             this.View.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.View.Font = new System.Drawing.Font("Microsoft YaHei", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.View.ForeColor = System.Drawing.Color.White;
-            this.View.Location = new System.Drawing.Point(410, 129);
+            this.View.Location = new System.Drawing.Point(520, 129);
             this.View.Name = "View";
             this.View.Size = new System.Drawing.Size(104, 37);
             this.View.TabIndex = 3;
@@ -122,9 +108,9 @@
             this.NameWindow.ForeColor = System.Drawing.Color.SteelBlue;
             this.NameWindow.Location = new System.Drawing.Point(9, 0);
             this.NameWindow.Name = "NameWindow";
-            this.NameWindow.Size = new System.Drawing.Size(108, 40);
+            this.NameWindow.Size = new System.Drawing.Size(152, 40);
             this.NameWindow.TabIndex = 4;
-            this.NameWindow.Text = "label1";
+            this.NameWindow.Text = "Products";
             // 
             // pictureBox1
             // 
@@ -145,7 +131,6 @@
             this.Controls.Add(this.NameWindow);
             this.Controls.Add(this.View);
             this.Controls.Add(this.GroupData);
-            this.Controls.Add(this.Print);
             this.Controls.Add(this.Update);
             this.Controls.Add(this.Insert);
             this.Name = "ProductsControl";
@@ -162,7 +147,6 @@
 
         private System.Windows.Forms.Button Insert;
         private System.Windows.Forms.Button Update;
-        private System.Windows.Forms.Button Print;
         private System.Windows.Forms.GroupBox GroupData;
         private System.Windows.Forms.DataGridView ViewDataList;
         private System.Windows.Forms.Button View;

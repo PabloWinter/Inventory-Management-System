@@ -30,7 +30,5 @@ namespace InventoryManagementSystem.Features.ProductTab
             InsertProductForm newProductForm = new InsertProductForm();
             newProductForm.Show();
         }
-
-
     }
 }

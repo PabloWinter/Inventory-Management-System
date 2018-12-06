@@ -1,6 +1,6 @@
 ﻿namespace InventoryManagementSystem
 {
-    partial class Form1
+    partial class MainInventoryForm
     {
         /// <summary>
         /// Required designer variable.
@@ -346,7 +346,7 @@
             this.productsControl1.Size = new System.Drawing.Size(983, 781);
             this.productsControl1.TabIndex = 0;
             // 
-            // Form1
+            // MainInventoryForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -354,7 +354,7 @@
             this.Controls.Add(this.optionTabs);
             this.Controls.Add(this.menuPanel);
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "Form1";
+            this.Name = "MainInventoryForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Inventory Manager";
             this.Load += new System.EventHandler(this.Form1_Load);
