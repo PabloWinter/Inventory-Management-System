@@ -26,17 +26,29 @@ namespace InventoryDataLayer
             }
 
         }
-      
-        public List<TProductGroup> ShowInventoryProduct()
+
+        public object ShowInventoryProduct()
         {
             DataLinqToSQLDataContext products = new DataLinqToSQLDataContext();
 
-            var query = products.GetTable<TProductGroup>();
+            var result = from product in products.TProductGroups
+                        select new
+                        {
+                            product.Name,
+                            product.Price,
+                            product.Tax,
+                            product.Discount,
+                            product.DESCRIPTION,
+                            product.CategoryID,
+                            product.BrandID,
+                            product.FullProductName,
+                            product.ShortProductName
+                        }; 
 
-            return query.ToList();        
+            return result.ToList();
         }
 
-        public void InsertNewProduct(string name, decimal price, int quantity, decimal tax, decimal discount, string description, int FKcategory, int FKbrand, string fullName, string shortName)
+        public void InsertNewProduct(string name, decimal price, decimal tax, decimal discount, string description, int FKcategory, int FKbrand, string fullName, string shortName)
         {
             // Using 'using' to dispose connection after the new product
             // gets inserted into the database.
@@ -48,7 +60,6 @@ namespace InventoryDataLayer
                 {
                     Name = name,
                     Price = price,
-                    Quantity = quantity,
                     Tax = tax,
                     Discount = discount,
                     DESCRIPTION = description,
@@ -63,7 +74,7 @@ namespace InventoryDataLayer
             }
         }
 
-        public void UpdateProduct(int indexEditProduct, string name, decimal price, int quantity, decimal tax, decimal discount, string description, string fullName, string shortName)
+        public void UpdateProduct(int indexEditProduct, string name, decimal price, decimal tax, decimal discount, string description, string fullName, string shortName)
         {
             // Updating product information
             
@@ -73,7 +84,6 @@ namespace InventoryDataLayer
 
                 editProduct.Name = name;
                 editProduct.Price = price;
-                editProduct.Quantity = quantity;
                 editProduct.Tax = tax;
                 editProduct.Discount = discount;
                 editProduct.DESCRIPTION = description;

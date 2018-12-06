@@ -5,7 +5,6 @@
       <Column Name="Barcode" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="Name" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="Price" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
-      <Column Name="Quantity" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="Tax" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
       <Column Name="Discount" Type="System.Decimal" DbType="Money" CanBeNull="true" />
       <Column Name="DESCRIPTION" Type="System.String" DbType="NVarChar(250) NOT NULL" CanBeNull="false" />

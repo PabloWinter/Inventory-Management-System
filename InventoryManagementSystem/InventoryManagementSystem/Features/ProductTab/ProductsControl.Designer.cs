@@ -32,12 +32,12 @@
             this.Update = new System.Windows.Forms.Button();
             this.Print = new System.Windows.Forms.Button();
             this.GroupData = new System.Windows.Forms.GroupBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.ViewDataList = new System.Windows.Forms.DataGridView();
             this.View = new System.Windows.Forms.Button();
             this.NameWindow = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.GroupData.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ViewDataList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -53,6 +53,7 @@
             this.Insert.TabIndex = 0;
             this.Insert.Text = "Insert";
             this.Insert.UseVisualStyleBackColor = false;
+            this.Insert.Click += new System.EventHandler(this.Insert_Click);
             // 
             // Update
             // 
@@ -82,7 +83,7 @@
             // 
             // GroupData
             // 
-            this.GroupData.Controls.Add(this.dataGridView1);
+            this.GroupData.Controls.Add(this.ViewDataList);
             this.GroupData.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.GroupData.Location = new System.Drawing.Point(3, 202);
             this.GroupData.Name = "GroupData";
@@ -91,14 +92,14 @@
             this.GroupData.TabStop = false;
             this.GroupData.Text = "Inventory";
             // 
-            // dataGridView1
+            // ViewDataList
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(6, 29);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(835, 503);
-            this.dataGridView1.TabIndex = 0;
+            this.ViewDataList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.ViewDataList.Location = new System.Drawing.Point(6, 29);
+            this.ViewDataList.Name = "ViewDataList";
+            this.ViewDataList.RowTemplate.Height = 24;
+            this.ViewDataList.Size = new System.Drawing.Size(835, 503);
+            this.ViewDataList.TabIndex = 0;
             // 
             // View
             // 
@@ -112,6 +113,7 @@
             this.View.TabIndex = 3;
             this.View.Text = "View";
             this.View.UseVisualStyleBackColor = false;
+            this.View.Click += new System.EventHandler(this.View_Click);
             // 
             // NameWindow
             // 
@@ -149,7 +151,7 @@
             this.Name = "ProductsControl";
             this.Size = new System.Drawing.Size(853, 743);
             this.GroupData.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ViewDataList)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -162,7 +164,7 @@
         private System.Windows.Forms.Button Update;
         private System.Windows.Forms.Button Print;
         private System.Windows.Forms.GroupBox GroupData;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView ViewDataList;
         private System.Windows.Forms.Button View;
         private System.Windows.Forms.Label NameWindow;
         private System.Windows.Forms.PictureBox pictureBox1;

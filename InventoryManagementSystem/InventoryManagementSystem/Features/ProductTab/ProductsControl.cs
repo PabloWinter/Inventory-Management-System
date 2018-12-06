@@ -7,14 +7,30 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using InventoryBusinessLayer;
 
 namespace InventoryManagementSystem.Features.ProductTab
 {
     public partial class ProductsControl : UserControl
     {
+        BProduct product = new BProduct();
+
         public ProductsControl()
         {
             InitializeComponent();
         }
+
+        private void View_Click(object sender, EventArgs e)
+        {
+            product.FillDataGridProduct(ViewDataList);
+        }
+
+        private void Insert_Click(object sender, EventArgs e)
+        {
+            InsertProductForm newProductForm = new InsertProductForm();
+            newProductForm.Show();
+        }
+
+
     }
 }
