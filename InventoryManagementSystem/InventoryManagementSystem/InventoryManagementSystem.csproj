@@ -121,6 +121,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Features\Dashboard\" />
     <Folder Include="Features\Other\" />
   </ItemGroup>
   <ItemGroup>

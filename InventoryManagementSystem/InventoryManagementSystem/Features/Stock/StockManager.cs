@@ -31,5 +31,17 @@ namespace InventoryManagementSystem.Features.Stock
         {
 
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            EditItemInStock form = new EditItemInStock();
+            form.Show();
+        }
+
+        //refresh the data grid
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Stock.GetStock(dataGridView1);
+        }
     }
 }

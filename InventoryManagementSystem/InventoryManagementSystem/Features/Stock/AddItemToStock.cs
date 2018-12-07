@@ -32,7 +32,7 @@ namespace InventoryManagementSystem.Features.Stock
             int location = stock.GetLocationListId()[productLocation.SelectedIndex];
             int quantity = Convert.ToInt16(productQantity.Text);
 
-            if (stock.checkIfProductInStock(barcode))
+            if (stock.checkIfProductInStock(barcode, location))
             {
                 MessageBox.Show("Item already exists in stock");
             }
@@ -44,6 +44,7 @@ namespace InventoryManagementSystem.Features.Stock
             }        
             //
         }
+
 
         private void button2_Click(object sender, EventArgs e)
         {
@@ -66,6 +67,8 @@ namespace InventoryManagementSystem.Features.Stock
             var BarcodeList = stock.GetBarcodeList();
 
             productBarcode.Text = BarcodeList.ToArray()[productList.SelectedIndex].ToString();
+
+
         }
     }
 }

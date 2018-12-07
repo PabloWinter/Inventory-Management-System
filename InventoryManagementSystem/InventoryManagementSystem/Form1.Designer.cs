@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.menuPanel = new System.Windows.Forms.Panel();
+            this.locationOption = new InventoryManagementSystem.Features.menuPanel.menuPanelButton();
             this.logisticOption = new InventoryManagementSystem.Features.menuPanel.menuPanelButton();
             this.plOption = new InventoryManagementSystem.Features.menuPanel.menuPanelButton();
             this.searchOption = new InventoryManagementSystem.Features.menuPanel.menuPanelButton();
@@ -52,6 +53,7 @@
             this.tabPage7 = new System.Windows.Forms.TabPage();
             this.tabPage8 = new System.Windows.Forms.TabPage();
             this.tabPage9 = new System.Windows.Forms.TabPage();
+            this.tabPage10 = new System.Windows.Forms.TabPage();
             this.menuPanel.SuspendLayout();
             this.optionTabs.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -62,6 +64,7 @@
             // menuPanel
             // 
             this.menuPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.menuPanel.Controls.Add(this.locationOption);
             this.menuPanel.Controls.Add(this.logisticOption);
             this.menuPanel.Controls.Add(this.plOption);
             this.menuPanel.Controls.Add(this.searchOption);
@@ -78,12 +81,23 @@
             this.menuPanel.TabIndex = 0;
             this.menuPanel.MouseLeave += new System.EventHandler(this.menuPanel_MouseLeave);
             // 
+            // locationOption
+            // 
+            this.locationOption.BackColor = System.Drawing.Color.DodgerBlue;
+            this.locationOption.Label1Text = "Location";
+            this.locationOption.Label2Text = "🗺️";
+            this.locationOption.Location = new System.Drawing.Point(-2, 432);
+            this.locationOption.Name = "locationOption";
+            this.locationOption.Size = new System.Drawing.Size(249, 48);
+            this.locationOption.TabIndex = 9;
+            this.locationOption.Click += new System.EventHandler(this.locationOption_Click);
+            // 
             // logisticOption
             // 
             this.logisticOption.BackColor = System.Drawing.Color.DodgerBlue;
             this.logisticOption.Label1Text = "Logistics";
             this.logisticOption.Label2Text = "↙️↗️";
-            this.logisticOption.Location = new System.Drawing.Point(0, 534);
+            this.logisticOption.Location = new System.Drawing.Point(0, 585);
             this.logisticOption.Name = "logisticOption";
             this.logisticOption.Size = new System.Drawing.Size(249, 48);
             this.logisticOption.TabIndex = 8;
@@ -94,7 +108,7 @@
             this.plOption.BackColor = System.Drawing.Color.DodgerBlue;
             this.plOption.Label1Text = "Purchase Log";
             this.plOption.Label2Text = "📜";
-            this.plOption.Location = new System.Drawing.Point(-1, 483);
+            this.plOption.Location = new System.Drawing.Point(-1, 534);
             this.plOption.Name = "plOption";
             this.plOption.Size = new System.Drawing.Size(249, 48);
             this.plOption.TabIndex = 7;
@@ -105,7 +119,7 @@
             this.searchOption.BackColor = System.Drawing.Color.DodgerBlue;
             this.searchOption.Label1Text = "Search";
             this.searchOption.Label2Text = "🔍";
-            this.searchOption.Location = new System.Drawing.Point(-1, 432);
+            this.searchOption.Location = new System.Drawing.Point(-1, 483);
             this.searchOption.Name = "searchOption";
             this.searchOption.Size = new System.Drawing.Size(249, 48);
             this.searchOption.TabIndex = 6;
@@ -189,6 +203,7 @@
             this.optionTabs.Controls.Add(this.tabPage7);
             this.optionTabs.Controls.Add(this.tabPage8);
             this.optionTabs.Controls.Add(this.tabPage9);
+            this.optionTabs.Controls.Add(this.tabPage10);
             this.optionTabs.Dock = System.Windows.Forms.DockStyle.Fill;
             this.optionTabs.Location = new System.Drawing.Point(249, 0);
             this.optionTabs.Name = "optionTabs";
@@ -325,6 +340,16 @@
             this.tabPage9.Text = "Logistics";
             this.tabPage9.UseVisualStyleBackColor = true;
             // 
+            // tabPage10
+            // 
+            this.tabPage10.Location = new System.Drawing.Point(4, 22);
+            this.tabPage10.Name = "tabPage10";
+            this.tabPage10.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage10.Size = new System.Drawing.Size(888, 639);
+            this.tabPage10.TabIndex = 9;
+            this.tabPage10.Text = "Location";
+            this.tabPage10.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -372,6 +397,8 @@
         private Features.menuPanel.menuPanelButton plOption;
         private Features.menuPanel.menuPanelButton logisticOption;
         private Features.Stock.StockManager stockManager1;
+        private Features.menuPanel.menuPanelButton locationOption;
+        private System.Windows.Forms.TabPage tabPage10;
     }
 }
 

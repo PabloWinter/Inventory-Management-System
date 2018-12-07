@@ -129,5 +129,12 @@ namespace InventoryManagementSystem
         {
 
         }
+
+        private void locationOption_Click(object sender, EventArgs e)
+        {
+            SelectOption("Location");
+            optionTabs.SelectedIndex = 9;
+
+        }
     }
 }
