@@ -67,7 +67,11 @@ namespace InventoryDataLayer
                 {
                     foreach (var tableDetails in result.RowType.DataMembers)
                     {
-                        listOfColumns.Add(tableDetails.MappedName);
+                        // Using this if to remove columns with "_" because they belong to foreing keys. This should not be displayed to user.
+                        if (!tableDetails.MappedName.Contains("_"))
+                        {
+                            listOfColumns.Add(tableDetails.MappedName);
+                        }
                     }
                     return listOfColumns;
                 }
@@ -124,17 +128,6 @@ namespace InventoryDataLayer
             var query = connect.ExecuteQuery<TProductGroup>(sqlStatement);
             
             return query;
-        }
-
-        public static IEnumerable<T> GetResultSet<T>(string table, string column, string parameter, string value)
-        {
-            DataLinqToSQLDataContext connect = new DataLinqToSQLDataContext();
-
-            string sqlStatement = "SELECT * FROM dbo." + table + " WHERE " + table + "." + column + " " + parameter + " " + "'" + value + "'";
-
-            var query = connect.ExecuteQuery<T>(sqlStatement);
-
-            return query.ToList();
         }
 
         public static IEnumerable<T> GetResultSetWithWhereClauses<T>(string table, string column, string parameter, string value, List<string[]> list)

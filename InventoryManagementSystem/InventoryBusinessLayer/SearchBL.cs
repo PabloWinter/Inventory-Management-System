@@ -63,16 +63,6 @@ namespace InventoryBusinessLayer
             dataGrid.DataSource = SearchDL.GetProductGroup(column, operation, value).ToList();
         }
 
-        public static void GetResultSet(DataGridView dataGrid, string table, string column, string operation, string value)
-        {
-            Type tableType = Type.GetType("InventoryDataLayer." + table + ", InventoryDataLayer");
-            var t1 = typeof(SearchDL).GetMethod("GetResultSet");
-            var t2 = t1.MakeGenericMethod(tableType);
-            var t3 = t2.Invoke(null, new object[] { table, column, operation, value });
-            var obj = t3;
-            dataGrid.DataSource = obj;
-        }
-
         public static void GetResultSetWithWhereClauses(DataGridView dataGrid, string table, string column, string operation, string value, List<string[]> list)
         {
             Type tableType = Type.GetType("InventoryDataLayer." + table + ", InventoryDataLayer");

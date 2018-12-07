@@ -49,9 +49,9 @@
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.tabPage6 = new System.Windows.Forms.TabPage();
             this.tabPage7 = new System.Windows.Forms.TabPage();
+            this.searchContent1 = new InventoryManagementSystem.Features.SearchTab.SearchContent();
             this.tabPage8 = new System.Windows.Forms.TabPage();
             this.tabPage9 = new System.Windows.Forms.TabPage();
-            this.searchContent1 = new InventoryManagementSystem.Features.SearchTab.SearchContent();
             this.menuPanel.SuspendLayout();
             this.optionTabs.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -317,6 +317,16 @@
             this.tabPage7.Text = "Search";
             this.tabPage7.UseVisualStyleBackColor = true;
             // 
+            // searchContent1
+            // 
+            this.searchContent1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.searchContent1.AutoSize = true;
+            this.searchContent1.Location = new System.Drawing.Point(0, 0);
+            this.searchContent1.Name = "searchContent1";
+            this.searchContent1.Size = new System.Drawing.Size(1115, 990);
+            this.searchContent1.TabIndex = 0;
+            // 
             // tabPage8
             // 
             this.tabPage8.Location = new System.Drawing.Point(4, 29);
@@ -339,13 +349,6 @@
             this.tabPage9.Text = "Logistics";
             this.tabPage9.UseVisualStyleBackColor = true;
             // 
-            // searchContent1
-            // 
-            this.searchContent1.Location = new System.Drawing.Point(0, 0);
-            this.searchContent1.Name = "searchContent1";
-            this.searchContent1.Size = new System.Drawing.Size(1115, 990);
-            this.searchContent1.TabIndex = 0;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -364,6 +367,7 @@
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             this.tabPage7.ResumeLayout(false);
+            this.tabPage7.PerformLayout();
             this.ResumeLayout(false);
 
         }

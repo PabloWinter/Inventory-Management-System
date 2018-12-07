@@ -16,7 +16,7 @@ namespace InventoryManagementSystem.Features.SearchTab
     {
         string[] listOfOperators = { "=", "<", "<=", ">=", ">", "!=" };
 
-        string[] listOfLogicalOperators = { "AND", "OR" };
+        string[] listOfLogicalOperators = { "OR", "AND" };
 
         public ExtraFilter()
         {

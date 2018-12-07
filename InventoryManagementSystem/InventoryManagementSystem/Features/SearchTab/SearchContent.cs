@@ -25,6 +25,29 @@ namespace InventoryManagementSystem.Features.SearchTab
             InitialFilter();
         }
 
+        private void InitialFilter()
+        {
+            InitialFilter aFilter = new InitialFilter();
+
+            requestedTableName = aFilter.TableBoxText;
+
+            // it sets the comboboxes value inside the Initial filter and refreshes it whenever it is updated
+
+            aFilter.OnChangeTable += () => requestedTableName = aFilter.TableBoxText; // !!!!!!!!!!!!!!!!!!!!!!!!!
+
+            // when OnChangeTable occurs inside of InitialFilter it should update the value of the columns inside the ExtraFilters
+
+            requestedTableName = aFilter.TableBoxText;
+
+            aFilter.OnChangeTable += () => requestedTableName = aFilter.TableBoxText;
+
+            aFilter.OnChangeTable += () => TableChanged();
+
+            TableChanged += () => UpdateExtraFilters(requestedTableName, FilterPanel);
+
+            FilterPanel.Controls.Add(aFilter);
+        }
+
         private void UpdateExtraFilters(string name, FlowLayoutPanel panel)
         {
             foreach (ExtraFilter filter in FilterPanel.Controls.OfType<ExtraFilter>())
@@ -72,7 +95,7 @@ namespace InventoryManagementSystem.Features.SearchTab
                         value = "%" + item.ValueBoxText + "%";
                     }
 
-                    SearchBL.GetResultSet(grid, tableName, columnName, operation, value);
+                    SearchBL.GetResultSetWithWhereClauses(grid, tableName, columnName, operation, value, whereClauses);
                 }
 
                 if (FilterPanel.Controls.Count > 1)
@@ -98,29 +121,6 @@ namespace InventoryManagementSystem.Features.SearchTab
                 }
             }
             
-        }
-
-        private void InitialFilter()
-        {
-            InitialFilter aFilter = new InitialFilter();
-
-            requestedTableName = aFilter.TableBoxText;
-
-            // it sets the comboboxes value inside the Initial filter and refreshes it whenever it is updated
-
-            aFilter.OnChangeTable += () => requestedTableName = aFilter.TableBoxText; // !!!!!!!!!!!!!!!!!!!!!!!!!
-
-            // when OnChangeTable occurs inside of InitialFilter it should update the value of the columns inside the ExtraFilters
-
-            requestedTableName = aFilter.TableBoxText;
-
-            aFilter.OnChangeTable += () => requestedTableName = aFilter.TableBoxText;
-
-            aFilter.OnChangeTable += () => TableChanged();
-
-            TableChanged += () => UpdateExtraFilters(requestedTableName, FilterPanel);
-
-            FilterPanel.Controls.Add(aFilter);
         }
 
         private void ResetButton_Click(object sender, EventArgs e)
