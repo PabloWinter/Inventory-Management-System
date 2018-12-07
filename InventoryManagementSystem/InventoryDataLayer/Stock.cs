@@ -7,6 +7,8 @@ namespace InventoryDataLayer
 {
     public class Stock
     {
+        DataLinqToSQLDataContext db = new DataLinqToSQLDataContext();
+
         private void ShowProduct()
         {
             using (DataLinqToSQLDataContext products = new DataLinqToSQLDataContext())
@@ -24,30 +26,71 @@ namespace InventoryDataLayer
             }
         }
 
-        public IEnumerable<TInStock> GetProducts()
-        {
-            DataLinqToSQLDataContext connect = new DataLinqToSQLDataContext();
+        public object GetStockList()
+        {     
 
-            var query = connect.ExecuteQuery<TInStock>(@"SELECT * FROM TInStock");
+           var table1 = db.GetTable<TProductGroup>();
+            var tab2 = db.GetTable<TInStock>();
+            var tab3 = db.GetTable<TLocation>();
+            //db.GetTable<TInStock>();
+            var prodQuery = (from stock in tab2
+                             join p in table1 on stock.BarcodeID equals p.Barcode
+                             join d in tab3 on stock.LocationID equals d.LocationID
+                             select new 
+                             {
+                                 p.Name,
+                                 stock.Quantity,
+                                 LocationName = d.Name
+                             }).ToList();
+
+           //var query = db.ExecuteQuery(@"
+           //  SELECT BarcodeID, Name, Quantity FROM TInStock
+           //  LEFT JOIN TProductGroup ON
+           //  TInStock.BarcodeID = TProductGroup.Barcode");
+
+            return prodQuery;
+        }
+
+        public IQueryable GetProductList()
+        {
+            DataLinqToSQLDataContext db = new DataLinqToSQLDataContext();
+
+            var query = from prodcuts in db.TProductGroups select prodcuts.Name;
+            
+            return query;
+        }
+
+
+        public List<int> GetBarcode()
+        {
+            DataLinqToSQLDataContext db = new DataLinqToSQLDataContext();
+
+            var query = from prodcuts in db.TProductGroups select prodcuts.Barcode;
+
+            return query.ToList();
+        }
+
+
+        public IQueryable GetLocationList()
+        {        
+            var query = from locations in db.TLocations select locations.Name;
 
             return query;
         }
 
-        public IEnumerable<TInStock> GetProductList()
+        public List<int> GetLocationListId()
         {
-            DataLinqToSQLDataContext connect = new DataLinqToSQLDataContext();
+            var query = from locations in db.TLocations select locations.LocationID;
 
-            var query = connect.ExecuteQuery<TInStock>(@"SELECT * FROM TInStock");
-
-
-            //var query = from product in TProductGroup
-            //            join p in TProduct on product.Barcode equals p.Barcode
-            //            select product.Name;
-
-            return query;
+            return query.ToList();
         }
 
+        public List<int> GetStockBarcode ()
+        {
+            return (from stock in db.TInStocks select stock.BarcodeID).ToList(); 
+        }
 
+        //new stock item
         public void NewStockItem (int barcode, int location, int quantity)
         {
             DataLinqToSQLDataContext connect = new DataLinqToSQLDataContext();
@@ -75,23 +118,6 @@ namespace InventoryDataLayer
                 // Try again.
                 connect.SubmitChanges();
             }
-
-
         }
-
-        //public IEnumerable<TProductGroup> NewStockItem()
-        //{
-        //    DataLinqToSQLDataContext connect = new DataLinqToSQLDataContext();
-
-        //    //var query = connect.ExecuteQuery<TProductGroup>(@"SELECT * FROM TProductGroup");
-
-        //    TProductGroup newP = new TProductGroup
-        //    {
-
-
-        //    };
-
-        //    return query;
-        //}
     }
 }

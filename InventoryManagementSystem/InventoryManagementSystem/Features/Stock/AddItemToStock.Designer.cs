@@ -37,13 +37,14 @@
             this.label2 = new System.Windows.Forms.Label();
             this.productBarcode = new System.Windows.Forms.TextBox();
             this.productList = new System.Windows.Forms.ComboBox();
-            this.productQantity = new System.Windows.Forms.TextBox();
+            this.productQantity = new System.Windows.Forms.NumericUpDown();
+            ((System.ComponentModel.ISupportInitialize)(this.productQantity)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(109, 54);
+            this.label1.Location = new System.Drawing.Point(76, 47);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(47, 13);
             this.label1.TabIndex = 2;
@@ -54,7 +55,7 @@
             this.productLocation.FormattingEnabled = true;
             this.productLocation.Items.AddRange(new object[] {
             "4"});
-            this.productLocation.Location = new System.Drawing.Point(162, 128);
+            this.productLocation.Location = new System.Drawing.Point(129, 121);
             this.productLocation.Name = "productLocation";
             this.productLocation.Size = new System.Drawing.Size(160, 21);
             this.productLocation.TabIndex = 4;
@@ -62,7 +63,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(104, 131);
+            this.label3.Location = new System.Drawing.Point(71, 124);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(51, 13);
             this.label3.TabIndex = 5;
@@ -72,7 +73,7 @@
             // 
             this.Ok.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.Ok.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Ok.Location = new System.Drawing.Point(69, 214);
+            this.Ok.Location = new System.Drawing.Point(36, 217);
             this.Ok.Name = "Ok";
             this.Ok.Size = new System.Drawing.Size(149, 23);
             this.Ok.TabIndex = 14;
@@ -84,7 +85,7 @@
             // 
             this.button2.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Location = new System.Drawing.Point(235, 214);
+            this.button2.Location = new System.Drawing.Point(202, 217);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(149, 23);
             this.button2.TabIndex = 15;
@@ -95,7 +96,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(106, 89);
+            this.label7.Location = new System.Drawing.Point(73, 82);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(50, 13);
             this.label7.TabIndex = 17;
@@ -104,7 +105,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(139, 171);
+            this.label2.Location = new System.Drawing.Point(92, 165);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(49, 13);
             this.label2.TabIndex = 21;
@@ -112,9 +113,10 @@
             // 
             // productBarcode
             // 
-            this.productBarcode.Location = new System.Drawing.Point(162, 89);
+            this.productBarcode.Location = new System.Drawing.Point(129, 82);
             this.productBarcode.Name = "productBarcode";
-            this.productBarcode.Size = new System.Drawing.Size(117, 20);
+            this.productBarcode.ReadOnly = true;
+            this.productBarcode.Size = new System.Drawing.Size(160, 20);
             this.productBarcode.TabIndex = 20;
             // 
             // productList
@@ -124,23 +126,29 @@
             "1",
             "2",
             "3"});
-            this.productList.Location = new System.Drawing.Point(162, 51);
+            this.productList.Location = new System.Drawing.Point(129, 44);
             this.productList.Name = "productList";
             this.productList.Size = new System.Drawing.Size(160, 21);
             this.productList.TabIndex = 22;
+            this.productList.SelectedIndexChanged += new System.EventHandler(this.productList_SelectedIndexChanged);
             // 
             // productQantity
             // 
-            this.productQantity.Location = new System.Drawing.Point(194, 164);
+            this.productQantity.Location = new System.Drawing.Point(147, 163);
+            this.productQantity.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
             this.productQantity.Name = "productQantity";
-            this.productQantity.Size = new System.Drawing.Size(85, 20);
-            this.productQantity.TabIndex = 23;
+            this.productQantity.Size = new System.Drawing.Size(108, 20);
+            this.productQantity.TabIndex = 26;
             // 
             // AddItemToStock
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(458, 286);
+            this.ClientSize = new System.Drawing.Size(391, 282);
             this.Controls.Add(this.productQantity);
             this.Controls.Add(this.productList);
             this.Controls.Add(this.label2);
@@ -154,8 +162,10 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "AddItemToStock";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Add Item";
             this.Load += new System.EventHandler(this.AddItemToStock_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.productQantity)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -171,6 +181,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox productBarcode;
         private System.Windows.Forms.ComboBox productList;
-        private System.Windows.Forms.TextBox productQantity;
+        private System.Windows.Forms.NumericUpDown productQantity;
     }
 }

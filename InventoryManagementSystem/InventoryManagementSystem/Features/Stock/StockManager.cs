@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using InventoryBusinessLayer;
 
@@ -18,20 +11,21 @@ namespace InventoryManagementSystem.Features.Stock
         public StockManager()
         {
             InitializeComponent();
+            Stock.GetStock(dataGridView1);
         }
 
         private void StockManager_Load(object sender, EventArgs e)
         {
-            Stock.GetProducts(dataGridView1);
+          
         }
 
         //launch add item to stock form
         private void button1_Click(object sender, EventArgs e)
         {
             AddItemToStock form = new AddItemToStock();
-
             form.Show();
         }
+
 
         private void panel1_Paint(object sender, PaintEventArgs e)
         {

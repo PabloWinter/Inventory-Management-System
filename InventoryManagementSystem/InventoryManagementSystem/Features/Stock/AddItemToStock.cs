@@ -11,20 +11,40 @@ namespace InventoryManagementSystem.Features.Stock
         public AddItemToStock()
         {
             InitializeComponent();
+            stock.ProductSelect(productList);
+            stock.LocationSelect(productLocation);
         }
+
 
         public void ValidateForm()
         {
              
         }
 
+        public void ProductList()
+        {
+
+        }
+
+
+
         private void Ok_Click(object sender, EventArgs e)
         {
             int barcode = Convert.ToInt16(productBarcode.Text);
-            MessageBox.Show(productLocation.SelectedText);
-            int location = Convert.ToInt16(productLocation.SelectedItem);
+            int location = stock.GetLocationListId()[productLocation.SelectedIndex];
             int quantity = Convert.ToInt16(productQantity.Text);
-            stock.NewStockItem(barcode, location, quantity);
+
+            if (stock.checkIfProductInStock(barcode))
+            {
+                MessageBox.Show("Item already exists in stock");
+            }
+            else
+            {
+                MessageBox.Show("Item added to stock successfully.");
+                stock.NewStockItem(barcode, location, quantity);
+                Close();
+            }        
+            //
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -35,6 +55,19 @@ namespace InventoryManagementSystem.Features.Stock
         private void AddItemToStock_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+          
+        }
+
+        //update textbox selected product id
+        private void productList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var BarcodeList = stock.GetBarcodeList();
+
+            productBarcode.Text = BarcodeList.ToArray()[productList.SelectedIndex].ToString();
         }
     }
 }

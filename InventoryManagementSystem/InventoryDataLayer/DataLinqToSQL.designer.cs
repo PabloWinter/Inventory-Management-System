@@ -160,8 +160,6 @@ namespace InventoryDataLayer
 		
 		private decimal _Price;
 		
-		private int _Quantity;
-		
 		private decimal _Tax;
 		
 		private System.Nullable<decimal> _Discount;
@@ -196,8 +194,6 @@ namespace InventoryDataLayer
     partial void OnNameChanged();
     partial void OnPriceChanging(decimal value);
     partial void OnPriceChanged();
-    partial void OnQuantityChanging(int value);
-    partial void OnQuantityChanged();
     partial void OnTaxChanging(decimal value);
     partial void OnTaxChanged();
     partial void OnDiscountChanging(System.Nullable<decimal> value);
@@ -280,26 +276,6 @@ namespace InventoryDataLayer
 					this._Price = value;
 					this.SendPropertyChanged("Price");
 					this.OnPriceChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Quantity", DbType="Int NOT NULL")]
-		public int Quantity
-		{
-			get
-			{
-				return this._Quantity;
-			}
-			set
-			{
-				if ((this._Quantity != value))
-				{
-					this.OnQuantityChanging(value);
-					this.SendPropertyChanging();
-					this._Quantity = value;
-					this.SendPropertyChanged("Quantity");
-					this.OnQuantityChanged();
 				}
 			}
 		}
