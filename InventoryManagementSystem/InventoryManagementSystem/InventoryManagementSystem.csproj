@@ -51,11 +51,17 @@
     <Compile Include="Features\menuPanel\menuPanelButton.Designer.cs">
       <DependentUpon>menuPanelButton.cs</DependentUpon>
     </Compile>
-    <Compile Include="Features\SearchTab\Filter.cs">
+    <Compile Include="Features\SearchTab\ExtraFilter.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Features\SearchTab\Filter.Designer.cs">
-      <DependentUpon>Filter.cs</DependentUpon>
+    <Compile Include="Features\SearchTab\ExtraFilter.Designer.cs">
+      <DependentUpon>ExtraFilter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Features\SearchTab\InitialFilter.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Features\SearchTab\InitialFilter.Designer.cs">
+      <DependentUpon>InitialFilter.cs</DependentUpon>
     </Compile>
     <Compile Include="Features\SearchTab\SearchContent.cs">
       <SubType>UserControl</SubType>
@@ -74,8 +80,11 @@
     <EmbeddedResource Include="Features\menuPanel\menuPanelButton.resx">
       <DependentUpon>menuPanelButton.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Features\SearchTab\Filter.resx">
-      <DependentUpon>Filter.cs</DependentUpon>
+    <EmbeddedResource Include="Features\SearchTab\ExtraFilter.resx">
+      <DependentUpon>ExtraFilter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Features\SearchTab\InitialFilter.resx">
+      <DependentUpon>InitialFilter.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Features\SearchTab\SearchContent.resx">
       <DependentUpon>SearchContent.cs</DependentUpon>

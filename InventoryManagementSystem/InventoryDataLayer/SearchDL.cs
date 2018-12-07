@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Linq.Mapping;
 using System.Diagnostics;
 using System.Linq;
 using System.Text;
@@ -45,7 +46,7 @@ namespace InventoryDataLayer
 
             foreach (var result in dataModel.GetTables())
             {
-                listOfTables.Add(result.TableName);
+                listOfTables.Add(result.RowType.ToString());
             }
 
             return listOfTables;
@@ -62,50 +63,116 @@ namespace InventoryDataLayer
 
             foreach (var result in dataModel.GetTables())
             {
+                if (result.TableName.Equals("dbo." + tableName))
+                {
+                    foreach (var tableDetails in result.RowType.DataMembers)
+                    {
+                        listOfColumns.Add(tableDetails.MappedName);
+                    }
+                    return listOfColumns;
+                }
+            }
+            return null;
+        }
+
+        public static Type CheckColumnType(string tableName, string column)
+        {
+            DataLinqToSQLDataContext connect = new DataLinqToSQLDataContext();
+
+            var dataModel = connect.Mapping;
+
+            foreach (var result in dataModel.GetTables())
+            {
                 if (result.TableName.Equals(tableName))
                 {
                     foreach (var tableDetails in result.RowType.DataMembers)
                     {
-                        Debug.WriteLine(tableDetails.MappedName);
-                        listOfColumns.Add(tableDetails.MappedName);
+                        if (tableDetails.MappedName == column)
+                        {
+                            return tableDetails.Type;
+                        }
                     }
-                    return listOfColumns;
                 }
             }
 
             return null;
         }
 
+        protected static MetaTable GetTableType(string tableName)
+        {
+            DataLinqToSQLDataContext connect = new DataLinqToSQLDataContext();
 
-        public static IEnumerable<TProductGroup> GetAProductGroup(string column, string parameter, string value)
+            var dataModel = connect.Mapping;
+
+            foreach (var result in dataModel.GetTables())
+            {
+                if (result.TableName.Equals(tableName))
+                {
+                    return result;
+                }
+            }
+
+            return null;
+        }
+
+        public static IEnumerable<TProductGroup> GetProductGroup(string column, string parameter, string value)
         {
             DataLinqToSQLDataContext connect = new DataLinqToSQLDataContext();
 
             string sqlStatement = "SELECT * FROM TProductGroup WHERE TProductGroup." + column + " " + parameter + " " + "'" + value + "'";
 
             var query = connect.ExecuteQuery<TProductGroup>(sqlStatement);
-
+            
             return query;
         }
 
+        public static IEnumerable<T> GetResultSet<T>(string table, string column, string parameter, string value)
+        {
+            DataLinqToSQLDataContext connect = new DataLinqToSQLDataContext();
 
-        //public static IQueryable GetResult(string table, string column, string theValue)
+            string sqlStatement = "SELECT * FROM dbo." + table + " WHERE " + table + "." + column + " " + parameter + " " + "'" + value + "'";
+
+            var query = connect.ExecuteQuery<T>(sqlStatement);
+
+            return query.ToList();
+        }
+
+        public static IEnumerable<T> GetResultSetWithWhereClauses<T>(string table, string column, string parameter, string value, List<string[]> list)
+        {
+            DataLinqToSQLDataContext connect = new DataLinqToSQLDataContext();
+
+            StringBuilder sb = new StringBuilder();
+
+            foreach (string[] clause in list)
+            {
+                string whereClause = clause[0] + " " + table + "." + clause[1] + " " + clause[2] + "'" + clause[3] + "' ";
+                sb.Append(whereClause);
+            }
+
+            string sqlStatement = "SELECT * FROM dbo." + table + " WHERE " + table + "." + column + " " + parameter + " " + "'" + value + "' " + sb.ToString();
+
+            var query = connect.ExecuteQuery<T>(sqlStatement);
+
+            return query.ToList();
+        }
+
+        //public static IQueryable GetResultSet(string table, string column, string operation, string value)
         //{
-        //    //IEnumerable<TProductGroup> GetAProductGroup(string column, string theValue)
-        //    //{
-        //        DataLinqToSQLDataContext connect = new DataLinqToSQLDataContext();
+        //    DataLinqToSQLDataContext connect = new DataLinqToSQLDataContext();
 
-        //        string sqlStatement = "SELECT " + table + " FROM TProductGroup WHERE TProductGroup." + column + " = " + "'" + theValue + "'";
+        //    // I have to find a way to select the right returning type. It must be selected based on user's search.
+        //    var tableType2 = GetTableType(table);
 
-        //        //Type queryType = Type.GetType(table);
-        //        Type queryType = Type.GetType(table);
+        //    Debug.WriteLine(tableType2 + "111111");
 
-        //        var query = connect.ExecuteQuery<TProductGroup>(sqlStatement);
+        //    Type tableType = tableType2;//Type.GetType(table.Substring(4));
+        //    Debug.WriteLine(tableType + "*******");
 
-        //        return (IQueryable)query;
-        //    //}
+        //    string sqlStatement = "SELECT * FROM " + table + " WHERE " + table + "." + column + " " + operation + " " + "'" + value + "'";
 
-        //    //return null;
+        //    var query = connect.ExecuteQuery(tableType, sqlStatement);
+
+        //    return (IQueryable)query;
         //}
 
 
