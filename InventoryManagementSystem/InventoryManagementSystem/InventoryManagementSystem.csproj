@@ -45,6 +45,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Features\Location\LocationManager.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Features\Location\LocationManager.Designer.cs">
+      <DependentUpon>LocationManager.cs</DependentUpon>
+    </Compile>
     <Compile Include="Features\menuPanel\menuPanelButton.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -56,6 +62,12 @@
     </Compile>
     <Compile Include="Features\Stock\AddItemToStock.Designer.cs">
       <DependentUpon>AddItemToStock.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Stock\EditItemInStock.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Features\Stock\EditItemInStock.Designer.cs">
+      <DependentUpon>EditItemInStock.cs</DependentUpon>
     </Compile>
     <Compile Include="Features\Stock\StockManager.cs">
       <SubType>UserControl</SubType>
@@ -76,6 +88,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Features\Stock\AddItemToStock.resx">
       <DependentUpon>AddItemToStock.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Features\Stock\EditItemInStock.resx">
+      <DependentUpon>EditItemInStock.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Features\Stock\StockManager.resx">
       <DependentUpon>StockManager.cs</DependentUpon>

@@ -19,12 +19,13 @@ namespace InventoryManagementSystem
             SelectOption("Dashboard");
         }
 
+
         //selection menu option
         public void SelectOption(string option)
         {
             foreach (InventoryManagementSystem.Features.menuPanel.menuPanelButton C in menuPanel.Controls)
             {
-               if (C.Label1Text != option)
+               if (C.Label1Text != option) 
                 {
                     C.selectMenu(false);
                 }
@@ -36,7 +37,6 @@ namespace InventoryManagementSystem
             }
 
         }
-
 
 
         private void Form1_Load(object sender, EventArgs e)
@@ -58,8 +58,6 @@ namespace InventoryManagementSystem
         {
             //menuPanel.Width = 79;
         }
-
-
 
         //clicks
 
@@ -125,6 +123,11 @@ namespace InventoryManagementSystem
         {
             SelectOption("Logistics");
             optionTabs.SelectedIndex = 8;
+        }
+
+        private void dashboardOption_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

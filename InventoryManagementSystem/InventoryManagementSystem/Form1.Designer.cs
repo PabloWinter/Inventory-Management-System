@@ -47,11 +47,11 @@
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.stockManager1 = new InventoryManagementSystem.Features.Stock.StockManager();
             this.tabPage6 = new System.Windows.Forms.TabPage();
             this.tabPage7 = new System.Windows.Forms.TabPage();
             this.tabPage8 = new System.Windows.Forms.TabPage();
             this.tabPage9 = new System.Windows.Forms.TabPage();
-            this.stockManager1 = new InventoryManagementSystem.Features.Stock.StockManager();
             this.menuPanel.SuspendLayout();
             this.optionTabs.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -175,6 +175,7 @@
             this.dashboardOption.Name = "dashboardOption";
             this.dashboardOption.Size = new System.Drawing.Size(249, 48);
             this.dashboardOption.TabIndex = 0;
+            this.dashboardOption.Load += new System.EventHandler(this.dashboardOption_Load);
             this.dashboardOption.Click += new System.EventHandler(this.menuPanelButton1_Click);
             // 
             // optionTabs
@@ -276,6 +277,14 @@
             this.tabPage5.Text = "Current Stock";
             this.tabPage5.UseVisualStyleBackColor = true;
             // 
+            // stockManager1
+            // 
+            this.stockManager1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.stockManager1.Location = new System.Drawing.Point(3, 3);
+            this.stockManager1.Name = "stockManager1";
+            this.stockManager1.Size = new System.Drawing.Size(882, 633);
+            this.stockManager1.TabIndex = 0;
+            // 
             // tabPage6
             // 
             this.tabPage6.Location = new System.Drawing.Point(4, 22);
@@ -315,14 +324,6 @@
             this.tabPage9.TabIndex = 8;
             this.tabPage9.Text = "Logistics";
             this.tabPage9.UseVisualStyleBackColor = true;
-            // 
-            // stockManager1
-            // 
-            this.stockManager1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.stockManager1.Location = new System.Drawing.Point(3, 3);
-            this.stockManager1.Name = "stockManager1";
-            this.stockManager1.Size = new System.Drawing.Size(882, 633);
-            this.stockManager1.TabIndex = 0;
             // 
             // Form1
             // 

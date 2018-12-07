@@ -26,8 +26,6 @@ namespace InventoryManagementSystem.Features.Stock
 
         }
 
-
-
         private void Ok_Click(object sender, EventArgs e)
         {
             int barcode = Convert.ToInt16(productBarcode.Text);
