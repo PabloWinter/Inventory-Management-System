@@ -446,7 +446,7 @@ namespace InventoryDataLayer
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TProductGroup_TPurchaseLog", Storage="_TPurchaseLogs", ThisKey="Barcode", OtherKey="Barcode")]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TProductGroup_TPurchaseLog", Storage="_TPurchaseLogs", ThisKey="Barcode", OtherKey="BarcodeID")]
 		public EntitySet<TPurchaseLog> TPurchaseLogs
 		{
 			get
@@ -955,8 +955,8 @@ namespace InventoryDataLayer
     partial void OnCreated();
     partial void OnTransactionIDChanging(int value);
     partial void OnTransactionIDChanged();
-    partial void OnBarcodeChanging(System.Nullable<int> value);
-    partial void OnBarcodeChanged();
+    partial void OnBarcodeIDChanging(System.Nullable<int> value);
+    partial void OnBarcodeIDChanged();
     partial void OnLocationIDChanging(System.Nullable<int> value);
     partial void OnLocationIDChanged();
     partial void OnDateChanging(System.DateTime value);
@@ -995,7 +995,7 @@ namespace InventoryDataLayer
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Barcode", DbType="Int")]
-		public System.Nullable<int> Barcode
+		public System.Nullable<int> BarcodeID
 		{
 			get
 			{
@@ -1009,11 +1009,11 @@ namespace InventoryDataLayer
 					{
 						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
 					}
-					this.OnBarcodeChanging(value);
+					this.OnBarcodeIDChanging(value);
 					this.SendPropertyChanging();
 					this._Barcode = value;
-					this.SendPropertyChanged("Barcode");
-					this.OnBarcodeChanged();
+					this.SendPropertyChanged("BarcodeID");
+					this.OnBarcodeIDChanged();
 				}
 			}
 		}
@@ -1102,7 +1102,7 @@ namespace InventoryDataLayer
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TProductGroup_TPurchaseLog", Storage="_TProductGroup", ThisKey="Barcode", OtherKey="Barcode", IsForeignKey=true)]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TProductGroup_TPurchaseLog", Storage="_TProductGroup", ThisKey="BarcodeID", OtherKey="Barcode", IsForeignKey=true)]
 		public TProductGroup TProductGroup
 		{
 			get

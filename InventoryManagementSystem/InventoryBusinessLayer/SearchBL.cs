@@ -76,5 +76,29 @@ namespace InventoryBusinessLayer
             var obj = t3;
             dataGrid.DataSource = obj;
         }
+
+        public static void GetAllProducts(ComboBox box)
+        {
+            box.DataSource = SearchDL.GetAllProducts();
+        }
+
+        public void GetLocations(ComboBox box, string text)
+        {
+            box.DataSource = SearchDL.GetLocationsWithProductId(TrimID(text, 7));
+        }
+
+        public void GetUnitCost(string barcode, DateTime startDate, DateTime endDate, string location, DataGridView grid)
+        {
+            grid.DataSource = SearchDL.GetUnitCost(TrimID(barcode, 7), startDate, endDate, TrimID(location, 10));
+        }
+
+        private int TrimID(string text, int index)
+        {
+            string mod1 = text.Substring(index); // 
+            string mod2 = mod1.Substring(0, mod1.LastIndexOf(","));
+            int convertedValue = Convert.ToInt32(mod2);
+            return convertedValue;
+        }
+
     }
 }

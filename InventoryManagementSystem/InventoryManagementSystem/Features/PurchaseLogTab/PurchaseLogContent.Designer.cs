@@ -72,6 +72,7 @@
             this.ProductBox.Name = "ProductBox";
             this.ProductBox.Size = new System.Drawing.Size(560, 33);
             this.ProductBox.TabIndex = 4;
+            this.ProductBox.SelectedIndexChanged += new System.EventHandler(this.ProductBox_SelectedIndexChanged);
             // 
             // FinalDatePicker
             // 
@@ -115,9 +116,9 @@
             this.LocationLabel.AutoSize = true;
             this.LocationLabel.Location = new System.Drawing.Point(670, 35);
             this.LocationLabel.Name = "LocationLabel";
-            this.LocationLabel.Size = new System.Drawing.Size(223, 29);
+            this.LocationLabel.Size = new System.Drawing.Size(110, 29);
             this.LocationLabel.TabIndex = 9;
-            this.LocationLabel.Text = "Location (Optional):";
+            this.LocationLabel.Text = "Location:";
             // 
             // StartingDateLabel
             // 

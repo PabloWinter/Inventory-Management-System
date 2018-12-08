@@ -13,7 +13,7 @@
       <Column Name="FullProductName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="ShortProductName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Association Name="TProductGroup_TProduct" Member="TProducts" ThisKey="Barcode" OtherKey="Barcode" Type="TProduct" />
-      <Association Name="TProductGroup_TPurchaseLog" Member="TPurchaseLogs" ThisKey="Barcode" OtherKey="Barcode" Type="TPurchaseLog" />
+      <Association Name="TProductGroup_TPurchaseLog" Member="TPurchaseLogs" ThisKey="Barcode" OtherKey="BarcodeID" Type="TPurchaseLog" />
       <Association Name="TProductGroup_TReturned" Member="TReturneds" ThisKey="Barcode" OtherKey="BarcodeID" Type="TReturned" />
       <Association Name="TProductGroup_TInStock" Member="TInStocks" ThisKey="Barcode" OtherKey="BarcodeID" Type="TInStock" />
       <Association Name="TCategory_TProductGroup" Member="TCategory" ThisKey="CategoryID" OtherKey="CategoryID" Type="TCategory" IsForeignKey="true" />
@@ -44,12 +44,12 @@
   <Table Name="dbo.TPurchaseLog" Member="TPurchaseLogs">
     <Type Name="TPurchaseLog">
       <Column Name="TransactionID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="Barcode" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="BarcodeID" Storage="_Barcode" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="LocationID" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="Date" Type="System.DateTime" DbType="DateTime2 NOT NULL" CanBeNull="false" />
       <Column Name="Quantity" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="TotalCost" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Association Name="TProductGroup_TPurchaseLog" Member="TProductGroup" ThisKey="Barcode" OtherKey="Barcode" Type="TProductGroup" IsForeignKey="true" />
+      <Association Name="TProductGroup_TPurchaseLog" Member="TProductGroup" ThisKey="BarcodeID" OtherKey="Barcode" Type="TProductGroup" IsForeignKey="true" />
       <Association Name="TLocation_TPurchaseLog" Member="TLocation" ThisKey="LocationID" OtherKey="LocationID" Type="TLocation" IsForeignKey="true" />
     </Type>
   </Table>
