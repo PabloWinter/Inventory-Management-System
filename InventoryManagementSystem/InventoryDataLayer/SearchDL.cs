@@ -46,7 +46,9 @@ namespace InventoryDataLayer
 
             foreach (var result in dataModel.GetTables())
             {
-                listOfTables.Add(result.RowType.ToString());
+                // Using this if to remove a sensitive table that was added later on the development process. This should not be displayed to the users.
+                if (!result.RowType.ToString().Contains("TManagerInventory"))
+                    listOfTables.Add(result.RowType.ToString());
             }
 
             return listOfTables;
