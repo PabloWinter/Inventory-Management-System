@@ -64,6 +64,12 @@
     <Compile Include="Features\ProductTab\ProductsControl.Designer.cs">
       <DependentUpon>ProductsControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Features\ProductTab\UpdateProductForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Features\ProductTab\UpdateProductForm.Designer.cs">
+      <DependentUpon>UpdateProductForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Features\SearchTab\Filter.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -98,6 +104,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Features\ProductTab\ProductsControl.resx">
       <DependentUpon>ProductsControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Features\ProductTab\UpdateProductForm.resx">
+      <DependentUpon>UpdateProductForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Features\SearchTab\Filter.resx">
       <DependentUpon>Filter.cs</DependentUpon>
@@ -161,6 +170,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\design.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\update.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -66,6 +66,7 @@
             this.Update.TabIndex = 0;
             this.Update.Text = "Update";
             this.Update.UseVisualStyleBackColor = false;
+            this.Update.Click += new System.EventHandler(this.Update_Click);
             // 
             // GroupData
             // 

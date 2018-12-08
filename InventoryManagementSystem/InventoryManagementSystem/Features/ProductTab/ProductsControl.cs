@@ -30,5 +30,11 @@ namespace InventoryManagementSystem.Features.ProductTab
             InsertProductForm newProductForm = new InsertProductForm();
             newProductForm.Show();
         }
+
+        private void Update_Click(object sender, EventArgs e)
+        {
+            UpdateProductForm newUpdateForm = new UpdateProductForm();
+            newUpdateForm.Show();
+        }
     }
 }

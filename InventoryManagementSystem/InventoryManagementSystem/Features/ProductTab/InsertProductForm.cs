@@ -18,6 +18,9 @@ namespace InventoryManagementSystem.Features.ProductTab
         public InsertProductForm()
         {
             InitializeComponent();
+
+            product.FillComboBoxCategory(comboCategory);
+            product.FillComboBoxBrand(comboBrand);
         }
 
         private void InsertProduct_Click(object sender, EventArgs e)
@@ -42,6 +45,7 @@ namespace InventoryManagementSystem.Features.ProductTab
             {
                 MessageBox.Show(error.Message, "Insert a new product", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
-        }   
+        }
+        
     }
 }
