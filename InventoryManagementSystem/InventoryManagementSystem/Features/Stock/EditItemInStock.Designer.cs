@@ -39,6 +39,11 @@
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.productLocation = new System.Windows.Forms.TextBox();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.totalCost = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.date = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.productQantity)).BeginInit();
             this.SuspendLayout();
             // 
@@ -97,7 +102,7 @@
             // 
             this.button2.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Location = new System.Drawing.Point(180, 227);
+            this.button2.Location = new System.Drawing.Point(178, 322);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(83, 23);
             this.button2.TabIndex = 31;
@@ -109,7 +114,7 @@
             // 
             this.Ok.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.Ok.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Ok.Location = new System.Drawing.Point(69, 227);
+            this.Ok.Location = new System.Drawing.Point(67, 322);
             this.Ok.Name = "Ok";
             this.Ok.Size = new System.Drawing.Size(83, 23);
             this.Ok.TabIndex = 30;
@@ -139,7 +144,7 @@
             // 
             this.button1.BackColor = System.Drawing.Color.DarkRed;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(286, 227);
+            this.button1.Location = new System.Drawing.Point(284, 322);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(83, 23);
             this.button1.TabIndex = 37;
@@ -155,11 +160,61 @@
             this.productLocation.Size = new System.Drawing.Size(160, 20);
             this.productLocation.TabIndex = 38;
             // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(320, 12);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(96, 17);
+            this.checkBox1.TabIndex = 39;
+            this.checkBox1.Text = "New Purchase";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            // 
+            // totalCost
+            // 
+            this.totalCost.Enabled = false;
+            this.totalCost.Location = new System.Drawing.Point(166, 214);
+            this.totalCost.Name = "totalCost";
+            this.totalCost.Size = new System.Drawing.Size(100, 20);
+            this.totalCost.TabIndex = 43;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(102, 217);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(58, 13);
+            this.label5.TabIndex = 42;
+            this.label5.Text = "Total Cost:";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(55, 260);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(92, 13);
+            this.label4.TabIndex = 41;
+            this.label4.Text = "Date of purchase:";
+            // 
+            // date
+            // 
+            this.date.Enabled = false;
+            this.date.Location = new System.Drawing.Point(148, 256);
+            this.date.Name = "date";
+            this.date.Size = new System.Drawing.Size(200, 20);
+            this.date.TabIndex = 40;
+            // 
             // EditItemInStock
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(428, 291);
+            this.ClientSize = new System.Drawing.Size(440, 383);
+            this.Controls.Add(this.totalCost);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.date);
+            this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.productLocation);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.productQantity);
@@ -195,5 +250,10 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox productLocation;
+        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.TextBox totalCost;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.DateTimePicker date;
     }
 }

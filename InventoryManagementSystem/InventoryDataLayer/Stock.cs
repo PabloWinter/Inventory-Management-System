@@ -113,7 +113,7 @@ namespace InventoryDataLayer
         }
 
         //new stock item
-        public void NewStockItem (int barcode, int location, int quantity)
+        public void NewStockItem (int barcode, int location, int quantity, string totalcost, DateTime date)
         {
             DataLinqToSQLDataContext connect = new DataLinqToSQLDataContext();
 
@@ -124,14 +124,18 @@ namespace InventoryDataLayer
                 Quantity = quantity
             };
 
-
             TPurchaseLog newLog = new TPurchaseLog
             {
-                
+                BarcodeID = barcode,
+                LocationID = location,
+                Quantity = quantity,
+                Date = date,
+                TotalCost = Convert.ToDecimal(totalcost)
             };
 
             // Add the new object to the Orders collection.
             connect.TInStocks.InsertOnSubmit(newStock);
+            connect.TPurchaseLogs.InsertOnSubmit(newLog);
 
             // Submit the change to the database.
             try
@@ -189,6 +193,53 @@ namespace InventoryDataLayer
                
             }
                                
+            //submit changes
+            try
+            {
+                db.SubmitChanges();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("An error has occured trying to edit this stock item");
+                MessageBox.Show(e.ToString());
+            }
+        }
+
+
+        public void StockToEditWithLog(int barcode, int location, int quantity, string totalcost, DateTime date)
+        {
+            var query = from stock in db.TInStocks
+                        where stock.BarcodeID == barcode && stock.LocationID == location
+                        select stock;
+
+            List<int> oldQuantity = (from stock in db.TInStocks
+                                          where stock.BarcodeID == barcode && stock.LocationID == location
+                                          select stock.Quantity).ToList();
+
+            int difference = Math.Abs(quantity - oldQuantity[0]);
+
+
+
+            MessageBox.Show(difference.ToString());
+
+            foreach (TInStock stock in query)
+            {
+                stock.Quantity = quantity;
+
+            }
+
+            TPurchaseLog newLog = new TPurchaseLog
+            {
+                BarcodeID = barcode,
+                LocationID = location,
+                Date = date,
+                Quantity = difference,
+                TotalCost = Convert.ToDecimal(totalcost)
+            };
+
+            // Add the new object to the Orders collection.
+            db.TPurchaseLogs.InsertOnSubmit(newLog);
+
             //submit changes
             try
             {

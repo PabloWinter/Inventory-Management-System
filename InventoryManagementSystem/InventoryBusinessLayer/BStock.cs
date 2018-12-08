@@ -23,10 +23,10 @@ namespace InventoryBusinessLayer
 
         }
 
-        public void NewStockItem (int barcode, int location, int quantity)
+        public void NewStockItem (int barcode, int location, int quantity, string totalcost, DateTime date)
         {
             //NewStockItem (int barcode, int location, int quantity)
-            stock.NewStockItem(barcode, location, quantity);          
+            stock.NewStockItem(barcode, location, quantity, totalcost, date);          
         }
 
         //for letting user pick a product to add to stock
@@ -102,6 +102,11 @@ namespace InventoryBusinessLayer
         public void EditStockItme (int barcode, int locationid, int quantity)
         {
             stock.StockToEdit(barcode, locationid, quantity);
+        }
+
+        public void EditStockItmeWithLog(int barcode, int locationid, int quantity, string totalprice, DateTime date)
+        {
+            stock.StockToEditWithLog(barcode, locationid, quantity, totalprice, date);
         }
 
 

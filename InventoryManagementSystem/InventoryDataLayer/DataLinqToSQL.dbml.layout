@@ -20,43 +20,17 @@
         <elementListCompartment Id="436b93fc-0ddc-4405-92ab-acb1caa1a05e" absoluteBounds="2.515, 5.71, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="2fa8d453-73bd-42bf-a884-3486db4b2991" absoluteBounds="6.625, 5.625, 2, 1.3862939453125">
-      <DataClassMoniker Name="/DataLinqToSQLDataContext/TReturned" />
-      <nestedChildShapes>
-        <elementListCompartment Id="fe0fb599-5184-49b3-b7e8-f61d1be2b12a" absoluteBounds="6.64, 6.085, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
     <classShape Id="5e539e8b-0f07-4d63-a0eb-28a6bf31ad28" absoluteBounds="7.875, 2.75, 2, 1.7708968098958331">
       <DataClassMoniker Name="/DataLinqToSQLDataContext/TLocation" />
       <nestedChildShapes>
         <elementListCompartment Id="eec880b2-f033-4686-b05c-40944eefd1bc" absoluteBounds="7.8900000000000006, 3.21, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(9.28125 : 4.52089680989583); (9.28125 : 5.49120198567708); (8.33333333333333 : 5.49120198567708 : JumpStart); (8.16666666666667 : 5.49120198567708 : JumpEnd); (5.77083283333333 : 5.49120198567708 : JumpStart); (5.60416616666667 : 5.49120198567708 : JumpEnd); (4.5 : 5.49120198567708)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(7.96875 : 4.52089680989583); (7.96875 : 5.67870198567708); (5.83333333333333 : 5.67870198567708 : JumpStart); (5.66666666666667 : 5.67870198567708 : JumpEnd); (4.5 : 5.67870198567708)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/DataLinqToSQLDataContext/TLocation/TLocation_TInStock" />
       <nodes>
         <classShapeMoniker Id="5e539e8b-0f07-4d63-a0eb-28a6bf31ad28" />
         <classShapeMoniker Id="c44bde31-c03b-471c-a75b-e479322a662c" />
-      </nodes>
-    </associationConnector>
-    <associationConnector edgePoints="[(8.25 : 4.52089680989583); (8.25 : 5.625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
-      <AssociationMoniker Name="/DataLinqToSQLDataContext/TLocation/TLocation_TReturned" />
-      <nodes>
-        <classShapeMoniker Id="5e539e8b-0f07-4d63-a0eb-28a6bf31ad28" />
-        <classShapeMoniker Id="2fa8d453-73bd-42bf-a884-3486db4b2991" />
-      </nodes>
-    </associationConnector>
-    <classShape Id="f18a048f-989e-425d-8916-0b5e035682d5" absoluteBounds="6.75, 0.5, 2, 1.9631982421875">
-      <DataClassMoniker Name="/DataLinqToSQLDataContext/TPurchaseLog" />
-      <nestedChildShapes>
-        <elementListCompartment Id="4d9376b1-bd47-4798-82eb-49fe5c5b0c85" absoluteBounds="6.7650000000000006, 0.96, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <associationConnector edgePoints="[(8.3125 : 2.75); (8.3125 : 2.4631982421875)]" fixedFrom="Algorithm" fixedTo="Algorithm">
-      <AssociationMoniker Name="/DataLinqToSQLDataContext/TLocation/TLocation_TPurchaseLog" />
-      <nodes>
-        <classShapeMoniker Id="5e539e8b-0f07-4d63-a0eb-28a6bf31ad28" />
-        <classShapeMoniker Id="f18a048f-989e-425d-8916-0b5e035682d5" />
       </nodes>
     </associationConnector>
     <classShape Id="11fb2d3c-f568-4ef2-bfaf-8eafdac54ec9" absoluteBounds="4.75, 2.625, 2, 2.7324039713541666">
@@ -65,32 +39,18 @@
         <elementListCompartment Id="6a08a7b5-4f1e-4653-bc17-19e1fd98100f" absoluteBounds="4.765, 3.085, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(4.75 : 3.59699625651042); (3.375 : 3.59699625651042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(4.75 : 3.59699625651042); (3.375 : 3.59699625651042)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/DataLinqToSQLDataContext/TProductGroup/TProductGroup_TProduct" />
       <nodes>
         <classShapeMoniker Id="11fb2d3c-f568-4ef2-bfaf-8eafdac54ec9" />
         <classShapeMoniker Id="ccad878c-4052-4fa6-81d0-6be1a307668c" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(4.75 : 4.45474962825521); (4.375 : 4.45474962825521); (4.375 : 4.875); (3.5 : 4.875); (3.5 : 5.25)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(4.75 : 4.45474962825521); (4.375 : 4.45474962825521); (4.375 : 4.875); (3.5 : 4.875); (3.5 : 5.25)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/DataLinqToSQLDataContext/TProductGroup/TProductGroup_TInStock" />
       <nodes>
         <classShapeMoniker Id="11fb2d3c-f568-4ef2-bfaf-8eafdac54ec9" />
         <classShapeMoniker Id="c44bde31-c03b-471c-a75b-e479322a662c" />
-      </nodes>
-    </associationConnector>
-    <associationConnector edgePoints="[(5.6874995 : 5.35740397135417); (5.6874995 : 6.31814697265625); (6.625 : 6.31814697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
-      <AssociationMoniker Name="/DataLinqToSQLDataContext/TProductGroup/TProductGroup_TReturned" />
-      <nodes>
-        <classShapeMoniker Id="11fb2d3c-f568-4ef2-bfaf-8eafdac54ec9" />
-        <classShapeMoniker Id="2fa8d453-73bd-42bf-a884-3486db4b2991" />
-      </nodes>
-    </associationConnector>
-    <associationConnector edgePoints="[(5.75 : 2.625); (5.75 : 2.5226); (6.6476 : 2.5226); (6.6476 : 2.5655982421875); (6.8524 : 2.5655982421875); (6.8524 : 2.6167982421875); (7.499998 : 2.6167982421875); (7.499998 : 2.4631982421875)]" fixedFrom="Algorithm" fixedTo="Algorithm">
-      <AssociationMoniker Name="/DataLinqToSQLDataContext/TProductGroup/TProductGroup_TPurchaseLog" />
-      <nodes>
-        <classShapeMoniker Id="11fb2d3c-f568-4ef2-bfaf-8eafdac54ec9" />
-        <classShapeMoniker Id="f18a048f-989e-425d-8916-0b5e035682d5" />
       </nodes>
     </associationConnector>
     <associationConnector edgePoints="[(3.75 : 2.19399251302083); (4.125 : 2.56899251302083); (4.125 : 2.25); (4.375 : 2.25); (4.75 : 2.625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
@@ -106,11 +66,51 @@
         <elementListCompartment Id="62ca9ec2-de37-4fe9-a704-396e39be3232" absoluteBounds="4.64, 0.96, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(5.2187525 : 1.69399251302083); (5.2187525 : 2.625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(5.2187525 : 1.69399251302083); (5.2187525 : 2.625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/DataLinqToSQLDataContext/TBrand/TBrand_TProductGroup" />
       <nodes>
         <classShapeMoniker Id="0a2cee52-8f47-4ac9-9c98-2836c4d91ea6" />
         <classShapeMoniker Id="11fb2d3c-f568-4ef2-bfaf-8eafdac54ec9" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="92706441-ef2c-4396-8f5a-c430819f61ea" absoluteBounds="7.25, 0.5, 2, 1.9631982421875">
+      <DataClassMoniker Name="/DataLinqToSQLDataContext/TPurchaseLog" />
+      <nestedChildShapes>
+        <elementListCompartment Id="aedb75ec-3a40-47c7-a2ec-209fe45eac79" absoluteBounds="7.2650000000000006, 0.96, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(6.75 : 2.625); (7.25 : 2.4631982421875)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DataLinqToSQLDataContext/TProductGroup/TProductGroup_TPurchaseLog" />
+      <nodes>
+        <classShapeMoniker Id="11fb2d3c-f568-4ef2-bfaf-8eafdac54ec9" />
+        <classShapeMoniker Id="92706441-ef2c-4396-8f5a-c430819f61ea" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.5625 : 2.75); (8.5625 : 2.4631982421875)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DataLinqToSQLDataContext/TLocation/TLocation_TPurchaseLog" />
+      <nodes>
+        <classShapeMoniker Id="5e539e8b-0f07-4d63-a0eb-28a6bf31ad28" />
+        <classShapeMoniker Id="92706441-ef2c-4396-8f5a-c430819f61ea" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="8296cd2c-76f5-40d7-9149-018f50c36746" absoluteBounds="8.125, 6, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/DataLinqToSQLDataContext/TReturned" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c5653e57-aa5c-4a1f-9bc8-3a883d11cebf" absoluteBounds="8.14, 6.46, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(5.75 : 5.35740397135417); (5.75 : 6.78929768880208); (8.125 : 6.78929768880208)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DataLinqToSQLDataContext/TProductGroup/TProductGroup_TReturned" />
+      <nodes>
+        <classShapeMoniker Id="11fb2d3c-f568-4ef2-bfaf-8eafdac54ec9" />
+        <classShapeMoniker Id="8296cd2c-76f5-40d7-9149-018f50c36746" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(9 : 4.52089680989583); (9 : 6)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DataLinqToSQLDataContext/TLocation/TLocation_TReturned" />
+      <nodes>
+        <classShapeMoniker Id="5e539e8b-0f07-4d63-a0eb-28a6bf31ad28" />
+        <classShapeMoniker Id="8296cd2c-76f5-40d7-9149-018f50c36746" />
       </nodes>
     </associationConnector>
   </nestedChildShapes>

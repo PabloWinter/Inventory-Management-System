@@ -1,5 +1,6 @@
 ﻿using InventoryBusinessLayer;
 using System;
+using System.Globalization;
 using System.Windows.Forms;
 
 namespace InventoryManagementSystem.Features.Stock
@@ -25,28 +26,41 @@ namespace InventoryManagementSystem.Features.Stock
 
         }
 
+        public bool MoneyValidate (string text)
+        {
+            float money = 0;
+            return float.TryParse(text, NumberStyles.Currency, CultureInfo.GetCultureInfo("en-CA"), out money);
+        }
+
         private void Ok_Click(object sender, EventArgs e)
         {
             int barcode = Convert.ToInt16(productBarcode.Text);
             int location = stock.GetLocationListId()[productLocation.SelectedIndex];
             int quantity = Convert.ToInt16(productQantity.Text);
 
-            MessageBox.Show(location.ToString());
-            MessageBox.Show(stock.checkIfProductInStock(barcode, location).ToString());
+            //MessageBox.Show(location.ToString());
+            //MessageBox.Show(stock.checkIfProductInStock(barcode, location).ToString());
 
-            if (stock.checkIfProductInStock(barcode, location))
+            float num = 0;
+
+            if (!MoneyValidate(totalCost.Text))
             {
-                MessageBox.Show("Item already exists in stock");
+                MessageBox.Show("Incorrect Total cost format");
             }
             else
             {
-                MessageBox.Show("Item added to stock successfully.");
-                stock.NewStockItem(barcode, location, quantity);
-                Close();
-            }
-
+                if (stock.checkIfProductInStock(barcode, location))
+                {
+                    MessageBox.Show("Item already exists in stock");
+                }
+                else
+                {
+                    MessageBox.Show("Item added to stock successfully.");
+                    stock.NewStockItem(barcode, location, quantity, totalCost.Text, date.Value);
+                    Close();
+                }
+            } 
         }
-
 
         private void button2_Click(object sender, EventArgs e)
         {
@@ -71,5 +85,6 @@ namespace InventoryManagementSystem.Features.Stock
             productBarcode.Text = BarcodeList.ToArray()[productList.SelectedIndex].ToString();
 
         }
+
     }
 }
