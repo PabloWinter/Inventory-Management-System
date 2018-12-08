@@ -52,11 +52,13 @@
             this.searchContent1 = new InventoryManagementSystem.Features.SearchTab.SearchContent();
             this.tabPage8 = new System.Windows.Forms.TabPage();
             this.tabPage9 = new System.Windows.Forms.TabPage();
+            this.purchaseLogContent1 = new InventoryManagementSystem.Features.PurchaseLogTab.PurchaseLogContent();
             this.menuPanel.SuspendLayout();
             this.optionTabs.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tabPage7.SuspendLayout();
+            this.tabPage8.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuPanel
@@ -331,6 +333,7 @@
             // 
             // tabPage8
             // 
+            this.tabPage8.Controls.Add(this.purchaseLogContent1);
             this.tabPage8.Location = new System.Drawing.Point(4, 29);
             this.tabPage8.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tabPage8.Name = "tabPage8";
@@ -351,6 +354,13 @@
             this.tabPage9.Text = "Logistics";
             this.tabPage9.UseVisualStyleBackColor = true;
             // 
+            // purchaseLogContent1
+            // 
+            this.purchaseLogContent1.Location = new System.Drawing.Point(0, 0);
+            this.purchaseLogContent1.Name = "purchaseLogContent1";
+            this.purchaseLogContent1.Size = new System.Drawing.Size(1115, 990);
+            this.purchaseLogContent1.TabIndex = 0;
+            // 
             // MainInventoryForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -370,6 +380,7 @@
             this.tabPage2.ResumeLayout(false);
             this.tabPage7.ResumeLayout(false);
             this.tabPage7.PerformLayout();
+            this.tabPage8.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -400,6 +411,7 @@
         private Features.menuPanel.menuPanelButton logisticOption;
         private Features.SearchTab.SearchContent searchContent1;
         private Features.ProductTab.ProductsControl productsControl1;
+        private Features.PurchaseLogTab.PurchaseLogContent purchaseLogContent1;
     }
 }
 
