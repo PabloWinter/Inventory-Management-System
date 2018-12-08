@@ -18,5 +18,31 @@ namespace InventoryManagementSystem.Features.Return
         { 
 
         }
+
+       
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            returned.GetReturned(dataGridView1);
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            AddItemToReturn returned = new AddItemToReturn();
+            returned.Show();
+
+        }
+
+        private void button3_Click_1(object sender, EventArgs e)
+        {
+            returned.GetReturned(dataGridView1);
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            EditItemInReturn edit = new EditItemInReturn();
+            edit.Show();
+        }
     }
 }

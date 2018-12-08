@@ -55,7 +55,6 @@ namespace InventoryManagementSystem.Features.Stock
                 }
                 else
                 {
-                    MessageBox.Show("Item added to stock successfully.");
                     stock.NewStockItem(barcode, location, quantity, totalCost.Text, date.Value);
                     Close();
                 }

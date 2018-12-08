@@ -141,6 +141,8 @@ namespace InventoryDataLayer
             try
             {
                 connect.SubmitChanges();
+
+                MessageBox.Show("Item added to stock successfully.");
             }
             catch (Exception e)
             {
@@ -197,6 +199,7 @@ namespace InventoryDataLayer
             try
             {
                 db.SubmitChanges();
+                MessageBox.Show("Item edited successfully.");
             }
             catch (Exception e)
             {
@@ -244,6 +247,7 @@ namespace InventoryDataLayer
             try
             {
                 db.SubmitChanges();
+                MessageBox.Show("Item edited successfully.");
             }
             catch (Exception e)
             {

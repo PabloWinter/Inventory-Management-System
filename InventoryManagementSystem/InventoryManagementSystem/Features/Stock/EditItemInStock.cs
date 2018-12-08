@@ -45,14 +45,12 @@ namespace InventoryManagementSystem.Features.Stock
                 else
                 {
                     stock.EditStockItmeWithLog(Convert.ToInt16(productBarcode.Text), Convert.ToInt16(stock.StockLocationId()[productList.SelectedIndex]), Convert.ToInt32(productQantity.Value), totalCost.Text, date.Value);
-                    MessageBox.Show("Item edited successfully.");
                     Close();
                 }               
             }
             else
             {
                 stock.EditStockItme(Convert.ToInt16(productBarcode.Text), Convert.ToInt16(stock.StockLocationId()[productList.SelectedIndex]), Convert.ToInt32(productQantity.Value));
-                MessageBox.Show("Item edited successfully.");
                 Close();
             }
           

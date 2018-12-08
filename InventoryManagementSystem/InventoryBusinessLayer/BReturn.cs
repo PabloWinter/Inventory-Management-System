@@ -17,7 +17,7 @@ namespace InventoryBusinessLayer
 
         public void NewReturnItem(int barcode, int location, int quantity)
         {
-            //NewStockItem (int barcode, int location, int quantity)
+            //NewReturnedItem (int barcode, int location, int quantity)
             returned.NewReturnedItem(barcode, location, quantity);
         }
 
@@ -53,39 +53,39 @@ namespace InventoryBusinessLayer
             return has;
         }
 
-        public void GetAllStock(ComboBox cbox)
+        public void GetAllReturns(ComboBox cbox)
         {
             cbox.DataSource = returned.ReturnNames();
         }
 
-        public List<int> StockLocationId()
+        public List<int> ReturnedLocationId()
         {
             return returned.ReturnLocation();
         }
 
-        public List<string> StockLocationName(int id)
+        public List<string> ReturnedLocationName(int id)
         {
             return returned.ReturnedLocationName(id);
         }
 
-        public List<int> StockQuantities()
+        public List<int> ReturnedQuantities()
         {
             return returned.ReturnQuantities();
         }
 
-        public void DeleteStockItem(int barcode, int locationid)
+        public void DeleteReturnedItem(int barcode, int locationid)
         {
             returned.DeleteReturnItem(barcode, locationid);
         }
 
-        public void EditStockItme(int barcode, int locationid, int quantity)
+        public void EditReturnedItem(int barcode, int locationid, int quantity)
         {
             returned.ReturnToEdit(barcode, locationid, quantity);
         }
 
-        public void SelectedStockItemLocation(ComboBox cbox)
+        public void SelectedReturnedItemLocation(ComboBox cbox)
         {
-            ///  cbox.SelectedItem = stock.StockLocationMatch();
+            ///  cbox.SelectedItem = Returned.ReturnedLocationMatch();
         }
     }
 }

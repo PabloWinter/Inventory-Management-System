@@ -63,6 +63,12 @@
     <Compile Include="Features\Return\AddItemToReturn.Designer.cs">
       <DependentUpon>AddItemToReturn.cs</DependentUpon>
     </Compile>
+    <Compile Include="Features\Return\EditItemInReturn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Features\Return\EditItemInReturn.Designer.cs">
+      <DependentUpon>EditItemInReturn.cs</DependentUpon>
+    </Compile>
     <Compile Include="Features\Return\ReturnManager.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -100,6 +106,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Features\Return\AddItemToReturn.resx">
       <DependentUpon>AddItemToReturn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Features\Return\EditItemInReturn.resx">
+      <DependentUpon>EditItemInReturn.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Features\Return\ReturnManager.resx">
       <DependentUpon>ReturnManager.cs</DependentUpon>

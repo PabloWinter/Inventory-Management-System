@@ -11,6 +11,8 @@ namespace InventoryManagementSystem.Features.Return
         public AddItemToReturn()
         {
             InitializeComponent();
+            returned.ProductSelect(productList);
+            returned.LocationSelect(productLocation);
         }
 
         private void Ok_Click(object sender, EventArgs e)
@@ -24,11 +26,17 @@ namespace InventoryManagementSystem.Features.Return
                 MessageBox.Show("Item already exists in return");
             }
             else
-            {
-                MessageBox.Show("return added to stock successfully.");
+            {           
                 returned.NewReturnItem(barcode, location, quantity);
                 Close();
             }
+        }
+
+        private void productList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var BarcodeList = returned.GetBarcodeList();
+
+            productBarcode.Text = BarcodeList.ToArray()[productList.SelectedIndex].ToString();
         }
     }
 }

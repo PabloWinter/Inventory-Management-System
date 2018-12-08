@@ -21,9 +21,11 @@ namespace InventoryDataLayer
                              join d in tab3 on returned.LocationID equals d.LocationID
                              select new
                              {
+                                 returned.BarcodeID,
                                  p.Name,
                                  returned.Quantity,
-                                 LocationName = d.Name
+                                 LocationName = d.Name,
+                                 returned.LocationID
                              }).ToList();
             return prodQuery;
         }
@@ -144,6 +146,7 @@ namespace InventoryDataLayer
             try
             {
                 db.SubmitChanges();
+                MessageBox.Show("return added to stock successfully.");
             }
             catch (Exception e)
             {
@@ -166,6 +169,7 @@ namespace InventoryDataLayer
             try
             {
                 db.SubmitChanges();
+                MessageBox.Show("Item edited successfully.");
             }
             catch (Exception e)
             {
