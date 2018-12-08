@@ -149,25 +149,5 @@ namespace InventoryDataLayer
             return query.ToList();
         }
 
-        //public static IQueryable GetResultSet(string table, string column, string operation, string value)
-        //{
-        //    DataLinqToSQLDataContext connect = new DataLinqToSQLDataContext();
-
-        //    // I have to find a way to select the right returning type. It must be selected based on user's search.
-        //    var tableType2 = GetTableType(table);
-
-        //    Debug.WriteLine(tableType2 + "111111");
-
-        //    Type tableType = tableType2;//Type.GetType(table.Substring(4));
-        //    Debug.WriteLine(tableType + "*******");
-
-        //    string sqlStatement = "SELECT * FROM " + table + " WHERE " + table + "." + column + " " + operation + " " + "'" + value + "'";
-
-        //    var query = connect.ExecuteQuery(tableType, sqlStatement);
-
-        //    return (IQueryable)query;
-        //}
-
-
     }
 }
