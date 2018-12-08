@@ -55,6 +55,24 @@
     <Compile Include="Features\ProductTab\InsertProductForm.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Features\SearchTab\ExtraFilter.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Features\SearchTab\ExtraFilter.Designer.cs">
+      <DependentUpon>ExtraFilter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Features\SearchTab\InitialFilter.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Features\SearchTab\InitialFilter.Designer.cs">
+      <DependentUpon>InitialFilter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Features\SearchTab\SearchContent.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Features\SearchTab\SearchContent.Designer.cs">
+      <DependentUpon>SearchContent.cs</DependentUpon>
+    </Compile>
     <Compile Include="Features\ProductTab\InsertProductForm.Designer.cs">
       <DependentUpon>InsertProductForm.cs</DependentUpon>
     </Compile>
@@ -75,12 +93,6 @@
     </Compile>
     <Compile Include="Features\SearchTab\Filter.Designer.cs">
       <DependentUpon>Filter.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Features\SearchTab\SearchContent.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Features\SearchTab\SearchContent.Designer.cs">
-      <DependentUpon>SearchContent.cs</DependentUpon>
     </Compile>
     <Compile Include="MainInventoryForm.cs">
       <SubType>Form</SubType>
@@ -110,6 +122,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Features\SearchTab\Filter.resx">
       <DependentUpon>Filter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Features\SearchTab\ExtraFilter.resx">
+      <DependentUpon>ExtraFilter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Features\SearchTab\InitialFilter.resx">
+      <DependentUpon>InitialFilter.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Features\SearchTab\SearchContent.resx">
       <DependentUpon>SearchContent.cs</DependentUpon>
