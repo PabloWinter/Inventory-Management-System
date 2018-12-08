@@ -33,5 +33,20 @@ namespace InventoryDataLayer
             var query = (from stock in db.TInStocks select stock).ToList();
             return query.ToList().Count;
         }
+
+        public int LocationCount()
+        {
+            var query = (from l in db.TLocations select l).ToList();
+            return query.ToList().Count;
+        }
+
+        public decimal TotalStockValue()
+        {
+            var query = from stock in db.TInStocks
+                        join p in db.TProductGroups on stock.BarcodeID equals p.Barcode
+                        where stock.Quantity > 1
+                        select (p.Price * stock.Quantity);
+            return query.ToList().Sum();
+        }
     }
 }

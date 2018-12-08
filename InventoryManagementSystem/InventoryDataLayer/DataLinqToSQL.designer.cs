@@ -54,6 +54,9 @@ namespace InventoryDataLayer
     partial void InsertTReturned(TReturned instance);
     partial void UpdateTReturned(TReturned instance);
     partial void DeleteTReturned(TReturned instance);
+    partial void InsertTManagerInventory(TManagerInventory instance);
+    partial void UpdateTManagerInventory(TManagerInventory instance);
+    partial void DeleteTManagerInventory(TManagerInventory instance);
     #endregion
 		
 		public DataLinqToSQLDataContext() : 
@@ -147,6 +150,14 @@ namespace InventoryDataLayer
 			get
 			{
 				return this.GetTable<TReturned>();
+			}
+		}
+		
+		public System.Data.Linq.Table<TManagerInventory> TManagerInventories
+		{
+			get
+			{
+				return this.GetTable<TManagerInventory>();
 			}
 		}
 	}
@@ -1891,6 +1902,140 @@ namespace InventoryDataLayer
 						this._LocationID = default(Nullable<int>);
 					}
 					this.SendPropertyChanged("TLocation");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TManagerInventory")]
+	public partial class TManagerInventory : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _ManagerID;
+		
+		private string _UserName;
+		
+		private string _ManagerEmail;
+		
+		private string _Password;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnManagerIDChanging(int value);
+    partial void OnManagerIDChanged();
+    partial void OnUserNameChanging(string value);
+    partial void OnUserNameChanged();
+    partial void OnManagerEmailChanging(string value);
+    partial void OnManagerEmailChanged();
+    partial void OnPasswordChanging(string value);
+    partial void OnPasswordChanged();
+    #endregion
+		
+		public TManagerInventory()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ManagerID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int ManagerID
+		{
+			get
+			{
+				return this._ManagerID;
+			}
+			set
+			{
+				if ((this._ManagerID != value))
+				{
+					this.OnManagerIDChanging(value);
+					this.SendPropertyChanging();
+					this._ManagerID = value;
+					this.SendPropertyChanged("ManagerID");
+					this.OnManagerIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserName", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string UserName
+		{
+			get
+			{
+				return this._UserName;
+			}
+			set
+			{
+				if ((this._UserName != value))
+				{
+					this.OnUserNameChanging(value);
+					this.SendPropertyChanging();
+					this._UserName = value;
+					this.SendPropertyChanged("UserName");
+					this.OnUserNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ManagerEmail", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string ManagerEmail
+		{
+			get
+			{
+				return this._ManagerEmail;
+			}
+			set
+			{
+				if ((this._ManagerEmail != value))
+				{
+					this.OnManagerEmailChanging(value);
+					this.SendPropertyChanging();
+					this._ManagerEmail = value;
+					this.SendPropertyChanged("ManagerEmail");
+					this.OnManagerEmailChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Password", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string Password
+		{
+			get
+			{
+				return this._Password;
+			}
+			set
+			{
+				if ((this._Password != value))
+				{
+					this.OnPasswordChanging(value);
+					this.SendPropertyChanging();
+					this._Password = value;
+					this.SendPropertyChanged("Password");
+					this.OnPasswordChanged();
 				}
 			}
 		}

@@ -21,6 +21,8 @@ namespace InventoryManagementSystem.Features.Dashboard
             dashboard.GetOutOfStockQuantity(outOfStockCount);
             dashboard.GetLowInStockQuantitiy(runningLowCount);
             dashboard.StockItemCount(totalStockItemCount);
+            dashboard.LocationCount(locationCount);
+            dashboard.StockValue(stockValue);
 
         }
 
@@ -36,6 +38,8 @@ namespace InventoryManagementSystem.Features.Dashboard
             dashboard.GetOutOfStockQuantity(outOfStockCount);
             dashboard.GetLowInStockQuantitiy(runningLowCount);
             dashboard.StockItemCount(totalStockItemCount);
+            dashboard.LocationCount(locationCount);
+            dashboard.StockValue(stockValue);
         }
     }
 }

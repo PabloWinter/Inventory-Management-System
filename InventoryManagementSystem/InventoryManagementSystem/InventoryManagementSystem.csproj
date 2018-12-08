@@ -51,6 +51,12 @@
     <Compile Include="Features\Dashboard\Dashboard.Designer.cs">
       <DependentUpon>Dashboard.cs</DependentUpon>
     </Compile>
+    <Compile Include="Features\Location\AddNewLocation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Features\Location\AddNewLocation.Designer.cs">
+      <DependentUpon>AddNewLocation.cs</DependentUpon>
+    </Compile>
     <Compile Include="Features\Location\LocationManager.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -109,6 +115,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Features\Dashboard\Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Features\Location\AddNewLocation.resx">
+      <DependentUpon>AddNewLocation.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Features\Location\LocationManager.resx">
       <DependentUpon>LocationManager.cs</DependentUpon>

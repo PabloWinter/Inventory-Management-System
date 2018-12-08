@@ -39,10 +39,12 @@ namespace InventoryDataLayer
                              join d in tab3 on stock.LocationID equals d.LocationID
                              select new
                              {
+                                 p.Name,                                
+                                 stock.StockID,
                                  stock.BarcodeID,
-                                 p.Name,
                                  stock.Quantity,
                                  LocationName = d.Name,
+                                 TotalValue = "$" + p.Price * stock.Quantity,
                                  stock.LocationID
                              }).ToList();
 
@@ -68,7 +70,7 @@ namespace InventoryDataLayer
         {
             DataLinqToSQLDataContext db = new DataLinqToSQLDataContext();
 
-            var query = from prodcuts in db.TProductGroups select prodcuts.Barcode;
+            var query = from products in db.TProductGroups select products.Barcode;
 
             return query.ToList();
         }

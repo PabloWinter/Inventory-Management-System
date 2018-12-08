@@ -31,5 +31,15 @@ namespace InventoryBusinessLayer
         {
             label.Text = dashboard.StockItemCount().ToString();
         }
+
+        public void LocationCount(Label label)
+        {
+            label.Text = dashboard.LocationCount().ToString();
+        }
+
+        public void StockValue(Label label)
+        {
+            label.Text = "$" + dashboard.TotalStockValue().ToString("0.##");
+        }
     }
 }

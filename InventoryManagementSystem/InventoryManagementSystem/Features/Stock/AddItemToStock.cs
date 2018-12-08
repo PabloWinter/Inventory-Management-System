@@ -81,9 +81,7 @@ namespace InventoryManagementSystem.Features.Stock
         {
             var BarcodeList = stock.GetBarcodeList();
 
-            productBarcode.Text = BarcodeList.ToArray()[productList.SelectedIndex].ToString();
-
+            productBarcode.Text = BarcodeList[productList.SelectedIndex].ToString();
         }
-
     }
 }
