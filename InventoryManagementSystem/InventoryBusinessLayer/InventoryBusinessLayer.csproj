@@ -44,6 +44,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BDashboard.cs" />
+    <Compile Include="BLocations.cs" />
     <Compile Include="BProduct.cs" />
     <Compile Include="BReturn.cs" />
     <Compile Include="BStock.cs" />

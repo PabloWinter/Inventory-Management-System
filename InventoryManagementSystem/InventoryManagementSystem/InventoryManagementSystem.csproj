@@ -45,6 +45,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Features\Dashboard\Dashboard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Features\Dashboard\Dashboard.Designer.cs">
+      <DependentUpon>Dashboard.cs</DependentUpon>
+    </Compile>
     <Compile Include="Features\Location\LocationManager.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -101,6 +107,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Features\Dashboard\Dashboard.resx">
+      <DependentUpon>Dashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Features\Location\LocationManager.resx">
+      <DependentUpon>LocationManager.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Features\menuPanel\menuPanelButton.resx">
       <DependentUpon>menuPanelButton.cs</DependentUpon>
     </EmbeddedResource>
@@ -148,7 +160,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Features\Dashboard\" />
     <Folder Include="Features\Other\" />
   </ItemGroup>
   <ItemGroup>
