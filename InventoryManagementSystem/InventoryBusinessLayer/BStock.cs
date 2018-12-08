@@ -11,8 +11,7 @@ namespace InventoryBusinessLayer
     public class BStock
     {
         Stock stock = new Stock();
-
-        
+      
         public void GetStock(DataGridView dataView)
         {
             dataView.DataSource = stock.GetStockList();
@@ -57,10 +56,21 @@ namespace InventoryBusinessLayer
             cbox.DataSource = stock.GetLocationList();
         }
 
-        public Boolean checkIfProductInStock (int id, int location)
+        public Boolean checkIfProductInStock(int id, int location)
         {
-            bool has = stock.GetStock().Any(st => st.BarcodeID == id && st.LocationID == location);
+            bool has = stock.GetStock().Any(st => st.LocationID == location && st.BarcodeID == id);
+
+            //foreach (var item in stock.GetStock())
+            //{
+            //    MessageBox.Show(item.BarcodeID.ToString() + " - " + item.LocationID.ToString());
+            //}
             return has;
+        }
+
+
+        public List<TInStock> STocks()
+        {
+            return stock.GetStock().ToList();
         }
 
         public void GetAllStock(ComboBox cbox)

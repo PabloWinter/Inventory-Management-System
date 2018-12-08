@@ -54,11 +54,13 @@
             this.tabPage8 = new System.Windows.Forms.TabPage();
             this.tabPage9 = new System.Windows.Forms.TabPage();
             this.tabPage10 = new System.Windows.Forms.TabPage();
+            this.returnManager1 = new InventoryManagementSystem.Features.Return.ReturnManager();
             this.menuPanel.SuspendLayout();
             this.optionTabs.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tabPage5.SuspendLayout();
+            this.tabPage6.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuPanel
@@ -208,7 +210,7 @@
             this.optionTabs.Location = new System.Drawing.Point(249, 0);
             this.optionTabs.Name = "optionTabs";
             this.optionTabs.SelectedIndex = 0;
-            this.optionTabs.Size = new System.Drawing.Size(896, 665);
+            this.optionTabs.Size = new System.Drawing.Size(945, 665);
             this.optionTabs.TabIndex = 1;
             // 
             // tabPage1
@@ -287,7 +289,7 @@
             this.tabPage5.Location = new System.Drawing.Point(4, 22);
             this.tabPage5.Name = "tabPage5";
             this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage5.Size = new System.Drawing.Size(888, 639);
+            this.tabPage5.Size = new System.Drawing.Size(905, 639);
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "Current Stock";
             this.tabPage5.UseVisualStyleBackColor = true;
@@ -297,15 +299,16 @@
             this.stockManager1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.stockManager1.Location = new System.Drawing.Point(3, 3);
             this.stockManager1.Name = "stockManager1";
-            this.stockManager1.Size = new System.Drawing.Size(882, 633);
+            this.stockManager1.Size = new System.Drawing.Size(899, 633);
             this.stockManager1.TabIndex = 0;
             // 
             // tabPage6
             // 
+            this.tabPage6.Controls.Add(this.returnManager1);
             this.tabPage6.Location = new System.Drawing.Point(4, 22);
             this.tabPage6.Name = "tabPage6";
             this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage6.Size = new System.Drawing.Size(888, 639);
+            this.tabPage6.Size = new System.Drawing.Size(937, 639);
             this.tabPage6.TabIndex = 5;
             this.tabPage6.Text = "Returned";
             this.tabPage6.UseVisualStyleBackColor = true;
@@ -350,11 +353,19 @@
             this.tabPage10.Text = "Location";
             this.tabPage10.UseVisualStyleBackColor = true;
             // 
+            // returnManager1
+            // 
+            this.returnManager1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.returnManager1.Location = new System.Drawing.Point(3, 3);
+            this.returnManager1.Name = "returnManager1";
+            this.returnManager1.Size = new System.Drawing.Size(931, 633);
+            this.returnManager1.TabIndex = 0;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1145, 665);
+            this.ClientSize = new System.Drawing.Size(1194, 665);
             this.Controls.Add(this.optionTabs);
             this.Controls.Add(this.menuPanel);
             this.Name = "Form1";
@@ -367,6 +378,7 @@
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             this.tabPage5.ResumeLayout(false);
+            this.tabPage6.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -399,6 +411,7 @@
         private Features.Stock.StockManager stockManager1;
         private Features.menuPanel.menuPanelButton locationOption;
         private System.Windows.Forms.TabPage tabPage10;
+        private Features.Return.ReturnManager returnManager1;
     }
 }
 

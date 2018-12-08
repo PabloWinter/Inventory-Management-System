@@ -57,6 +57,18 @@
     <Compile Include="Features\menuPanel\menuPanelButton.Designer.cs">
       <DependentUpon>menuPanelButton.cs</DependentUpon>
     </Compile>
+    <Compile Include="Features\Return\AddItemToReturn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Features\Return\AddItemToReturn.Designer.cs">
+      <DependentUpon>AddItemToReturn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Return\ReturnManager.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Features\Return\ReturnManager.Designer.cs">
+      <DependentUpon>ReturnManager.cs</DependentUpon>
+    </Compile>
     <Compile Include="Features\Stock\AddItemToStock.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -85,6 +97,12 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Features\menuPanel\menuPanelButton.resx">
       <DependentUpon>menuPanelButton.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Features\Return\AddItemToReturn.resx">
+      <DependentUpon>AddItemToReturn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Features\Return\ReturnManager.resx">
+      <DependentUpon>ReturnManager.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Features\Stock\AddItemToStock.resx">
       <DependentUpon>AddItemToStock.cs</DependentUpon>
@@ -128,6 +146,10 @@
     <ProjectReference Include="..\InventoryBusinessLayer\InventoryBusinessLayer.csproj">
       <Project>{867ce2b4-6939-4be6-980b-bb7c1f39bf7e}</Project>
       <Name>InventoryBusinessLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\InventoryDataLayer\InventoryDataLayer.csproj">
+      <Project>{4BEB6A89-83A1-4421-B2B0-37E9572E1EE2}</Project>
+      <Name>InventoryDataLayer</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

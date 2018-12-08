@@ -37,11 +37,13 @@ namespace InventoryDataLayer
             var prodQuery = (from stock in tab2
                              join p in table1 on stock.BarcodeID equals p.Barcode
                              join d in tab3 on stock.LocationID equals d.LocationID
-                             select new 
+                             select new
                              {
+                                 stock.BarcodeID,
                                  p.Name,
                                  stock.Quantity,
-                                 LocationName = d.Name
+                                 LocationName = d.Name,
+                                 stock.LocationID
                              }).ToList();
 
             //var query = db.ExecuteQuery(@"
@@ -71,7 +73,6 @@ namespace InventoryDataLayer
             return query.ToList();
         }
 
-
         public IQueryable GetLocationList()
         {        
             var query = from locations in db.TLocations select locations.Name;
@@ -88,15 +89,28 @@ namespace InventoryDataLayer
 
         public List<int> GetStockBarcode ()
         {
-            return (from stock in db.TInStocks select stock.BarcodeID).ToList(); 
+            return (from stock in db.TInStocks select Convert.ToInt32(stock.BarcodeID)).ToList(); 
         }
 
-        public List<TInStock> GetStock()
+        public IEnumerable<TInStock> GetStock()
         {
-            return (from stock in db.TInStocks select stock).ToList();
+
+            //return (from stock in db.TInStocks
+            //                        join p in db.TProductGroups on stock.BarcodeID equals p.Barcode
+            //                        join d in db.TLocations on stock.LocationID equals d.LocationID
+            //                        select new
+            //                        {
+            //                            stock.BarcodeID,
+            //                            stock.LocationID
+            //                        });
+
+            DataLinqToSQLDataContext conn = new DataLinqToSQLDataContext();
+            string sql = "SELECT StockID, BarcodeID, LocationID, Quantity FROM TInStock";
+
+           return conn.ExecuteQuery<TInStock>(sql);
+
+            
         }
-
-
 
         //new stock item
         public void NewStockItem (int barcode, int location, int quantity)
@@ -108,6 +122,12 @@ namespace InventoryDataLayer
                 BarcodeID = barcode,
                 LocationID = location,
                 Quantity = quantity
+            };
+
+
+            TPurchaseLog newLog = new TPurchaseLog
+            {
+                
             };
 
             // Add the new object to the Orders collection.
@@ -124,7 +144,7 @@ namespace InventoryDataLayer
                 // Make some adjustments.
                 // ...
                 // Try again.
-                connect.SubmitChanges();
+               // connect.SubmitChanges();
             }
         }
 
@@ -140,7 +160,8 @@ namespace InventoryDataLayer
         //locations 
         public List<int> StockLocation()
         {
-            return (from stock in db.TInStocks select stock.LocationID).ToList();
+
+            return (from stock in db.TInStocks select Convert.ToInt32(stock.LocationID)).ToList();
         }
 
         public List<string> StockLocationName(int id)
@@ -165,6 +186,7 @@ namespace InventoryDataLayer
             foreach (TInStock stock in query)
             {               
                 stock.Quantity = quantity;
+               
             }
                                
             //submit changes

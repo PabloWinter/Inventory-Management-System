@@ -38,6 +38,10 @@
             this.productBarcode = new System.Windows.Forms.TextBox();
             this.productList = new System.Windows.Forms.ComboBox();
             this.productQantity = new System.Windows.Forms.NumericUpDown();
+            this.date = new System.Windows.Forms.DateTimePicker();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.totalCost = new System.Windows.Forms.MaskedTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.productQantity)).BeginInit();
             this.SuspendLayout();
             // 
@@ -73,7 +77,7 @@
             // 
             this.Ok.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.Ok.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Ok.Location = new System.Drawing.Point(36, 217);
+            this.Ok.Location = new System.Drawing.Point(45, 310);
             this.Ok.Name = "Ok";
             this.Ok.Size = new System.Drawing.Size(149, 23);
             this.Ok.TabIndex = 14;
@@ -85,7 +89,7 @@
             // 
             this.button2.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Location = new System.Drawing.Point(202, 217);
+            this.button2.Location = new System.Drawing.Point(211, 310);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(149, 23);
             this.button2.TabIndex = 15;
@@ -144,11 +148,48 @@
             this.productQantity.Size = new System.Drawing.Size(108, 20);
             this.productQantity.TabIndex = 26;
             // 
+            // date
+            // 
+            this.date.Location = new System.Drawing.Point(129, 239);
+            this.date.Name = "date";
+            this.date.Size = new System.Drawing.Size(200, 20);
+            this.date.TabIndex = 27;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(36, 243);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(92, 13);
+            this.label4.TabIndex = 28;
+            this.label4.Text = "Date of purchase:";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(91, 206);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(58, 13);
+            this.label5.TabIndex = 30;
+            this.label5.Text = "Total Cost:";
+            // 
+            // totalCost
+            // 
+            this.totalCost.Location = new System.Drawing.Point(155, 203);
+            this.totalCost.Mask = "000,000,000,00";
+            this.totalCost.Name = "totalCost";
+            this.totalCost.Size = new System.Drawing.Size(100, 20);
+            this.totalCost.TabIndex = 31;
+            // 
             // AddItemToStock
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(391, 282);
+            this.ClientSize = new System.Drawing.Size(402, 345);
+            this.Controls.Add(this.totalCost);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.date);
             this.Controls.Add(this.productQantity);
             this.Controls.Add(this.productList);
             this.Controls.Add(this.label2);
@@ -182,5 +223,9 @@
         private System.Windows.Forms.TextBox productBarcode;
         private System.Windows.Forms.ComboBox productList;
         private System.Windows.Forms.NumericUpDown productQantity;
+        private System.Windows.Forms.DateTimePicker date;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.MaskedTextBox totalCost;
     }
 }

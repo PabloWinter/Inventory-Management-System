@@ -43,5 +43,15 @@ namespace InventoryManagementSystem.Features.Stock
         {
             Stock.GetStock(dataGridView1);
         }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

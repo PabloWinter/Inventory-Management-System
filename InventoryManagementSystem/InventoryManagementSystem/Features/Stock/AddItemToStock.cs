@@ -15,7 +15,6 @@ namespace InventoryManagementSystem.Features.Stock
             stock.LocationSelect(productLocation);
         }
 
-
         public void ValidateForm()
         {
              
@@ -32,6 +31,9 @@ namespace InventoryManagementSystem.Features.Stock
             int location = stock.GetLocationListId()[productLocation.SelectedIndex];
             int quantity = Convert.ToInt16(productQantity.Text);
 
+            MessageBox.Show(location.ToString());
+            MessageBox.Show(stock.checkIfProductInStock(barcode, location).ToString());
+
             if (stock.checkIfProductInStock(barcode, location))
             {
                 MessageBox.Show("Item already exists in stock");
@@ -41,8 +43,8 @@ namespace InventoryManagementSystem.Features.Stock
                 MessageBox.Show("Item added to stock successfully.");
                 stock.NewStockItem(barcode, location, quantity);
                 Close();
-            }        
-            //
+            }
+
         }
 
 
@@ -53,7 +55,7 @@ namespace InventoryManagementSystem.Features.Stock
 
         private void AddItemToStock_Load(object sender, EventArgs e)
         {
-
+          
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -67,7 +69,6 @@ namespace InventoryManagementSystem.Features.Stock
             var BarcodeList = stock.GetBarcodeList();
 
             productBarcode.Text = BarcodeList.ToArray()[productList.SelectedIndex].ToString();
-
 
         }
     }

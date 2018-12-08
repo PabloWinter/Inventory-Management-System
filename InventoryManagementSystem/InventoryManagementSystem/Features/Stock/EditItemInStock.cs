@@ -40,5 +40,10 @@ namespace InventoryManagementSystem.Features.Stock
             MessageBox.Show("Item deleted.");
             Close();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }
