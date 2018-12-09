@@ -107,7 +107,6 @@ namespace InventoryBusinessLayer
 
             if (divisor != 0)
             {
-                //{ LocID = 4, Base = Calgary Location }
                 decimal averageCost = dividend / Convert.ToDecimal(divisor);
                 string result = "The average cost per unit was CAD$" + averageCost.ToString() + " in " + locationName + ".\r\n" +
                     "Total of Units: " + divisor + ". Total Cost: CAD$" + dividend +". \r\n" +
@@ -119,9 +118,6 @@ namespace InventoryBusinessLayer
                 string result = "There are no records in " + locationName + " in the given period of time.";
                 return result;
             }
-
-
-
 
         }
 

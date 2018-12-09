@@ -20,7 +20,6 @@ namespace InventoryManagementSystem.Features.PurchaseLogTab
         {
             InitializeComponent();
             SearchBL.GetAllProducts(ProductBox);
-
         }
 
         private void RunQuery_Click(object sender, EventArgs e)

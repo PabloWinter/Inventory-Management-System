@@ -214,20 +214,11 @@ namespace InventoryDataLayer
                                  TotalCost = pl.TotalCost
                              };
 
-                return result.ToList(); // IM STUCK HERE
+                return result.ToList();
             }
 
             else
             {
-                //string sqlStatement = "SELECT pl.TransactionID, pg.FullProductName, lo.[Name], pl.Quantity, pl.TotalCost " +
-                //        "FROM TPurchaseLog AS pl" +
-                //            "JOIN TLocation AS lo ON pl.LocationID = lo.LocationID" +
-                //            "JOIN TProductGroup AS pg ON pl.BarcodeID = pg.Barcode" +
-                //        "WHERE pl.BarcodeID = " + barcode +
-                //            "AND[Date] >= '" + startDate + "'" +
-                //            "AND[Date] <= '" + endDate + "'";
-                //var query = connect.ExecuteQuery<TProductGroup>(sqlStatement);
-                //return query;
                 var result = from pl in connect.TPurchaseLogs
                              join lo in connect.TLocations
                              on pl.LocationID equals lo.LocationID
@@ -245,7 +236,7 @@ namespace InventoryDataLayer
                                  TotalCost = pl.TotalCost
                              };
 
-                return result.ToList(); // IM STUCK HERE
+                return result.ToList();
             }
         }
 
