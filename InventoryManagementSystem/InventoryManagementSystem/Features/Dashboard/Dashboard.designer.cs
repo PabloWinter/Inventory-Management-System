@@ -43,11 +43,11 @@
             this.totalStockItemCount = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.stockValue = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.locationCount = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.stockValue = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -60,9 +60,10 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(17, 13);
+            this.label1.Location = new System.Drawing.Point(26, 20);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(234, 39);
+            this.label1.Size = new System.Drawing.Size(353, 61);
             this.label1.TabIndex = 0;
             this.label1.Text = "🏠 Dashboard";
             // 
@@ -71,18 +72,20 @@
             this.panel1.BackColor = System.Drawing.Color.ForestGreen;
             this.panel1.Controls.Add(this.stockCount);
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Location = new System.Drawing.Point(24, 132);
+            this.panel1.Location = new System.Drawing.Point(36, 203);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(227, 167);
+            this.panel1.Size = new System.Drawing.Size(340, 257);
             this.panel1.TabIndex = 1;
             // 
             // stockCount
             // 
             this.stockCount.AutoSize = true;
             this.stockCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.stockCount.Location = new System.Drawing.Point(33, 55);
+            this.stockCount.Location = new System.Drawing.Point(50, 85);
+            this.stockCount.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.stockCount.Name = "stockCount";
-            this.stockCount.Size = new System.Drawing.Size(431, 73);
+            this.stockCount.Size = new System.Drawing.Size(631, 108);
             this.stockCount.TabIndex = 1;
             this.stockCount.Text = "Failed to load";
             // 
@@ -90,9 +93,10 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(20, 13);
+            this.label2.Location = new System.Drawing.Point(30, 20);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(119, 25);
+            this.label2.Size = new System.Drawing.Size(170, 37);
             this.label2.TabIndex = 0;
             this.label2.Text = "✔️ In Stock";
             // 
@@ -101,18 +105,20 @@
             this.panel2.BackColor = System.Drawing.Color.Maroon;
             this.panel2.Controls.Add(this.outOfStockCount);
             this.panel2.Controls.Add(this.label4);
-            this.panel2.Location = new System.Drawing.Point(24, 305);
+            this.panel2.Location = new System.Drawing.Point(36, 469);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(227, 172);
+            this.panel2.Size = new System.Drawing.Size(340, 265);
             this.panel2.TabIndex = 2;
             // 
             // outOfStockCount
             // 
             this.outOfStockCount.AutoSize = true;
             this.outOfStockCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.outOfStockCount.Location = new System.Drawing.Point(33, 55);
+            this.outOfStockCount.Location = new System.Drawing.Point(50, 85);
+            this.outOfStockCount.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.outOfStockCount.Name = "outOfStockCount";
-            this.outOfStockCount.Size = new System.Drawing.Size(431, 73);
+            this.outOfStockCount.Size = new System.Drawing.Size(631, 108);
             this.outOfStockCount.TabIndex = 1;
             this.outOfStockCount.Text = "Failed to load";
             // 
@@ -120,9 +126,10 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(20, 13);
+            this.label4.Location = new System.Drawing.Point(30, 20);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(169, 25);
+            this.label4.Size = new System.Drawing.Size(245, 37);
             this.label4.TabIndex = 0;
             this.label4.Text = "⚠️ Out Of Stock";
             // 
@@ -131,18 +138,20 @@
             this.panel3.BackColor = System.Drawing.Color.Gold;
             this.panel3.Controls.Add(this.runningLowCount);
             this.panel3.Controls.Add(this.label5);
-            this.panel3.Location = new System.Drawing.Point(257, 132);
+            this.panel3.Location = new System.Drawing.Point(386, 203);
+            this.panel3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(227, 167);
+            this.panel3.Size = new System.Drawing.Size(340, 257);
             this.panel3.TabIndex = 2;
             // 
             // runningLowCount
             // 
             this.runningLowCount.AutoSize = true;
             this.runningLowCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.runningLowCount.Location = new System.Drawing.Point(33, 55);
+            this.runningLowCount.Location = new System.Drawing.Point(50, 85);
+            this.runningLowCount.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.runningLowCount.Name = "runningLowCount";
-            this.runningLowCount.Size = new System.Drawing.Size(431, 73);
+            this.runningLowCount.Size = new System.Drawing.Size(631, 108);
             this.runningLowCount.TabIndex = 1;
             this.runningLowCount.Text = "Failed to load";
             // 
@@ -150,9 +159,10 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(20, 13);
+            this.label5.Location = new System.Drawing.Point(30, 20);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(169, 25);
+            this.label5.Size = new System.Drawing.Size(245, 37);
             this.label5.TabIndex = 0;
             this.label5.Text = "!  Running Low";
             // 
@@ -161,9 +171,10 @@
             this.button3.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(282, 13);
+            this.button3.Location = new System.Drawing.Point(423, 20);
+            this.button3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(60, 51);
+            this.button3.Size = new System.Drawing.Size(90, 78);
             this.button3.TabIndex = 3;
             this.button3.Text = "🔄";
             this.button3.UseVisualStyleBackColor = false;
@@ -174,18 +185,20 @@
             this.panel4.BackColor = System.Drawing.SystemColors.Highlight;
             this.panel4.Controls.Add(this.totalStockItemCount);
             this.panel4.Controls.Add(this.label3);
-            this.panel4.Location = new System.Drawing.Point(257, 305);
+            this.panel4.Location = new System.Drawing.Point(386, 469);
+            this.panel4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(227, 82);
+            this.panel4.Size = new System.Drawing.Size(340, 126);
             this.panel4.TabIndex = 4;
             // 
             // totalStockItemCount
             // 
             this.totalStockItemCount.AutoSize = true;
             this.totalStockItemCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.totalStockItemCount.Location = new System.Drawing.Point(54, 43);
+            this.totalStockItemCount.Location = new System.Drawing.Point(81, 66);
+            this.totalStockItemCount.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.totalStockItemCount.Name = "totalStockItemCount";
-            this.totalStockItemCount.Size = new System.Drawing.Size(170, 25);
+            this.totalStockItemCount.Size = new System.Drawing.Size(246, 37);
             this.totalStockItemCount.TabIndex = 1;
             this.totalStockItemCount.Text = "Failed To Load";
             // 
@@ -193,9 +206,10 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(40, 13);
+            this.label3.Location = new System.Drawing.Point(60, 20);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(167, 20);
+            this.label3.Size = new System.Drawing.Size(237, 29);
             this.label3.TabIndex = 0;
             this.label3.Text = "🔢 Stock Item Count";
             // 
@@ -204,48 +218,20 @@
             this.panel6.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.panel6.Controls.Add(this.stockValue);
             this.panel6.Controls.Add(this.label8);
-            this.panel6.Location = new System.Drawing.Point(257, 395);
+            this.panel6.Location = new System.Drawing.Point(386, 608);
+            this.panel6.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(227, 82);
+            this.panel6.Size = new System.Drawing.Size(340, 126);
             this.panel6.TabIndex = 5;
-            // 
-            // panel5
-            // 
-            this.panel5.BackColor = System.Drawing.Color.SlateBlue;
-            this.panel5.Controls.Add(this.locationCount);
-            this.panel5.Controls.Add(this.label7);
-            this.panel5.Location = new System.Drawing.Point(657, 132);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(227, 167);
-            this.panel5.TabIndex = 2;
-            // 
-            // locationCount
-            // 
-            this.locationCount.AutoSize = true;
-            this.locationCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.locationCount.Location = new System.Drawing.Point(33, 55);
-            this.locationCount.Name = "locationCount";
-            this.locationCount.Size = new System.Drawing.Size(431, 73);
-            this.locationCount.TabIndex = 1;
-            this.locationCount.Text = "Failed to load";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(20, 13);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(144, 25);
-            this.label7.TabIndex = 0;
-            this.label7.Text = "🗺️ Locations";
             // 
             // stockValue
             // 
             this.stockValue.AutoSize = true;
             this.stockValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.stockValue.Location = new System.Drawing.Point(54, 38);
+            this.stockValue.Location = new System.Drawing.Point(81, 58);
+            this.stockValue.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.stockValue.Name = "stockValue";
-            this.stockValue.Size = new System.Drawing.Size(170, 25);
+            this.stockValue.Size = new System.Drawing.Size(246, 37);
             this.stockValue.TabIndex = 3;
             this.stockValue.Text = "Failed To Load";
             // 
@@ -253,15 +239,49 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(40, 8);
+            this.label8.Location = new System.Drawing.Point(60, 12);
+            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(124, 20);
+            this.label8.Size = new System.Drawing.Size(178, 29);
             this.label8.TabIndex = 2;
             this.label8.Text = "💵 Stock Value";
             // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.SlateBlue;
+            this.panel5.Controls.Add(this.locationCount);
+            this.panel5.Controls.Add(this.label7);
+            this.panel5.Location = new System.Drawing.Point(734, 203);
+            this.panel5.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(340, 257);
+            this.panel5.TabIndex = 2;
+            // 
+            // locationCount
+            // 
+            this.locationCount.AutoSize = true;
+            this.locationCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.locationCount.Location = new System.Drawing.Point(50, 85);
+            this.locationCount.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.locationCount.Name = "locationCount";
+            this.locationCount.Size = new System.Drawing.Size(631, 108);
+            this.locationCount.TabIndex = 1;
+            this.locationCount.Text = "Failed to load";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(30, 20);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(206, 37);
+            this.label7.TabIndex = 0;
+            this.label7.Text = "🗺️ Locations";
+            // 
             // Dashboard
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel6);
@@ -271,8 +291,9 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Dashboard";
-            this.Size = new System.Drawing.Size(1005, 626);
+            this.Size = new System.Drawing.Size(1508, 963);
             this.Load += new System.EventHandler(this.Dashboard_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
