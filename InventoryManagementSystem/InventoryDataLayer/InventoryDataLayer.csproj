@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Brand.cs" />
     <Compile Include="Class1.cs" />
     <Compile Include="Dashboard.cs" />
     <Compile Include="DataLinqToSQL.designer.cs">

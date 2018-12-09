@@ -46,6 +46,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Features\BrandTab\BrandControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Features\BrandTab\BrandControl.Designer.cs">
+      <DependentUpon>BrandControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Features\BrandTab\InsertBrandForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Features\BrandTab\InsertBrandForm.Designer.cs">
+      <DependentUpon>InsertBrandForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Features\BrandTab\UpdateBrandForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Features\BrandTab\UpdateBrandForm.Designer.cs">
+      <DependentUpon>UpdateBrandForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Features\Dashboard\Dashboard.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -162,6 +180,15 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Features\BrandTab\BrandControl.resx">
+      <DependentUpon>BrandControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Features\BrandTab\InsertBrandForm.resx">
+      <DependentUpon>InsertBrandForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Features\BrandTab\UpdateBrandForm.resx">
+      <DependentUpon>UpdateBrandForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Features\Dashboard\Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>
     </EmbeddedResource>
@@ -272,6 +299,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\update.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\branding.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
