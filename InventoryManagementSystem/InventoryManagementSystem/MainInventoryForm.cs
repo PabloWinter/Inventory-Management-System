@@ -127,5 +127,11 @@ namespace InventoryManagementSystem
             SelectOption("Logistics");
             optionTabs.SelectedIndex = 8;
         }
+
+        private void locationOption_Click(object sender, EventArgs e)
+        {
+            SelectOption("Location");
+            optionTabs.SelectedIndex = 9;
+        }
     }
 }

@@ -44,7 +44,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BDashboard.cs" />
+    <Compile Include="BLocations.cs" />
     <Compile Include="BProduct.cs" />
+    <Compile Include="BReturn.cs" />
+    <Compile Include="BStock.cs" />
     <Compile Include="Class1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SearchBL.cs" />

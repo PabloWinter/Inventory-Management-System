@@ -46,6 +46,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Features\Dashboard\Dashboard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Features\Dashboard\Dashboard.designer.cs">
+      <DependentUpon>Dashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Location\AddNewLocation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Features\Location\AddNewLocation.designer.cs">
+      <DependentUpon>AddNewLocation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Location\LocationManager.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Features\Location\LocationManager.designer.cs">
+      <DependentUpon>LocationManager.cs</DependentUpon>
+    </Compile>
     <Compile Include="Features\menuPanel\menuPanelButton.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -54,6 +72,24 @@
     </Compile>
     <Compile Include="Features\ProductTab\InsertProductForm.cs">
       <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Features\Return\AddItemToReturn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Features\Return\AddItemToReturn.designer.cs">
+      <DependentUpon>AddItemToReturn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Return\EditItemInReturn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Features\Return\EditItemInReturn.designer.cs">
+      <DependentUpon>EditItemInReturn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Return\ReturnManager.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Features\Return\ReturnManager.designer.cs">
+      <DependentUpon>ReturnManager.cs</DependentUpon>
     </Compile>
     <Compile Include="Features\SearchTab\ExtraFilter.cs">
       <SubType>UserControl</SubType>
@@ -94,6 +130,24 @@
     <Compile Include="Features\SearchTab\Filter.Designer.cs">
       <DependentUpon>Filter.cs</DependentUpon>
     </Compile>
+    <Compile Include="Features\Stock\AddItemToStock.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Features\Stock\AddItemToStock.designer.cs">
+      <DependentUpon>AddItemToStock.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Stock\EditItemInStock.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Features\Stock\EditItemInStock.designer.cs">
+      <DependentUpon>EditItemInStock.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Stock\StockManager.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Features\Stock\StockManager.designer.cs">
+      <DependentUpon>StockManager.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainInventoryForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -108,6 +162,15 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Features\Dashboard\Dashboard.resx">
+      <DependentUpon>Dashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Features\Location\AddNewLocation.resx">
+      <DependentUpon>AddNewLocation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Features\Location\LocationManager.resx">
+      <DependentUpon>LocationManager.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Features\menuPanel\menuPanelButton.resx">
       <DependentUpon>menuPanelButton.cs</DependentUpon>
     </EmbeddedResource>
@@ -120,6 +183,15 @@
     <EmbeddedResource Include="Features\ProductTab\UpdateProductForm.resx">
       <DependentUpon>UpdateProductForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Features\Return\AddItemToReturn.resx">
+      <DependentUpon>AddItemToReturn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Features\Return\EditItemInReturn.resx">
+      <DependentUpon>EditItemInReturn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Features\Return\ReturnManager.resx">
+      <DependentUpon>ReturnManager.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Features\SearchTab\Filter.resx">
       <DependentUpon>Filter.cs</DependentUpon>
     </EmbeddedResource>
@@ -131,6 +203,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Features\SearchTab\SearchContent.resx">
       <DependentUpon>SearchContent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Features\Stock\AddItemToStock.resx">
+      <DependentUpon>AddItemToStock.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Features\Stock\EditItemInStock.resx">
+      <DependentUpon>EditItemInStock.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Features\Stock\StockManager.resx">
+      <DependentUpon>StockManager.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainInventoryForm.resx">
       <DependentUpon>MainInventoryForm.cs</DependentUpon>
