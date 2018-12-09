@@ -108,8 +108,8 @@ namespace InventoryBusinessLayer
             if (divisor != 0)
             {
                 decimal averageCost = dividend / Convert.ToDecimal(divisor);
-                string result = "The average cost per unit was CAD$" + averageCost.ToString() + " in " + locationName + ".\r\n" +
-                    "Total of Units: " + divisor + ". Total Cost: CAD$" + dividend +". \r\n" +
+                string result = "The average cost per unit was " + averageCost.ToString("c") + " in " + locationName + ".\r\n" +
+                    "Total of Units: " + divisor + ". Total Cost: " + dividend.ToString("c") +". \r\n" +
                     "Start Date: " + startDate.ToShortDateString() + ". End Date: " + endDate.ToShortDateString();
                 return result;
             }
