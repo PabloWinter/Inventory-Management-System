@@ -33,15 +33,17 @@
             this.ProductBox = new System.Windows.Forms.ComboBox();
             this.FinalDatePicker = new System.Windows.Forms.DateTimePicker();
             this.FilterCost = new System.Windows.Forms.GroupBox();
-            this.ProductLabel = new System.Windows.Forms.Label();
-            this.LocationLabel = new System.Windows.Forms.Label();
-            this.StartingDateLabel = new System.Windows.Forms.Label();
-            this.UntilLabel = new System.Windows.Forms.Label();
             this.RunQuery = new System.Windows.Forms.Button();
+            this.UntilLabel = new System.Windows.Forms.Label();
+            this.StartingDateLabel = new System.Windows.Forms.Label();
+            this.LocationLabel = new System.Windows.Forms.Label();
+            this.ProductLabel = new System.Windows.Forms.Label();
             this.ResultView = new System.Windows.Forms.DataGridView();
             this.ConclusionBox = new System.Windows.Forms.GroupBox();
+            this.ResultLabel = new System.Windows.Forms.Label();
             this.FilterCost.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ResultView)).BeginInit();
+            this.ConclusionBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // InitialDatePicker
@@ -102,42 +104,6 @@
             this.FilterCost.TabStop = false;
             this.FilterCost.Text = "Unit Cost Search";
             // 
-            // ProductLabel
-            // 
-            this.ProductLabel.AutoSize = true;
-            this.ProductLabel.Location = new System.Drawing.Point(7, 35);
-            this.ProductLabel.Name = "ProductLabel";
-            this.ProductLabel.Size = new System.Drawing.Size(102, 29);
-            this.ProductLabel.TabIndex = 8;
-            this.ProductLabel.Text = "Product:";
-            // 
-            // LocationLabel
-            // 
-            this.LocationLabel.AutoSize = true;
-            this.LocationLabel.Location = new System.Drawing.Point(670, 35);
-            this.LocationLabel.Name = "LocationLabel";
-            this.LocationLabel.Size = new System.Drawing.Size(110, 29);
-            this.LocationLabel.TabIndex = 9;
-            this.LocationLabel.Text = "Location:";
-            // 
-            // StartingDateLabel
-            // 
-            this.StartingDateLabel.AutoSize = true;
-            this.StartingDateLabel.Location = new System.Drawing.Point(7, 119);
-            this.StartingDateLabel.Name = "StartingDateLabel";
-            this.StartingDateLabel.Size = new System.Drawing.Size(76, 29);
-            this.StartingDateLabel.TabIndex = 10;
-            this.StartingDateLabel.Text = "From:";
-            // 
-            // UntilLabel
-            // 
-            this.UntilLabel.AutoSize = true;
-            this.UntilLabel.Location = new System.Drawing.Point(290, 119);
-            this.UntilLabel.Name = "UntilLabel";
-            this.UntilLabel.Size = new System.Drawing.Size(67, 29);
-            this.UntilLabel.TabIndex = 11;
-            this.UntilLabel.Text = "Until:";
-            // 
             // RunQuery
             // 
             this.RunQuery.BackColor = System.Drawing.Color.DarkGreen;
@@ -151,6 +117,42 @@
             this.RunQuery.UseVisualStyleBackColor = false;
             this.RunQuery.Click += new System.EventHandler(this.RunQuery_Click);
             // 
+            // UntilLabel
+            // 
+            this.UntilLabel.AutoSize = true;
+            this.UntilLabel.Location = new System.Drawing.Point(290, 119);
+            this.UntilLabel.Name = "UntilLabel";
+            this.UntilLabel.Size = new System.Drawing.Size(67, 29);
+            this.UntilLabel.TabIndex = 11;
+            this.UntilLabel.Text = "Until:";
+            // 
+            // StartingDateLabel
+            // 
+            this.StartingDateLabel.AutoSize = true;
+            this.StartingDateLabel.Location = new System.Drawing.Point(7, 119);
+            this.StartingDateLabel.Name = "StartingDateLabel";
+            this.StartingDateLabel.Size = new System.Drawing.Size(76, 29);
+            this.StartingDateLabel.TabIndex = 10;
+            this.StartingDateLabel.Text = "From:";
+            // 
+            // LocationLabel
+            // 
+            this.LocationLabel.AutoSize = true;
+            this.LocationLabel.Location = new System.Drawing.Point(670, 35);
+            this.LocationLabel.Name = "LocationLabel";
+            this.LocationLabel.Size = new System.Drawing.Size(110, 29);
+            this.LocationLabel.TabIndex = 9;
+            this.LocationLabel.Text = "Location:";
+            // 
+            // ProductLabel
+            // 
+            this.ProductLabel.AutoSize = true;
+            this.ProductLabel.Location = new System.Drawing.Point(7, 35);
+            this.ProductLabel.Name = "ProductLabel";
+            this.ProductLabel.Size = new System.Drawing.Size(102, 29);
+            this.ProductLabel.TabIndex = 8;
+            this.ProductLabel.Text = "Product:";
+            // 
             // ResultView
             // 
             this.ResultView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -158,21 +160,32 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.ResultView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.ResultView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.ResultView.Location = new System.Drawing.Point(3, 374);
+            this.ResultView.Location = new System.Drawing.Point(3, 407);
             this.ResultView.Name = "ResultView";
             this.ResultView.RowTemplate.Height = 28;
-            this.ResultView.Size = new System.Drawing.Size(1108, 613);
+            this.ResultView.Size = new System.Drawing.Size(1108, 580);
             this.ResultView.TabIndex = 9;
             // 
             // ConclusionBox
             // 
+            this.ConclusionBox.Controls.Add(this.ResultLabel);
             this.ConclusionBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ConclusionBox.Location = new System.Drawing.Point(3, 234);
             this.ConclusionBox.Name = "ConclusionBox";
-            this.ConclusionBox.Size = new System.Drawing.Size(1109, 97);
+            this.ConclusionBox.Size = new System.Drawing.Size(1109, 146);
             this.ConclusionBox.TabIndex = 10;
             this.ConclusionBox.TabStop = false;
             this.ConclusionBox.Text = "Unit Cost";
+            // 
+            // ResultLabel
+            // 
+            this.ResultLabel.AutoSize = true;
+            this.ResultLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ResultLabel.ForeColor = System.Drawing.Color.DarkBlue;
+            this.ResultLabel.Location = new System.Drawing.Point(13, 31);
+            this.ResultLabel.Name = "ResultLabel";
+            this.ResultLabel.Size = new System.Drawing.Size(0, 29);
+            this.ResultLabel.TabIndex = 0;
             // 
             // PurchaseLogContent
             // 
@@ -186,6 +199,8 @@
             this.FilterCost.ResumeLayout(false);
             this.FilterCost.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ResultView)).EndInit();
+            this.ConclusionBox.ResumeLayout(false);
+            this.ConclusionBox.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -204,5 +219,6 @@
         private System.Windows.Forms.Button RunQuery;
         private System.Windows.Forms.DataGridView ResultView;
         private System.Windows.Forms.GroupBox ConclusionBox;
+        private System.Windows.Forms.Label ResultLabel;
     }
 }

@@ -25,14 +25,13 @@ namespace InventoryManagementSystem.Features.PurchaseLogTab
 
         private void RunQuery_Click(object sender, EventArgs e)
         {
-            bl.GetUnitCost(ProductBox.Text, InitialDatePicker.Value.Date, FinalDatePicker.Value.Date, LocationBox.Text, ResultView);
+            ResultLabel.Text = bl.GetUnitCost(ProductBox.Text, InitialDatePicker.Value.Date, FinalDatePicker.Value.Date, LocationBox.Text, ResultView);
         }
 
         private void ProductBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             var comboBoxText = ProductBox.SelectedValue.ToString();
             bl.GetLocations(LocationBox, comboBoxText);
-            Debug.WriteLine(InitialDatePicker.Value.ToShortDateString());
         }
     }
 }

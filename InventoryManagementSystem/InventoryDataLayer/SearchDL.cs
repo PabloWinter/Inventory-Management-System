@@ -182,7 +182,7 @@ namespace InventoryDataLayer
             var distinctResult = result.Distinct().ToList();
 
             // Adding extra line in the result so we can query independently from product's location;
-            var emptyObj = new { LocID = (int?)0, Base = "Every Location" };
+            var emptyObj = new { LocID = (int?)0, Base = "All Locations" };
 
             distinctResult.Add(emptyObj);
 
@@ -205,19 +205,14 @@ namespace InventoryDataLayer
                              pl.Date >= startDate &&
                              pl.Date <= endDate &&
                              pl.LocationID == location
-                             select new
+                             select new JoinResultGetUnitCostMethod
                              {
                                  TrNmb = pl.TransactionID,
                                  ProductName = pg.FullProductName,
                                  Location = lo.Name,
-                                 pl.Quantity,
-                                 pl.TotalCost
+                                 Quantity = pl.Quantity,
+                                 TotalCost = pl.TotalCost
                              };
-
-                foreach (var item in result)
-                {
-                    Debug.WriteLine(item.TrNmb);
-                }
 
                 return result.ToList(); // IM STUCK HERE
             }
@@ -241,16 +236,34 @@ namespace InventoryDataLayer
                              where pl.BarcodeID == barcode &&
                              pl.Date >= startDate &&
                              pl.Date <= endDate
-                             select new
+                             select new JoinResultGetUnitCostMethod
                              {
                                  TrNmb = pl.TransactionID,
                                  ProductName = pg.FullProductName,
                                  Location = lo.Name,
-                                 pl.Quantity,
-                                 pl.TotalCost
+                                 Quantity = pl.Quantity,
+                                 TotalCost = pl.TotalCost
                              };
 
                 return result.ToList(); // IM STUCK HERE
+            }
+        }
+
+        public class JoinResultGetUnitCostMethod
+        {
+            public int TrNmb { get; set; }
+            public string ProductName { get; set; }
+            public string Location { get; set; }
+            public int Quantity { get; set; }
+
+            private decimal _totalCost;
+
+            public decimal TotalCost {
+                get {
+                    var temp = decimal.Round(_totalCost, 2);
+                    return temp;
+                }
+                set { _totalCost = value; }
             }
         }
     }
