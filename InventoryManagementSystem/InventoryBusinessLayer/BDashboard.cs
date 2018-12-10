@@ -17,6 +17,11 @@ namespace InventoryBusinessLayer
             label.Text = dashboard.StockCount().ToString();
         }
 
+        public void GetReturnQuantity(Label label)
+        {
+            label.Text = dashboard.ReturnCount().ToString();
+        }
+
         public void GetOutOfStockQuantity(Label label)
         {
             label.Text = dashboard.OutOfStockCount().ToString();
@@ -32,6 +37,27 @@ namespace InventoryBusinessLayer
             label.Text = dashboard.StockItemCount().ToString();
         }
 
+        public void CategoryCount(Label label)
+        {
+            label.Text = dashboard.CategoryCount().ToString();
+        }
+
+        public void ProductCount(Label label)
+        {
+            label.Text = dashboard.ProductCount().ToString();
+        }
+
+        public void PurchaseLogCount(Label label)
+        {
+            label.Text = dashboard.PurchaseLogCount().ToString();
+        }
+
+
+        public void BrandCount(Label label)
+        {
+            label.Text = dashboard.BrandCount().ToString();
+        }
+
         public void LocationCount(Label label)
         {
             label.Text = dashboard.LocationCount().ToString();
@@ -40,6 +66,16 @@ namespace InventoryBusinessLayer
         public void StockValue(Label label)
         {
             label.Text = "$" + dashboard.TotalStockValue().ToString("0.##");
+        }
+
+        public void ReturnValue(Label label)
+        {
+            label.Text = "$" + dashboard.TotalReturnValue().ToString("0.##");
+        }
+
+        public void PurchaseCost(Label label)
+        {
+            label.Text = "$" + dashboard.PurchaseCost().ToString("0.##");
         }
     }
 }

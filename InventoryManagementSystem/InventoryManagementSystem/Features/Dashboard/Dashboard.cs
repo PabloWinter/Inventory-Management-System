@@ -23,6 +23,13 @@ namespace InventoryManagementSystem.Features.Dashboard
             dashboard.StockItemCount(totalStockItemCount);
             dashboard.LocationCount(locationCount);
             dashboard.StockValue(stockValue);
+            dashboard.GetReturnQuantity(returnCount);
+            dashboard.ReturnValue(returnValue);
+            dashboard.CategoryCount(categoryCount);
+            dashboard.BrandCount(brandCount);
+            dashboard.ProductCount(productCount);
+            dashboard.PurchaseCost(purchaseCost);
+            dashboard.PurchaseLogCount(purchaseLogCount);
 
         }
 
@@ -40,6 +47,13 @@ namespace InventoryManagementSystem.Features.Dashboard
             dashboard.StockItemCount(totalStockItemCount);
             dashboard.LocationCount(locationCount);
             dashboard.StockValue(stockValue);
+            dashboard.GetReturnQuantity(returnCount);
+            dashboard.ReturnValue(returnValue);
+            dashboard.CategoryCount(categoryCount);
+            dashboard.BrandCount(brandCount);
+            dashboard.ProductCount(productCount);
+            dashboard.PurchaseCost(purchaseCost);
+            dashboard.PurchaseLogCount(purchaseLogCount);
         }
     }
 }
