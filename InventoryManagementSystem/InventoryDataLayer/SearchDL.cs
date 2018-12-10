@@ -151,5 +151,111 @@ namespace InventoryDataLayer
             return query.ToList();
         }
 
+        public static object GetAllProducts()
+        {
+            DataLinqToSQLDataContext connect = new DataLinqToSQLDataContext();
+
+            var result = from product in connect.TProductGroups
+                         select new
+                         {
+                             ID = product.Barcode, // If this tag is modified it will impact on the string splitting (Substring) that happens in TrimID located at SearchBL
+                             product.Name,
+                         };
+            
+            return result.ToList();
+        }
+
+        public static object GetLocationsWithProductId(int value)
+        {
+            DataLinqToSQLDataContext connect = new DataLinqToSQLDataContext();
+
+            var result =    from product in connect.TPurchaseLogs
+                            join location in connect.TLocations
+                            on product.LocationID equals location.LocationID
+                            where product.BarcodeID == value
+                            select new
+                            {
+                                LocID = product.LocationID,
+                                Base = location.Name,
+                            };
+
+            var distinctResult = result.Distinct().ToList();
+
+            // Adding extra line in the result so we can query independently from product's location;
+            var emptyObj = new { LocID = (int?)0, Base = "All Locations" };
+
+            distinctResult.Add(emptyObj);
+
+            return distinctResult.ToList();
+        }
+
+
+        public static object GetUnitCost(int barcode, DateTime startDate, DateTime endDate, int location)
+        {
+            DataLinqToSQLDataContext connect = new DataLinqToSQLDataContext();
+
+            if (location != 0)
+            {
+                var result = from pl in connect.TPurchaseLogs
+                             join lo in connect.TLocations
+                             on pl.LocationID equals lo.LocationID
+                             join pg in connect.TProductGroups
+                             on pl.BarcodeID equals pg.Barcode
+                             where pl.BarcodeID == barcode &&
+                             pl.Date >= startDate &&
+                             pl.Date <= endDate &&
+                             pl.LocationID == location
+                             select new JoinResultGetUnitCostMethod
+                             {
+                                 TrNmb = pl.TransactionID,
+                                 ProductName = pg.FullProductName,
+                                 Location = lo.Name,
+                                 Quantity = pl.Quantity,
+                                 TotalCost = pl.TotalCost
+                             };
+
+                return result.ToList();
+            }
+
+            else
+            {
+                var result = from pl in connect.TPurchaseLogs
+                             join lo in connect.TLocations
+                             on pl.LocationID equals lo.LocationID
+                             join pg in connect.TProductGroups
+                             on pl.BarcodeID equals pg.Barcode
+                             where pl.BarcodeID == barcode &&
+                             pl.Date >= startDate &&
+                             pl.Date <= endDate
+                             select new JoinResultGetUnitCostMethod
+                             {
+                                 TrNmb = pl.TransactionID,
+                                 ProductName = pg.FullProductName,
+                                 Location = lo.Name,
+                                 Quantity = pl.Quantity,
+                                 TotalCost = pl.TotalCost
+                             };
+
+                return result.ToList();
+            }
+        }
+
+        public class JoinResultGetUnitCostMethod
+        {
+            public int TrNmb { get; set; }
+            public string ProductName { get; set; }
+            public string Location { get; set; }
+            public int Quantity { get; set; }
+
+            private decimal _totalCost;
+
+            public decimal TotalCost {
+                get {
+                    var temp = decimal.Round(_totalCost, 2);
+                    return temp;
+                }
+                set { _totalCost = value; }
+            }
+        }
     }
 }

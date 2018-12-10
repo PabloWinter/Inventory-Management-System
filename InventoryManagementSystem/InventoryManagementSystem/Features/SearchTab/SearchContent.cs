@@ -82,7 +82,6 @@ namespace InventoryManagementSystem.Features.SearchTab
 
                 foreach (InitialFilter item in FilterPanel.Controls.OfType<InitialFilter>())
                 {
-                    //SearchBL.GetProductGroup(ResultView, item.ColumnBoxText, item.OpBoxText, item.ValueBoxText);
                     tableName = item.TableBoxText;
                     columnName = item.ColumnBoxText;
                     operation = item.OpBoxText;
@@ -128,10 +127,7 @@ namespace InventoryManagementSystem.Features.SearchTab
             FilterPanel.Controls.Clear();
             FilterPanel.Refresh();
             InitialFilter();
-
             ResultView.DataSource = null;
-            
-            //ResultView.Refresh();
         }
     }
 }

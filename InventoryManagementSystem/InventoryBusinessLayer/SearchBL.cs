@@ -76,5 +76,58 @@ namespace InventoryBusinessLayer
             var obj = t3;
             dataGrid.DataSource = obj;
         }
+
+        public static void GetAllProducts(ComboBox box)
+        {
+            box.DataSource = SearchDL.GetAllProducts();
+        }
+
+        public void GetLocations(ComboBox box, string text)
+        {
+            box.DataSource = SearchDL.GetLocationsWithProductId(TrimID(text, 7));
+        }
+
+        public string GetUnitCost(string barcode, DateTime startDate, DateTime endDate, string location, DataGridView grid)
+        {
+            // Populate Grid with every record according to user's input parameteres
+            grid.DataSource = SearchDL.GetUnitCost(TrimID(barcode, 7), startDate, endDate, TrimID(location, 10));
+
+            // Calculate the average based on the result set obtained from the query
+            decimal dividend = 0;
+            int divisor = 0;
+
+            for (int i = 0; i < grid.RowCount; i++)
+            {
+                divisor += Convert.ToInt32(grid.Rows[i].Cells[3].Value); // cell 3 = quantity = divisor
+                dividend += Convert.ToDecimal((grid.Rows[i].Cells[4].Value)); // cell 4 = totalcost = dividend
+            }
+
+            string mod1 = location.Substring((location.LastIndexOf("=") + 2));
+            string locationName = mod1.Substring(0, mod1.LastIndexOf("}") - 1);
+
+            if (divisor != 0)
+            {
+                decimal averageCost = dividend / Convert.ToDecimal(divisor);
+                string result = "The average cost per unit was " + averageCost.ToString("c") + " in " + locationName + ".\r\n" +
+                    "Total of Units: " + divisor + ". Total Cost: " + dividend.ToString("c") +". \r\n" +
+                    "Start Date: " + startDate.ToShortDateString() + ". End Date: " + endDate.ToShortDateString();
+                return result;
+            }
+            else
+            {
+                string result = "There are no records in " + locationName + " in the given period of time.";
+                return result;
+            }
+
+        }
+
+        private int TrimID(string text, int index)
+        {
+            string mod1 = text.Substring(index);
+            string mod2 = mod1.Substring(0, mod1.LastIndexOf(","));
+            int convertedValue = Convert.ToInt32(mod2);
+            return convertedValue;
+        }
+
     }
 }

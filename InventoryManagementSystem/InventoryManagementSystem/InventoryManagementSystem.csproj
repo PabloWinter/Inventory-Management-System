@@ -127,6 +127,12 @@
     <Compile Include="Features\Return\ReturnManager.designer.cs">
       <DependentUpon>ReturnManager.cs</DependentUpon>
     </Compile>
+    <Compile Include="Features\PurchaseLogTab\PurchaseLogContent.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Features\PurchaseLogTab\PurchaseLogContent.Designer.cs">
+      <DependentUpon>PurchaseLogContent.cs</DependentUpon>
+    </Compile>
     <Compile Include="Features\SearchTab\ExtraFilter.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -245,6 +251,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Features\Return\ReturnManager.resx">
       <DependentUpon>ReturnManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Features\PurchaseLogTab\PurchaseLogContent.resx">
+      <DependentUpon>PurchaseLogContent.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Features\SearchTab\Filter.resx">
       <DependentUpon>Filter.cs</DependentUpon>
