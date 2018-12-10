@@ -94,6 +94,12 @@
     <Compile Include="Features\Location\AddNewLocation.designer.cs">
       <DependentUpon>AddNewLocation.cs</DependentUpon>
     </Compile>
+    <Compile Include="Features\Location\EditLocation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Features\Location\EditLocation.designer.cs">
+      <DependentUpon>EditLocation.cs</DependentUpon>
+    </Compile>
     <Compile Include="Features\Location\LocationManager.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -227,6 +233,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Features\Location\AddNewLocation.resx">
       <DependentUpon>AddNewLocation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Features\Location\EditLocation.resx">
+      <DependentUpon>EditLocation.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Features\Location\LocationManager.resx">
       <DependentUpon>LocationManager.cs</DependentUpon>
