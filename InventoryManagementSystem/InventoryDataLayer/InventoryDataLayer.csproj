@@ -44,6 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Brand.cs" />
+    <Compile Include="Category.cs" />
     <Compile Include="Class1.cs" />
     <Compile Include="Dashboard.cs" />
     <Compile Include="DataLinqToSQL.designer.cs">

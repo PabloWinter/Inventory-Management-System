@@ -45,6 +45,7 @@
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.productsControl1 = new InventoryManagementSystem.Features.ProductTab.ProductsControl();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.brandControl1 = new InventoryManagementSystem.Features.BrandTab.BrandControl();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.stockManager1 = new InventoryManagementSystem.Features.Stock.StockManager();
@@ -56,7 +57,6 @@
             this.tabPage9 = new System.Windows.Forms.TabPage();
             this.tabPage10 = new System.Windows.Forms.TabPage();
             this.locationManager1 = new InventoryManagementSystem.Features.Location.LocationManager();
-            this.brandControl1 = new InventoryManagementSystem.Features.BrandTab.BrandControl();
             this.menuPanel.SuspendLayout();
             this.optionTabs.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -83,7 +83,7 @@
             this.menuPanel.Controls.Add(this.dashboardOption);
             this.menuPanel.Dock = System.Windows.Forms.DockStyle.Left;
             this.menuPanel.Location = new System.Drawing.Point(0, 0);
-            this.menuPanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.menuPanel.Margin = new System.Windows.Forms.Padding(4);
             this.menuPanel.Name = "menuPanel";
             this.menuPanel.Size = new System.Drawing.Size(332, 817);
             this.menuPanel.TabIndex = 0;
@@ -95,7 +95,7 @@
             this.locationOption.Label1Text = "Location";
             this.locationOption.Label2Text = "🗺️";
             this.locationOption.Location = new System.Drawing.Point(0, 532);
-            this.locationOption.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.locationOption.Margin = new System.Windows.Forms.Padding(5);
             this.locationOption.Name = "locationOption";
             this.locationOption.Size = new System.Drawing.Size(332, 59);
             this.locationOption.TabIndex = 9;
@@ -223,7 +223,7 @@
             this.optionTabs.Controls.Add(this.tabPage10);
             this.optionTabs.Dock = System.Windows.Forms.DockStyle.Fill;
             this.optionTabs.Location = new System.Drawing.Point(332, 0);
-            this.optionTabs.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.optionTabs.Margin = new System.Windows.Forms.Padding(4);
             this.optionTabs.Name = "optionTabs";
             this.optionTabs.SelectedIndex = 0;
             this.optionTabs.Size = new System.Drawing.Size(999, 817);
@@ -233,7 +233,7 @@
             // 
             this.tabPage1.Controls.Add(this.dashboard1);
             this.tabPage1.Location = new System.Drawing.Point(4, 25);
-            this.tabPage1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage1.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Size = new System.Drawing.Size(991, 788);
             this.tabPage1.TabIndex = 0;
@@ -243,7 +243,7 @@
             // 
             this.dashboard1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dashboard1.Location = new System.Drawing.Point(0, 0);
-            this.dashboard1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.dashboard1.Margin = new System.Windows.Forms.Padding(5);
             this.dashboard1.Name = "dashboard1";
             this.dashboard1.Size = new System.Drawing.Size(991, 788);
             this.dashboard1.TabIndex = 0;
@@ -252,9 +252,9 @@
             // 
             this.tabPage2.Controls.Add(this.productsControl1);
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
-            this.tabPage2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage2.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(4);
             this.tabPage2.Size = new System.Drawing.Size(991, 788);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Products";
@@ -274,20 +274,29 @@
             // 
             this.tabPage3.Controls.Add(this.brandControl1);
             this.tabPage3.Location = new System.Drawing.Point(4, 25);
-            this.tabPage3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage3.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(4);
             this.tabPage3.Size = new System.Drawing.Size(991, 788);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Brands";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
+            // brandControl1
+            // 
+            this.brandControl1.BackColor = System.Drawing.Color.White;
+            this.brandControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.brandControl1.Location = new System.Drawing.Point(4, 4);
+            this.brandControl1.Name = "brandControl1";
+            this.brandControl1.Size = new System.Drawing.Size(983, 780);
+            this.brandControl1.TabIndex = 0;
+            // 
             // tabPage4
             // 
             this.tabPage4.Location = new System.Drawing.Point(4, 25);
-            this.tabPage4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage4.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(4);
             this.tabPage4.Size = new System.Drawing.Size(991, 788);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Category";
@@ -297,9 +306,9 @@
             // 
             this.tabPage5.Controls.Add(this.stockManager1);
             this.tabPage5.Location = new System.Drawing.Point(4, 25);
-            this.tabPage5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage5.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage5.Padding = new System.Windows.Forms.Padding(4);
             this.tabPage5.Size = new System.Drawing.Size(991, 788);
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "Current Stock";
@@ -309,7 +318,7 @@
             // 
             this.stockManager1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.stockManager1.Location = new System.Drawing.Point(4, 4);
-            this.stockManager1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.stockManager1.Margin = new System.Windows.Forms.Padding(5);
             this.stockManager1.Name = "stockManager1";
             this.stockManager1.Size = new System.Drawing.Size(983, 780);
             this.stockManager1.TabIndex = 0;
@@ -318,9 +327,9 @@
             // 
             this.tabPage6.Controls.Add(this.returnManager1);
             this.tabPage6.Location = new System.Drawing.Point(4, 25);
-            this.tabPage6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage6.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage6.Name = "tabPage6";
-            this.tabPage6.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage6.Padding = new System.Windows.Forms.Padding(4);
             this.tabPage6.Size = new System.Drawing.Size(991, 788);
             this.tabPage6.TabIndex = 5;
             this.tabPage6.Text = "Returned";
@@ -330,7 +339,7 @@
             // 
             this.returnManager1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.returnManager1.Location = new System.Drawing.Point(4, 4);
-            this.returnManager1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.returnManager1.Margin = new System.Windows.Forms.Padding(5);
             this.returnManager1.Name = "returnManager1";
             this.returnManager1.Size = new System.Drawing.Size(983, 780);
             this.returnManager1.TabIndex = 0;
@@ -339,9 +348,9 @@
             // 
             this.tabPage7.Controls.Add(this.searchContent1);
             this.tabPage7.Location = new System.Drawing.Point(4, 25);
-            this.tabPage7.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage7.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage7.Name = "tabPage7";
-            this.tabPage7.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage7.Padding = new System.Windows.Forms.Padding(4);
             this.tabPage7.Size = new System.Drawing.Size(991, 788);
             this.tabPage7.TabIndex = 6;
             this.tabPage7.Text = "Search";
@@ -362,9 +371,9 @@
             // tabPage8
             // 
             this.tabPage8.Location = new System.Drawing.Point(4, 25);
-            this.tabPage8.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage8.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage8.Name = "tabPage8";
-            this.tabPage8.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage8.Padding = new System.Windows.Forms.Padding(4);
             this.tabPage8.Size = new System.Drawing.Size(991, 788);
             this.tabPage8.TabIndex = 7;
             this.tabPage8.Text = "Purchase Logs";
@@ -373,9 +382,9 @@
             // tabPage9
             // 
             this.tabPage9.Location = new System.Drawing.Point(4, 25);
-            this.tabPage9.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage9.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage9.Name = "tabPage9";
-            this.tabPage9.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage9.Padding = new System.Windows.Forms.Padding(4);
             this.tabPage9.Size = new System.Drawing.Size(991, 788);
             this.tabPage9.TabIndex = 8;
             this.tabPage9.Text = "Logistics";
@@ -385,9 +394,9 @@
             // 
             this.tabPage10.Controls.Add(this.locationManager1);
             this.tabPage10.Location = new System.Drawing.Point(4, 25);
-            this.tabPage10.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage10.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage10.Name = "tabPage10";
-            this.tabPage10.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage10.Padding = new System.Windows.Forms.Padding(4);
             this.tabPage10.Size = new System.Drawing.Size(991, 788);
             this.tabPage10.TabIndex = 9;
             this.tabPage10.Text = "Location";
@@ -397,19 +406,10 @@
             // 
             this.locationManager1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.locationManager1.Location = new System.Drawing.Point(4, 4);
-            this.locationManager1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.locationManager1.Margin = new System.Windows.Forms.Padding(5);
             this.locationManager1.Name = "locationManager1";
             this.locationManager1.Size = new System.Drawing.Size(983, 780);
             this.locationManager1.TabIndex = 0;
-            // 
-            // brandControl1
-            // 
-            this.brandControl1.BackColor = System.Drawing.Color.White;
-            this.brandControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.brandControl1.Location = new System.Drawing.Point(4, 4);
-            this.brandControl1.Name = "brandControl1";
-            this.brandControl1.Size = new System.Drawing.Size(983, 780);
-            this.brandControl1.TabIndex = 0;
             // 
             // MainInventoryForm
             // 
@@ -418,7 +418,7 @@
             this.ClientSize = new System.Drawing.Size(1331, 817);
             this.Controls.Add(this.optionTabs);
             this.Controls.Add(this.menuPanel);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "MainInventoryForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Inventory Manager";

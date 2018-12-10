@@ -64,6 +64,24 @@
     <Compile Include="Features\BrandTab\UpdateBrandForm.Designer.cs">
       <DependentUpon>UpdateBrandForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Features\CategoryTab\CategoryControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Features\CategoryTab\CategoryControl.Designer.cs">
+      <DependentUpon>CategoryControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Features\CategoryTab\InsertCategoryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Features\CategoryTab\InsertCategoryForm.Designer.cs">
+      <DependentUpon>InsertCategoryForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Features\CategoryTab\UpdateCategoryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Features\CategoryTab\UpdateCategoryForm.Designer.cs">
+      <DependentUpon>UpdateCategoryForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Features\Dashboard\Dashboard.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -189,6 +207,15 @@
     <EmbeddedResource Include="Features\BrandTab\UpdateBrandForm.resx">
       <DependentUpon>UpdateBrandForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Features\CategoryTab\CategoryControl.resx">
+      <DependentUpon>CategoryControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Features\CategoryTab\InsertCategoryForm.resx">
+      <DependentUpon>InsertCategoryForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Features\CategoryTab\UpdateCategoryForm.resx">
+      <DependentUpon>UpdateCategoryForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Features\Dashboard\Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>
     </EmbeddedResource>
@@ -302,6 +329,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\branding.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\list.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

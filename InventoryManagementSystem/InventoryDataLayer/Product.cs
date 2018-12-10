@@ -154,7 +154,5 @@ namespace InventoryDataLayer
 
             return query.ToList();
         }
-
-
     }
 }
