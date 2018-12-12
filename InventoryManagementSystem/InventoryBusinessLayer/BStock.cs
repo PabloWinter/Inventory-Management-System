@@ -17,12 +17,6 @@ namespace InventoryBusinessLayer
             dataView.DataSource = stock.GetStockList();
         }
 
-
-        public void GetStockItems (ComboBox cbox)
-        {
-
-        }
-
         public void NewStockItem (int barcode, int location, int quantity, string totalcost, DateTime date)
         {
             //NewStockItem (int barcode, int location, int quantity)
@@ -60,10 +54,7 @@ namespace InventoryBusinessLayer
         {
             bool has = stock.GetStock().Any(st => st.LocationID == location && st.BarcodeID == id);
 
-            //foreach (var item in stock.GetStock())
-            //{
-            //    MessageBox.Show(item.BarcodeID.ToString() + " - " + item.LocationID.ToString());
-            //}
+          
             return has;
         }
 
@@ -110,9 +101,6 @@ namespace InventoryBusinessLayer
         }
 
 
-        public void SelectedStockItemLocation (ComboBox cbox)
-        {
-          ///  cbox.SelectedItem = stock.StockLocationMatch();
-        }
+        
     }
 }

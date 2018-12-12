@@ -146,7 +146,7 @@ namespace InventoryDataLayer
             try
             {
                 db.SubmitChanges();
-                MessageBox.Show("return added to stock successfully.");
+                MessageBox.Show("return item edited successfully.");
             }
             catch (Exception e)
             {
@@ -165,11 +165,10 @@ namespace InventoryDataLayer
             {
                 db.TReturneds.DeleteOnSubmit(stockItem);
             }
-
             try
             {
                 db.SubmitChanges();
-                MessageBox.Show("Item edited successfully.");
+                MessageBox.Show("Item deleted successfully.");
             }
             catch (Exception e)
             {

@@ -16,15 +16,6 @@ namespace InventoryManagementSystem.Features.Stock
             stock.LocationSelect(productLocation);
         }
 
-        public void ValidateForm()
-        {
-             
-        }
-
-        public void ProductList()
-        {
-
-        }
 
         public bool MoneyValidate (string text)
         {
@@ -36,10 +27,7 @@ namespace InventoryManagementSystem.Features.Stock
         {
             int barcode = Convert.ToInt16(productBarcode.Text);
             int location = stock.GetLocationListId()[productLocation.SelectedIndex];
-            int quantity = Convert.ToInt16(productQantity.Text);
-
-            //MessageBox.Show(location.ToString());
-            //MessageBox.Show(stock.checkIfProductInStock(barcode, location).ToString());
+            int quantity = Convert.ToInt16(productQantity.Text);      
 
             float num = 0;
 
