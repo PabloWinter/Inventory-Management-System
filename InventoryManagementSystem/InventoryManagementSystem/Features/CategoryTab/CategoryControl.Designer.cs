@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.NameWindow = new System.Windows.Forms.Label();
-            this.ViewCategory = new System.Windows.Forms.Button();
             this.GroupData = new System.Windows.Forms.GroupBox();
             this.ViewDataList = new System.Windows.Forms.DataGridView();
             this.UpdateCategory = new System.Windows.Forms.Button();
@@ -43,27 +42,13 @@
             // NameWindow
             // 
             this.NameWindow.AutoSize = true;
-            this.NameWindow.Font = new System.Drawing.Font("Microsoft YaHei", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NameWindow.Font = new System.Drawing.Font("Microsoft YaHei", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.NameWindow.ForeColor = System.Drawing.Color.SteelBlue;
             this.NameWindow.Location = new System.Drawing.Point(9, 1);
             this.NameWindow.Name = "NameWindow";
-            this.NameWindow.Size = new System.Drawing.Size(153, 40);
+            this.NameWindow.Size = new System.Drawing.Size(196, 50);
             this.NameWindow.TabIndex = 22;
             this.NameWindow.Text = "Category";
-            // 
-            // ViewCategory
-            // 
-            this.ViewCategory.BackColor = System.Drawing.Color.SteelBlue;
-            this.ViewCategory.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.ViewCategory.Font = new System.Drawing.Font("Microsoft YaHei", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ViewCategory.ForeColor = System.Drawing.Color.White;
-            this.ViewCategory.Location = new System.Drawing.Point(520, 130);
-            this.ViewCategory.Name = "ViewCategory";
-            this.ViewCategory.Size = new System.Drawing.Size(104, 37);
-            this.ViewCategory.TabIndex = 21;
-            this.ViewCategory.Text = "View";
-            this.ViewCategory.UseVisualStyleBackColor = false;
-            this.ViewCategory.Click += new System.EventHandler(this.ViewCategory_Click);
             // 
             // GroupData
             // 
@@ -91,9 +76,9 @@
             this.UpdateCategory.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.UpdateCategory.Font = new System.Drawing.Font("Microsoft YaHei", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.UpdateCategory.ForeColor = System.Drawing.Color.White;
-            this.UpdateCategory.Location = new System.Drawing.Point(740, 130);
+            this.UpdateCategory.Location = new System.Drawing.Point(636, 130);
             this.UpdateCategory.Name = "UpdateCategory";
-            this.UpdateCategory.Size = new System.Drawing.Size(104, 37);
+            this.UpdateCategory.Size = new System.Drawing.Size(214, 37);
             this.UpdateCategory.TabIndex = 18;
             this.UpdateCategory.Text = "Update";
             this.UpdateCategory.UseVisualStyleBackColor = false;
@@ -105,9 +90,9 @@
             this.InsertCategory.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.InsertCategory.Font = new System.Drawing.Font("Microsoft YaHei", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.InsertCategory.ForeColor = System.Drawing.Color.White;
-            this.InsertCategory.Location = new System.Drawing.Point(630, 130);
+            this.InsertCategory.Location = new System.Drawing.Point(416, 130);
             this.InsertCategory.Name = "InsertCategory";
-            this.InsertCategory.Size = new System.Drawing.Size(104, 37);
+            this.InsertCategory.Size = new System.Drawing.Size(214, 37);
             this.InsertCategory.TabIndex = 19;
             this.InsertCategory.Text = "Insert";
             this.InsertCategory.UseVisualStyleBackColor = false;
@@ -131,7 +116,6 @@
             this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.NameWindow);
-            this.Controls.Add(this.ViewCategory);
             this.Controls.Add(this.GroupData);
             this.Controls.Add(this.UpdateCategory);
             this.Controls.Add(this.InsertCategory);
@@ -149,7 +133,6 @@
 
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label NameWindow;
-        private System.Windows.Forms.Button ViewCategory;
         private System.Windows.Forms.GroupBox GroupData;
         private System.Windows.Forms.DataGridView ViewDataList;
         private System.Windows.Forms.Button UpdateCategory;

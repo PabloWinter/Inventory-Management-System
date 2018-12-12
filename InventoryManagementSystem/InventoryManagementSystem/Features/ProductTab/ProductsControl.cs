@@ -18,10 +18,7 @@ namespace InventoryManagementSystem.Features.ProductTab
         public ProductsControl()
         {
             InitializeComponent();
-        }
 
-        private void View_Click(object sender, EventArgs e)
-        {
             product.FillDataGridProduct(ViewDataList);
         }
 

@@ -18,10 +18,7 @@ namespace InventoryManagementSystem.Features.BrandTab
         public BrandControl()
         {
             InitializeComponent();
-        }
 
-        private void ViewBrand_Click_1(object sender, EventArgs e)
-        {
             brand.FillDataGridBrand(ViewDataList);
         }
 

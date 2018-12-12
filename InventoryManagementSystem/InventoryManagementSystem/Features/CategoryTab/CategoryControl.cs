@@ -18,10 +18,7 @@ namespace InventoryManagementSystem.Features.CategoryTab
         public CategoryControl()
         {
             InitializeComponent();
-        }
 
-        private void ViewCategory_Click(object sender, EventArgs e)
-        {
             category.FillDataGridCategory(ViewDataList);
         }
 

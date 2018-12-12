@@ -30,7 +30,6 @@
         {
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.NameWindow = new System.Windows.Forms.Label();
-            this.ViewBrand = new System.Windows.Forms.Button();
             this.GroupData = new System.Windows.Forms.GroupBox();
             this.ViewDataList = new System.Windows.Forms.DataGridView();
             this.UpdateBrand = new System.Windows.Forms.Button();
@@ -54,27 +53,13 @@
             // NameWindow
             // 
             this.NameWindow.AutoSize = true;
-            this.NameWindow.Font = new System.Drawing.Font("Microsoft YaHei", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NameWindow.Font = new System.Drawing.Font("Microsoft YaHei", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.NameWindow.ForeColor = System.Drawing.Color.SteelBlue;
             this.NameWindow.Location = new System.Drawing.Point(9, 1);
             this.NameWindow.Name = "NameWindow";
-            this.NameWindow.Size = new System.Drawing.Size(107, 40);
+            this.NameWindow.Size = new System.Drawing.Size(136, 50);
             this.NameWindow.TabIndex = 16;
             this.NameWindow.Text = "Brand";
-            // 
-            // ViewBrand
-            // 
-            this.ViewBrand.BackColor = System.Drawing.Color.SteelBlue;
-            this.ViewBrand.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.ViewBrand.Font = new System.Drawing.Font("Microsoft YaHei", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ViewBrand.ForeColor = System.Drawing.Color.White;
-            this.ViewBrand.Location = new System.Drawing.Point(520, 130);
-            this.ViewBrand.Name = "ViewBrand";
-            this.ViewBrand.Size = new System.Drawing.Size(104, 37);
-            this.ViewBrand.TabIndex = 15;
-            this.ViewBrand.Text = "View";
-            this.ViewBrand.UseVisualStyleBackColor = false;
-            this.ViewBrand.Click += new System.EventHandler(this.ViewBrand_Click_1);
             // 
             // GroupData
             // 
@@ -102,9 +87,9 @@
             this.UpdateBrand.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.UpdateBrand.Font = new System.Drawing.Font("Microsoft YaHei", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.UpdateBrand.ForeColor = System.Drawing.Color.White;
-            this.UpdateBrand.Location = new System.Drawing.Point(740, 130);
+            this.UpdateBrand.Location = new System.Drawing.Point(636, 130);
             this.UpdateBrand.Name = "UpdateBrand";
-            this.UpdateBrand.Size = new System.Drawing.Size(104, 37);
+            this.UpdateBrand.Size = new System.Drawing.Size(214, 37);
             this.UpdateBrand.TabIndex = 12;
             this.UpdateBrand.Text = "Update";
             this.UpdateBrand.UseVisualStyleBackColor = false;
@@ -116,9 +101,9 @@
             this.InsertBrand.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.InsertBrand.Font = new System.Drawing.Font("Microsoft YaHei", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.InsertBrand.ForeColor = System.Drawing.Color.White;
-            this.InsertBrand.Location = new System.Drawing.Point(630, 130);
+            this.InsertBrand.Location = new System.Drawing.Point(416, 130);
             this.InsertBrand.Name = "InsertBrand";
-            this.InsertBrand.Size = new System.Drawing.Size(104, 37);
+            this.InsertBrand.Size = new System.Drawing.Size(214, 37);
             this.InsertBrand.TabIndex = 13;
             this.InsertBrand.Text = "Insert";
             this.InsertBrand.UseVisualStyleBackColor = false;
@@ -131,7 +116,6 @@
             this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.NameWindow);
-            this.Controls.Add(this.ViewBrand);
             this.Controls.Add(this.GroupData);
             this.Controls.Add(this.UpdateBrand);
             this.Controls.Add(this.InsertBrand);
@@ -149,7 +133,6 @@
 
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label NameWindow;
-        private System.Windows.Forms.Button ViewBrand;
         private System.Windows.Forms.GroupBox GroupData;
         private System.Windows.Forms.DataGridView ViewDataList;
         private System.Windows.Forms.Button UpdateBrand;
