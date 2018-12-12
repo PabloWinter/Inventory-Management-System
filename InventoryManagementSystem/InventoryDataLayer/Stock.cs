@@ -96,16 +96,6 @@ namespace InventoryDataLayer
 
         public IEnumerable<TInStock> GetStock()
         {
-
-            //return (from stock in db.TInStocks
-            //                        join p in db.TProductGroups on stock.BarcodeID equals p.Barcode
-            //                        join d in db.TLocations on stock.LocationID equals d.LocationID
-            //                        select new
-            //                        {
-            //                            stock.BarcodeID,
-            //                            stock.LocationID
-            //                        });
-
             DataLinqToSQLDataContext conn = new DataLinqToSQLDataContext();
             string sql = "SELECT StockID, BarcodeID, LocationID, Quantity FROM TInStock";
 
@@ -149,10 +139,6 @@ namespace InventoryDataLayer
             catch (Exception e)
             {
                 MessageBox.Show(e.ToString());
-                // Make some adjustments.
-                // ...
-                // Try again.
-               // connect.SubmitChanges();
             }
         }
 

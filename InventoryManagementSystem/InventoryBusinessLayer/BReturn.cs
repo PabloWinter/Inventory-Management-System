@@ -83,9 +83,6 @@ namespace InventoryBusinessLayer
             returned.ReturnToEdit(barcode, locationid, quantity);
         }
 
-        public void SelectedReturnedItemLocation(ComboBox cbox)
-        {
-            ///  cbox.SelectedItem = Returned.ReturnedLocationMatch();
-        }
+        
     }
 }
