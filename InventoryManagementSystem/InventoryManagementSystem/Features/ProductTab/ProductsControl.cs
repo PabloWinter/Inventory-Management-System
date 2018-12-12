@@ -33,5 +33,10 @@ namespace InventoryManagementSystem.Features.ProductTab
             UpdateProductForm newUpdateForm = new UpdateProductForm();
             newUpdateForm.Show();
         }
+
+        private void refreshbtn_Click(object sender, EventArgs e)
+        {
+            product.FillDataGridProduct(ViewDataList);
+        }
     }
 }

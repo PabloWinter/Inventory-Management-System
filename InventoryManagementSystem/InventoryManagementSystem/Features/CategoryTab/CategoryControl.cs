@@ -33,5 +33,10 @@ namespace InventoryManagementSystem.Features.CategoryTab
             UpdateCategoryForm newCategory = new UpdateCategoryForm();
             newCategory.ShowDialog();
         }
+
+        private void refreshbtn_Click(object sender, EventArgs e)
+        {
+            category.FillDataGridCategory(ViewDataList);
+        }
     }
 }

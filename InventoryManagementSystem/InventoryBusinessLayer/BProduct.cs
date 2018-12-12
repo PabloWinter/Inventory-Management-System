@@ -20,7 +20,7 @@ namespace InventoryBusinessLayer
 
         public void InsertIntoDatabase(string name, decimal price, decimal tax, decimal discount, string description, int FKcategory, int FKbrand, string fullName, string shortName)
         {
-            // Inseting new product
+            // Inserting new product
             product.InsertNewProduct(name, price, tax, discount, description, FKcategory, FKbrand, fullName, shortName);
         }
 

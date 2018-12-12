@@ -33,5 +33,10 @@ namespace InventoryManagementSystem.Features.BrandTab
             UpdateBrandForm updateBrandForm = new UpdateBrandForm();
             updateBrandForm.Show();
         }
+
+        private void refreshbtn_Click(object sender, EventArgs e)
+        {
+            brand.FillDataGridBrand(ViewDataList);
+        }
     }
 }
