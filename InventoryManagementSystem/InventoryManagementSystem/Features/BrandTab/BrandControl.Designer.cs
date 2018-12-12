@@ -74,6 +74,9 @@
             // 
             // ViewDataList
             // 
+            this.ViewDataList.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.ViewDataList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.ViewDataList.Location = new System.Drawing.Point(6, 29);
             this.ViewDataList.Name = "ViewDataList";
