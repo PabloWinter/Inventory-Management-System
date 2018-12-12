@@ -9,24 +9,6 @@ namespace InventoryDataLayer
 {
     public class Product
     {
-        // EXAMPLE QUERY
-        private void ShowProduct()
-        {
-            using (DataLinqToSQLDataContext products = new DataLinqToSQLDataContext())
-            {             
-                var query = from product in products.TProductGroups
-                            select product;
-
-                IQueryable<TProductGroup> prodQuery =
-                                       from prod in products.TProductGroups
-                                       orderby prod.BrandID
-                                       select prod;
-
-                var lambaQuery = products.TProductGroups.OrderBy(x => x.DESCRIPTION).ThenByDescending(x => x.CategoryID);
-            }
-
-        }
-
         public object ShowInventoryProduct()
         {
             DataLinqToSQLDataContext products = new DataLinqToSQLDataContext();
@@ -144,6 +126,8 @@ namespace InventoryDataLayer
 
             return result.ToList();
         }
+
+        // Get primary key to display in a combo box
 
         public List<int> GetListBarcode()
         {
