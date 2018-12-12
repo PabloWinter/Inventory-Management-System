@@ -45,7 +45,7 @@
             this.Insert.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.Insert.Font = new System.Drawing.Font("Microsoft YaHei", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Insert.ForeColor = System.Drawing.Color.White;
-            this.Insert.Location = new System.Drawing.Point(410, 129);
+            this.Insert.Location = new System.Drawing.Point(416, 129);
             this.Insert.Name = "Insert";
             this.Insert.Size = new System.Drawing.Size(214, 37);
             this.Insert.TabIndex = 0;
@@ -59,7 +59,7 @@
             this.Update.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.Update.Font = new System.Drawing.Font("Microsoft YaHei", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Update.ForeColor = System.Drawing.Color.White;
-            this.Update.Location = new System.Drawing.Point(630, 129);
+            this.Update.Location = new System.Drawing.Point(636, 129);
             this.Update.Name = "Update";
             this.Update.Size = new System.Drawing.Size(214, 37);
             this.Update.TabIndex = 0;
