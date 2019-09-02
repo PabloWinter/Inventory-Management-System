@@ -13,14 +13,14 @@ A desktop application designed to help keep track of an inventory in different s
 
 * [Windows Forms](https://docs.microsoft.com/en-us/dotnet/framework/winforms/) - .NET Framework
 * [LINQ to SQL](https://docs.microsoft.com/en-us/dotnet/framework/data/adonet/sql/linq/) - The object-relational mapper
-* [Microsoft SQL Server] - Database management system
-* [C#] - Programming language
+* Microsoft SQL Server - Database management system
+* C# - Programming language
 
 ## Authors
 
 For this project, I worked along with two other developers implementing agile methodologies.
 
-* **Pablo Winter** - *Git credentials for this project - p.rodriguez673 * - [PabloWinter](https://pablowinter.com)
+* **Pablo Winter** - *Git credentials for this project - p.rodriguez673* - [PabloWinter](https://pablowinter.com)
 * **Anderson Viana**
 * **karamullah Agha**
 
